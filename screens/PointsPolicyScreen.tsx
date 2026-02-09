@@ -108,117 +108,107 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                         <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gray-200 rounded-full shadow-inner"></div>
                    </div>
 
-                   {/* Bottom Part: Info */}
+                   {/* Bottom Part: Stats */}
                    <div className="bg-gray-50 p-6 flex justify-between items-center">
-                        <div>
-                            <p className="text-xs text-gray-500">Ngày tham gia</p>
-                            <p className="font-bold text-gray-900">20/10/2023</p>
-                        </div>
-                        <div className="h-8 w-px bg-gray-200"></div>
-                        <div className="text-right">
-                             <p className="text-xs text-gray-500">Trạng thái</p>
-                             <p className="font-bold text-green-600 flex items-center gap-1 justify-end">
-                                <span className="size-2 bg-green-500 rounded-full animate-pulse"></span> Active
-                             </p>
-                        </div>
+                       <div className="text-center flex-1 border-r border-gray-200">
+                           <p className="text-xs text-gray-500 font-bold uppercase">Hạng</p>
+                           <p className="text-lg font-black text-gray-900">GOLD</p>
+                       </div>
+                       <div className="text-center flex-1 border-r border-gray-200">
+                           <p className="text-xs text-gray-500 font-bold uppercase">Điểm</p>
+                           <p className="text-lg font-black text-primary">1,250</p>
+                       </div>
+                       <div className="text-center flex-1">
+                           <p className="text-xs text-gray-500 font-bold uppercase">Hết hạn</p>
+                           <p className="text-lg font-black text-gray-900">31/12</p>
+                       </div>
                    </div>
                </div>
                
-               <p className="text-center text-gray-400 text-xs mt-6 font-medium">
-                  Đưa mã này cho nhân viên thu ngân để tích điểm
+               <p className="text-center text-white/50 text-xs mt-6 px-8">
+                  Mã QR được tự động làm mới mỗi 60 giây để bảo mật. Vui lòng không chụp ảnh màn hình.
                </p>
            </div>
         ) : (
            <div className="animate-in slide-in-from-bottom-4 duration-300 pb-8">
-              <div className="relative pl-4">
-                  {/* Vertical Line */}
-                  <div className="absolute left-[27px] top-4 bottom-0 w-0.5 bg-gray-200"></div>
-
-                  {/* Rank 1: Silver (Passed) */}
-                  <div className="relative flex gap-4 mb-8 opacity-60 grayscale">
-                      <div className="relative z-10 flex flex-col items-center">
-                          <div className="size-14 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center">
-                              <div className="size-10 bg-gray-100 rounded-xl flex items-center justify-center">
-                                  <i className="iconoir-medal text-gray-500 text-xl"></i>
-                              </div>
-                          </div>
+              {/* Next Rank Goal Card */}
+              <div className="mb-6 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-5 text-white shadow-xl shadow-gray-900/20 relative overflow-hidden border border-white/10">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+                  <div className="relative z-10">
+                      <div className="flex items-center gap-3 mb-4">
+                           <div className="size-10 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm border border-white/10 shadow-inner">
+                               <i className="iconoir-lock-key text-xl text-primary"></i>
+                           </div>
+                           <div>
+                               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Mục tiêu tiếp theo</p>
+                               <h3 className="font-black text-lg text-white">Diamond Member</h3>
+                           </div>
                       </div>
-                      <div className="pt-1 flex-1">
-                          <h3 className="text-lg font-bold text-gray-900">Silver Member</h3>
-                          <div className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm mt-2">
-                              <p className="text-sm text-gray-500 flex items-center gap-2"><i className="iconoir-check text-green-500"></i> Tích điểm 1%</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  {/* Rank 2: Gold (Current) */}
-                  <div className="relative flex gap-4 mb-8">
-                      <div className="relative z-10 flex flex-col items-center">
-                           {/* Static Ring for Current Rank - Removed animate-ping */}
-                          <div className="absolute inset-0 bg-yellow-400/10 rounded-2xl"></div>
-                          <div className="size-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 shadow-md shadow-yellow-500/20 flex items-center justify-center border-2 border-white relative z-10">
-                              <i className="iconoir-star-solid text-white text-2xl"></i>
-                          </div>
-                      </div>
-                      <div className="pt-1 flex-1">
-                          <div className="flex justify-between items-center mb-1">
-                             <h3 className="text-lg font-black text-gray-900">Gold Member</h3>
-                             <span className="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-yellow-200">Hiện tại</span>
-                          </div>
-                          <div className="bg-white rounded-xl border border-gray-100 shadow-md overflow-hidden">
-                              <div className="p-3 border-b border-gray-50 flex items-center gap-3">
-                                  <div className="size-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
-                                      <i className="iconoir-percentage"></i>
-                                  </div>
-                                  <div>
-                                      <p className="text-sm font-bold text-gray-900">Tích điểm 1.2%</p>
-                                      <p className="text-[11px] text-gray-500">Mọi đơn hàng</p>
-                                  </div>
-                              </div>
-                              <div className="p-3 border-b border-gray-50 flex items-center gap-3">
-                                  <div className="size-8 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center shrink-0">
-                                      <i className="iconoir-gift"></i>
-                                  </div>
-                                  <div>
-                                      <p className="text-sm font-bold text-gray-900">Sinh nhật</p>
-                                      <p className="text-[11px] text-gray-500">Voucher 200k</p>
-                                  </div>
-                              </div>
-                              <div className="p-3 flex items-center gap-3">
-                                  <div className="size-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                                      <i className="iconoir-delivery-truck"></i>
-                                  </div>
-                                  <div>
-                                      <p className="text-sm font-bold text-gray-900">Freeship</p>
-                                      <p className="text-[11px] text-gray-500">Đơn > 500k nội thành</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-                  {/* Rank 3: Diamond (Locked) */}
-                  <div className="relative flex gap-4 opacity-70">
-                      <div className="relative z-10 flex flex-col items-center">
-                          <div className="size-14 rounded-2xl bg-gray-100 border-2 border-gray-200 border-dashed flex items-center justify-center">
-                              <i className="iconoir-lock text-gray-400 text-xl"></i>
-                          </div>
-                      </div>
-                      <div className="pt-1 flex-1">
-                          <h3 className="text-lg font-bold text-gray-500">Diamond Member</h3>
-                          <div className="bg-white/50 p-3 rounded-xl border border-gray-200 border-dashed mt-2">
-                               <div className="flex items-center gap-3 mb-2">
-                                  <i className="iconoir-lock text-gray-400 text-sm"></i>
-                                  <p className="text-sm font-medium text-gray-500">Tích điểm 1.5%</p>
-                               </div>
-                               <div className="flex items-center gap-3">
-                                  <i className="iconoir-lock text-gray-400 text-sm"></i>
-                                  <p className="text-sm font-medium text-gray-500">Đặc quyền Service VIP</p>
+                      
+                      <div className="space-y-2 mb-4">
+                          <div className="flex items-center justify-between text-sm bg-black/20 p-2.5 rounded-lg border border-white/5">
+                               <span className="text-gray-300 font-medium">Tích điểm</span>
+                               <div className="flex items-center gap-2">
+                                   <span className="text-gray-500 line-through text-xs font-medium">1.2%</span>
+                                   <i className="iconoir-arrow-right text-xs text-gray-500"></i>
+                                   <span className="text-green-400 font-bold">1.5%</span>
                                </div>
                           </div>
+                           <div className="flex items-center justify-between text-sm bg-black/20 p-2.5 rounded-lg border border-white/5">
+                               <span className="text-gray-300 font-medium">Đặc quyền</span>
+                               <span className="text-white font-bold flex items-center gap-1"><i className="iconoir-crown text-xs text-yellow-500"></i> Service VIP</span>
+                          </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 text-[10px] text-gray-400 bg-white/5 p-2 rounded-lg">
+                           <i className="iconoir-info-circle"></i>
+                           <p>Cần thêm <span className="text-white font-bold">14,674</span> điểm để mở khóa quyền lợi này</p>
                       </div>
                   </div>
               </div>
+
+              {/* Current Benefits List */}
+              <div className="bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/50 animate-in fade-in zoom-in-95 duration-300 space-y-6">
+                    <div className="flex items-start gap-4">
+                        <div className="size-12 rounded-xl bg-yellow-100 flex items-center justify-center text-yellow-600 shrink-0">
+                            <i className="iconoir-percentage text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-gray-900 text-lg">Giảm giá đặc quyền</h3>
+                            <p className="text-gray-500 text-sm mt-1 leading-relaxed">Giảm 5% cho phụ kiện và 2% cho Laptop/PC khi mua trực tiếp tại cửa hàng.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                        <div className="size-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+                            <i className="iconoir-birthday-cake text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-gray-900 text-lg">Quà sinh nhật</h3>
+                            <p className="text-gray-500 text-sm mt-1 leading-relaxed">Nhận ngay voucher 500k và quà lưu niệm trong tháng sinh nhật.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                        <div className="size-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                            <i className="iconoir-delivery-truck text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-gray-900 text-lg">Miễn phí vận chuyển</h3>
+                            <p className="text-gray-500 text-sm mt-1 leading-relaxed">Freeship cho mọi đơn hàng nội thành và hỗ trợ 50% phí ship ngoại thành.</p>
+                        </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                        <div className="size-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
+                            <i className="iconoir-tools text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-gray-900 text-lg">Ưu tiên bảo hành</h3>
+                            <p className="text-gray-500 text-sm mt-1 leading-relaxed">Được ưu tiên xử lý bảo hành nhanh trong 24h và mượn thiết bị thay thế.</p>
+                        </div>
+                    </div>
+               </div>
            </div>
         )}
       </main>
