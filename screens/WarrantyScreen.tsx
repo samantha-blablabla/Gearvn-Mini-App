@@ -15,12 +15,10 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors">
-            <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
+            <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
-          <h1 className="text-primary text-lg font-bold leading-tight tracking-tight text-center flex-1">Quản lý Bảo hành</h1>
-          <button className="p-2 -mr-2 rounded-full hover:bg-gray-100 transition-colors">
-            <i className="iconoir-search text-gray-900 text-xl"></i>
-          </button>
+          <h1 className="text-primary text-lg font-bold leading-tight tracking-tight text-center flex-1 pr-8">Quản lý Bảo hành</h1>
+          {/* Removed Search Button as requested */}
         </div>
         {/* Tabs */}
         <div className="flex px-4 gap-8">
@@ -77,7 +75,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 1 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <i className="iconoir-sync text-[14px] animate-spin"></i>
+                            <i className="ph-bold ph-arrows-clockwise text-[14px] animate-spin"></i>
                           </div>
                           <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
                         </div>
@@ -89,7 +87,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 2 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <i className="iconoir-check text-[14px]"></i>
+                            <i className="ph-bold ph-check text-[14px]"></i>
                           </div>
                           <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
                         </div>
@@ -101,7 +99,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 3 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <i className="iconoir-check text-[14px]"></i>
+                            <i className="ph-bold ph-check text-[14px]"></i>
                           </div>
                         </div>
                         <div className="pt-0.5">
@@ -145,7 +143,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                 {/* Info Tip */}
                 <div className="mx-4 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-start gap-3">
-                  <i className="iconoir-info-circle text-primary text-xl"></i>
+                  <i className="ph-bold ph-info text-primary text-xl"></i>
                   <div className="text-xs leading-relaxed">
                     <p className="font-bold text-primary mb-1">Quy định bảo hành Gearvn</p>
                     <p className="text-gray-600">Thời gian xử lý trung bình từ 3-7 ngày làm việc. Quý khách vui lòng giữ hóa đơn hoặc tin nhắn SMS tiếp nhận.</p>
@@ -209,7 +207,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
                  
                  <div className="px-12 py-8 flex flex-col items-center justify-center text-center opacity-50">
-                    <i className="iconoir-clock text-4xl text-gray-300 mb-2"></i>
+                    <i className="ph-bold ph-clock text-4xl text-gray-300 mb-2"></i>
                     <p className="text-sm font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
                  </div>
             </div>

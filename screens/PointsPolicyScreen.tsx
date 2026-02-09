@@ -17,7 +17,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
       <div className="relative z-10 pt-[calc(env(safe-area-inset-top)+16px)] px-4 mb-6">
          <div className="flex items-center justify-between text-white mb-6">
             <button onClick={onBack} className="bg-white/10 backdrop-blur-md size-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors">
-              <i className="iconoir-nav-arrow-left text-xl"></i>
+              <i className="ph-bold ph-caret-left text-xl"></i>
             </button>
             <h1 className="font-bold text-lg tracking-wide">Member Pass</h1>
             <div className="size-10"></div> {/* Spacer */}
@@ -36,7 +36,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                     </div>
                     <div className="flex flex-col items-end">
                         <div className="flex items-center gap-1.5 bg-gradient-to-r from-yellow-600 to-yellow-400 px-3 py-1 rounded-full shadow-lg shadow-yellow-900/40 border border-white/10">
-                            <i className="iconoir-star-solid text-white text-xs"></i>
+                            <i className="ph-fill ph-star text-white text-xs"></i>
                             <span className="text-[10px] font-black text-white uppercase tracking-wider">G-PRO</span>
                         </div>
                     </div>
@@ -66,13 +66,13 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
              onClick={() => setActiveTab('QR')}
              className={`flex-1 py-3 text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 relative z-10 ${activeTab === 'QR' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'}`}
            >
-             <i className="iconoir-qr-code"></i> Tích điểm
+             <i className="ph-bold ph-qr-code"></i> Tích điểm
            </button>
            <button 
              onClick={() => setActiveTab('BENEFITS')}
              className={`flex-1 py-3 text-sm font-bold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 relative z-10 ${activeTab === 'BENEFITS' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'}`}
            >
-             <i className="iconoir-crown"></i> Quyền lợi
+             <i className="ph-bold ph-crown"></i> Quyền lợi
            </button>
            
            {/* Animated Background Pill */}
@@ -137,7 +137,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                   <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
                            <div className="size-10 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm border border-white/10 shadow-inner">
-                               <i className="iconoir-lock-key text-xl text-primary"></i>
+                               <i className="ph-bold ph-lock-key text-xl text-primary"></i>
                            </div>
                            <div>
                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Mục tiêu tiếp theo</p>
@@ -150,18 +150,18 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                                <span className="text-gray-300 font-medium">Tích điểm</span>
                                <div className="flex items-center gap-2">
                                    <span className="text-gray-500 line-through text-xs font-medium">1.2%</span>
-                                   <i className="iconoir-arrow-right text-xs text-gray-500"></i>
+                                   <i className="ph-bold ph-arrow-right text-xs text-gray-500"></i>
                                    <span className="text-green-400 font-bold">1.5%</span>
                                </div>
                           </div>
                            <div className="flex items-center justify-between text-sm bg-black/20 p-2.5 rounded-lg border border-white/5">
                                <span className="text-gray-300 font-medium">Đặc quyền</span>
-                               <span className="text-white font-bold flex items-center gap-1"><i className="iconoir-crown text-xs text-yellow-500"></i> Service VIP</span>
+                               <span className="text-white font-bold flex items-center gap-1"><i className="ph-fill ph-crown text-xs text-yellow-500"></i> Service VIP</span>
                           </div>
                       </div>
 
                       <div className="flex items-center gap-2 text-[10px] text-gray-400 bg-white/5 p-2 rounded-lg">
-                           <i className="iconoir-info-circle"></i>
+                           <i className="ph-bold ph-info"></i>
                            <p>Cần thêm <span className="text-white font-bold">14,674</span> điểm để mở khóa quyền lợi này</p>
                       </div>
                   </div>
@@ -171,7 +171,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
               <div className="bg-white rounded-3xl p-6 shadow-xl shadow-gray-200/50 animate-in fade-in zoom-in-95 duration-300 space-y-6">
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-xl bg-yellow-100 flex items-center justify-center text-yellow-600 shrink-0">
-                            <i className="iconoir-percentage text-2xl"></i>
+                            <i className="ph-bold ph-percent text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-lg">Giảm giá đặc quyền</h3>
@@ -181,7 +181,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
 
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shrink-0">
-                            <i className="iconoir-birthday-cake text-2xl"></i>
+                            <i className="ph-bold ph-cake text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-lg">Quà sinh nhật</h3>
@@ -191,7 +191,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
 
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 shrink-0">
-                            <i className="iconoir-delivery-truck text-2xl"></i>
+                            <i className="ph-bold ph-truck text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-lg">Miễn phí vận chuyển</h3>
@@ -201,7 +201,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                     
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
-                            <i className="iconoir-tools text-2xl"></i>
+                            <i className="ph-bold ph-wrench text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-lg">Ưu tiên bảo hành</h3>

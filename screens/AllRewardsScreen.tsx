@@ -21,11 +21,11 @@ const AllRewardsScreen: React.FC<AllRewardsScreenProps> = ({ onBack, onNavigate 
        <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
+             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Tất cả phần thưởng</h1>
           <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2">
-             <i className="iconoir-search text-gray-900 text-xl"></i>
+             <i className="ph-bold ph-magnifying-glass text-gray-900 text-xl"></i>
           </button>
         </div>
       </header>
@@ -47,7 +47,7 @@ const AllRewardsScreen: React.FC<AllRewardsScreenProps> = ({ onBack, onNavigate 
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">{item.title}</h3>
               <div className="mt-auto">
                  <div className="flex items-center gap-1 mb-3">
-                   <i className="iconoir-star-solid text-primary text-[16px]"></i>
+                   <i className="ph-fill ph-star text-primary text-[16px]"></i>
                    <p className="text-primary text-sm font-bold">{item.points} pts</p>
                  </div>
                  <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">

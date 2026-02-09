@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iconoir@latest/css/iconoir.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -41,13 +41,11 @@
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
       }
-      /* Iconoir adjustments */
-      i[class^="iconoir-"] {
+      /* Icon adjustments */
+      i[class^="ph"] {
         font-size: 1.5rem; /* Default 24px */
-        stroke-width: 2px;
-      }
-      .fill-1 {
-        fill: currentColor;
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
   <script type="importmap">

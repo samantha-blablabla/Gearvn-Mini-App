@@ -35,7 +35,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
+             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Tra cứu vận đơn</h1>
         </div>
@@ -47,7 +47,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
            <div className="flex justify-center mb-6">
               <div className="size-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 ring-8 ring-blue-50/50">
-                 <i className="iconoir-search text-4xl"></i>
+                 <i className="ph-bold ph-magnifying-glass text-4xl"></i>
               </div>
            </div>
            
@@ -64,7 +64,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
                       />
                       {orderCode && (
                           <button onClick={() => setOrderCode('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                              <i className="iconoir-cancel-circle-solid"></i>
+                              <i className="ph-fill ph-x-circle"></i>
                           </button>
                       )}
                   </div>
@@ -74,7 +74,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
                 className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
               >
                   Tra cứu ngay
-                  <i className="iconoir-arrow-right"></i>
+                  <i className="ph-bold ph-arrow-right"></i>
               </button>
            </div>
         </div>
@@ -116,7 +116,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
 
         {/* Help Banner */}
         <div className="bg-blue-50 rounded-xl p-4 flex gap-3 border border-blue-100">
-             <i className="iconoir-info-circle text-blue-600 text-xl shrink-0"></i>
+             <i className="ph-bold ph-info text-blue-600 text-xl shrink-0"></i>
              <div className="text-xs text-blue-800 leading-relaxed">
                 <p className="font-bold mb-1">Cần hỗ trợ về đơn hàng?</p>
                 <p>Nếu bạn không tìm thấy đơn hàng hoặc cần thay đổi thông tin giao nhận, vui lòng liên hệ <span className="font-bold underline cursor-pointer">Hotline 1800 6789</span>.</p>

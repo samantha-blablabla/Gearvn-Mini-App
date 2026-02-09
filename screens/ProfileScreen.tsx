@@ -18,7 +18,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              </div>
              <div className="flex gap-2">
                 <button className="bg-white/20 backdrop-blur-md p-2 rounded-full hover:bg-white/30 transition-colors">
-                   <i className="iconoir-more-horiz text-xl"></i>
+                   <i className="ph-bold ph-dots-three text-xl"></i>
                 </button>
              </div>
           </div>
@@ -36,7 +36,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    />
                 </div>
                 <div className="absolute -bottom-1 -right-1 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white flex items-center gap-0.5 shadow-sm">
-                   <i className="iconoir-crown text-xs"></i>
+                   <i className="ph-bold ph-crown text-xs"></i>
                 </div>
              </div>
              
@@ -47,7 +47,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                       <p className="text-emerald-100 text-sm">0929033523</p>
                    </div>
                    <span className="bg-white/20 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold uppercase flex items-center gap-1">
-                      <i className="iconoir-star-solid text-yellow-300"></i> G-PRO
+                      <i className="ph-fill ph-star text-yellow-300"></i> G-PRO
                    </span>
                 </div>
                 <p className="font-extrabold text-xl mt-1">35.326 <span className="text-sm font-medium opacity-80">điểm</span></p>
@@ -72,21 +72,21 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              <div className="grid grid-cols-3 gap-2">
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2 group">
                    <div className="size-12 bg-red-50 rounded-full flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="iconoir-clock text-2xl"></i>
+                      <i className="ph-bold ph-clock text-2xl"></i>
                    </div>
                    <span className="text-xs font-medium text-gray-600">Đang xử lý</span>
                 </button>
                 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2 group">
                    <div className="size-12 bg-red-50 rounded-full flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="iconoir-delivery-truck text-2xl"></i>
+                      <i className="ph-bold ph-truck text-2xl"></i>
                    </div>
                    <span className="text-xs font-medium text-gray-600">Đang giao</span>
                 </button>
 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2 group relative">
                    <div className="size-12 bg-red-50 rounded-full flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="iconoir-check-circle text-2xl"></i>
+                      <i className="ph-bold ph-check-circle text-2xl"></i>
                    </div>
                    <span className="text-xs font-medium text-gray-600">Hoàn thành</span>
                    <div className="absolute top-0 right-2 bg-primary text-white text-[10px] font-bold size-5 rounded-full flex items-center justify-center border-2 border-white">3</div>
@@ -105,13 +105,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-calendar text-xl"></i>
+                   <i className="ph-bold ph-calendar-blank text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Lịch hẹn dịch vụ</p>
                    <p className="text-xs text-gray-500 mt-0.5">Xem các lịch hẹn đã đặt</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -119,13 +119,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-shopping-bag text-xl"></i>
+                   <i className="ph-bold ph-shopping-bag text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Lịch sử mua hàng</p>
                    <p className="text-xs text-gray-500 mt-0.5">Xem các đơn hàng đã hoàn thành</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
           </div>
 
@@ -140,13 +140,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-chat-bubble text-xl"></i>
+                   <i className="ph-bold ph-chat-circle text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Liên hệ hỗ trợ</p>
                    <p className="text-xs text-gray-500 mt-0.5">Chat với GearVN</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -154,13 +154,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-group text-xl"></i>
+                   <i className="ph-bold ph-users text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Theo dõi GearVN</p>
                    <p className="text-xs text-gray-500 mt-0.5">Nhận thông báo ưu đãi</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
              
              <button 
@@ -168,13 +168,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-shield-check text-xl"></i>
+                   <i className="ph-bold ph-shield-check text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Chính sách bảo mật</p>
                    <p className="text-xs text-gray-500 mt-0.5">Quyền riêng tư & bảo mật</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -182,19 +182,19 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors"
              >
                 <div className="size-10 bg-red-50 rounded-full flex items-center justify-center text-primary shrink-0">
-                   <i className="iconoir-page text-xl"></i>
+                   <i className="ph-bold ph-file-text text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-bold text-gray-900 text-sm">Điều khoản dịch vụ</p>
                    <p className="text-xs text-gray-500 mt-0.5">Điều khoản sử dụng</p>
                 </div>
-                <i className="iconoir-nav-arrow-right text-gray-300"></i>
+                <i className="ph-bold ph-caret-right text-gray-300"></i>
              </button>
           </div>
           
           <div className="flex flex-col items-center gap-2 py-4">
               <div className="flex items-center gap-2 text-primary font-bold text-lg">
-                 <i className="iconoir-flash"></i> GEARVN
+                 <i className="ph-bold ph-lightning"></i> GEARVN
               </div>
               <p className="text-xs text-gray-400">GearVN Member • Version 1.1.3</p>
               

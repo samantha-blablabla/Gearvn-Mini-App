@@ -81,7 +81,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
            {/* Top Nav */}
            <div className="flex items-center px-4 h-14 justify-between">
               <button onClick={onBack} className="text-gray-900 flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2">
-                 <i className="iconoir-nav-arrow-left text-xl"></i>
+                 <i className="ph-bold ph-caret-left text-xl"></i>
               </button>
               <h1 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
            </div>
@@ -92,7 +92,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                   <label className="flex flex-col w-full relative">
                      <div className="flex w-full items-stretch rounded-xl h-11 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
                         <div className="text-gray-500 flex items-center justify-center pl-3">
-                           <i className="iconoir-search text-xl"></i>
+                           <i className="ph-bold ph-magnifying-glass text-xl"></i>
                         </div>
                         <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-sm font-medium" placeholder="Tìm theo mã đơn hàng..." />
                      </div>
@@ -114,7 +114,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
        <div className="px-4 py-4 space-y-4">
           {filteredOrders.length === 0 ? (
              <div className="flex flex-col items-center justify-center py-12 text-gray-400">
-                <i className="iconoir-box-iso text-4xl mb-2"></i>
+                <i className="ph-bold ph-package text-4xl mb-2"></i>
                 <p className="text-sm">Không tìm thấy đơn hàng nào</p>
              </div>
           ) : (
@@ -147,14 +147,14 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                       
                       {item.status === 'COMPLETED' && item.points > 0 && (
                          <p className="text-green-600 text-xs flex items-center gap-1 font-semibold">
-                            <i className="iconoir-star-solid text-sm leading-none"></i>
+                            <i className="ph-fill ph-star text-sm leading-none"></i>
                             +{item.points} điểm tích lũy
                          </p>
                       )}
                       
                       {item.status === 'SHIPPING' && (
                          <p className="text-blue-600 text-xs flex items-center gap-1 font-semibold">
-                            <i className="iconoir-delivery-truck text-sm leading-none"></i>
+                            <i className="ph-bold ph-truck text-sm leading-none"></i>
                             {item.shippingStatus}
                          </p>
                       )}

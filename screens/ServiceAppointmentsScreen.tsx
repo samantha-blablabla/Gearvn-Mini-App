@@ -11,7 +11,7 @@ const ServiceAppointmentsScreen: React.FC<ServiceAppointmentsScreenProps> = ({ o
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
+             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Lịch hẹn dịch vụ</h1>
         </div>
@@ -21,7 +21,7 @@ const ServiceAppointmentsScreen: React.FC<ServiceAppointmentsScreenProps> = ({ o
         {/* Empty State */}
         <div className="flex flex-col items-center justify-center py-12 text-center opacity-60">
            <div className="size-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-              <i className="iconoir-calendar text-4xl text-gray-400"></i>
+              <i className="ph-bold ph-calendar-blank text-4xl text-gray-400"></i>
            </div>
            <p className="text-gray-900 font-bold text-base">Chưa có lịch hẹn nào</p>
            <p className="text-gray-500 text-sm mt-1 max-w-[200px]">Bạn có thể đặt lịch vệ sinh PC, bảo dưỡng tại cửa hàng.</p>

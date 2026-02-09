@@ -55,8 +55,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                <p className="text-white/80 text-xs font-medium mt-1">Xin chào, Nguyễn Minh Hoàng</p>
             </div>
             <div className="flex gap-3">
-               <button className="bg-white/20 backdrop-blur-md size-10 flex items-center justify-center rounded-full text-white hover:bg-white/30 transition-colors">
-                  <i className="iconoir-bell text-xl"></i>
+               <button className="bg-white/20 backdrop-blur-md size-10 flex items-center justify-center rounded-full text-white hover:bg-white/30 transition-colors relative">
+                  <i className="ph-bold ph-bell text-xl"></i>
                   <span className="absolute top-2 right-2 size-2.5 bg-yellow-400 rounded-full border-2 border-primary"></span>
                </button>
             </div>
@@ -77,7 +77,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                    <h2 className="font-bold text-lg leading-tight">Nguyễn Minh Hoàng</h2>
                 </div>
                 <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-3 py-1 rounded-full shadow-lg shadow-yellow-500/20 flex items-center gap-1.5 border border-white/20">
-                   <i className="iconoir-star-solid text-white text-xs"></i>
+                   <i className="ph-fill ph-star text-white text-xs"></i>
                    <span className="text-[10px] font-black text-white uppercase tracking-wide">Gold</span>
                 </div>
              </div>
@@ -114,7 +114,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate(ScreenName.POINTS_POLICY)}
                   className="flex items-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition-colors backdrop-blur-md active:scale-95 border border-white/5"
                 >
-                   Xem QR <i className="iconoir-qr-code text-base"></i>
+                   Xem QR <i className="ph-bold ph-qr-code text-base"></i>
                 </button>
              </div>
           </div>
@@ -128,7 +128,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <i className="iconoir-wrench text-primary text-xl"></i>
+              <i className="ph-bold ph-wrench text-primary text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Gửi Bảo Hành</h3>
@@ -141,7 +141,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
-              <i className="iconoir-box text-blue-500 text-xl"></i>
+              <i className="ph-bold ph-package text-blue-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Tra Cứu Đơn</h3>
@@ -154,7 +154,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-              <i className="iconoir-fire-flame text-orange-500 text-xl"></i>
+              <i className="ph-bold ph-fire text-orange-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Khuyến Mãi</h3>
@@ -167,7 +167,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
              className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-              <i className="iconoir-store text-green-500 text-xl"></i>
+              <i className="ph-bold ph-storefront text-green-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Cửa Hàng</h3>
@@ -181,14 +181,14 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           <div className="px-4 flex justify-between items-center mb-4">
             <h2 className="text-xl font-extrabold flex items-center gap-2 text-gray-900">
               Hot Deals 
-              <i className="iconoir-fire-flame text-primary animate-pulse text-xl"></i>
+              <i className="ph-bold ph-fire text-primary animate-pulse text-xl"></i>
             </h2>
             <button 
               onClick={() => onNavigate(ScreenName.HOT_DEALS)}
               className="text-primary text-sm font-bold flex items-center hover:underline gap-1"
             >
               Xem tất cả
-              <i className="iconoir-nav-arrow-right text-sm"></i>
+              <i className="ph-bold ph-caret-right text-sm"></i>
             </button>
           </div>
           
@@ -219,7 +219,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
               <p className="text-[10px] font-medium opacity-90 mt-1 uppercase tracking-widest bg-white/20 inline-block px-2 py-0.5 rounded">Ưu đãi giảm 50% vệ sinh PC</p>
             </div>
             <div className="relative z-10">
-              <i className="iconoir-settings text-white text-6xl opacity-40 rotate-12"></i>
+              <i className="ph-bold ph-gear text-white text-6xl opacity-40 rotate-12"></i>
             </div>
             <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-xl"></div>
             <div className="absolute top-0 left-10 size-16 bg-white/10 rounded-full blur-xl"></div>

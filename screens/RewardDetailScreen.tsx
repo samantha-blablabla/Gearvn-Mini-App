@@ -12,7 +12,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       <header className="sticky top-0 z-50 bg-white/0">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white/80 backdrop-blur shadow-sm hover:bg-white transition-colors">
-             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
+             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
         </div>
       </header>
@@ -29,7 +29,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
            <h1 className="text-xl font-bold text-gray-900 leading-tight">Voucher Gearvn Giảm 500k cho đơn hàng từ 5 triệu</h1>
            <div className="mt-4 flex items-center justify-between">
               <div className="flex items-center gap-2 text-primary">
-                 <i className="iconoir-star-solid text-2xl"></i>
+                 <i className="ph-fill ph-star text-2xl"></i>
                  <span className="text-2xl font-black">1,000 pts</span>
               </div>
               <span className="bg-red-50 text-red-600 px-3 py-1 rounded-full text-xs font-bold">Còn lại: 50</span>
@@ -60,7 +60,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       {/* Floating Action Button */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 z-50">
           <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-              <i className="iconoir-gift text-lg"></i>
+              <i className="ph-bold ph-gift text-lg"></i>
               Đổi quà ngay
           </button>
       </div>

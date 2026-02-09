@@ -11,12 +11,12 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
     {
       id: ScreenName.HOME,
       label: 'Trang Chủ',
-      icon: 'iconoir-home',
+      icon: 'ph-house',
     },
     {
       id: ScreenName.WARRANTY,
       label: 'Bảo Hành',
-      icon: 'iconoir-shield-check',
+      icon: 'ph-shield-check',
     },
     // Center button spacer
     {
@@ -27,12 +27,12 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
     {
       id: ScreenName.SUPPORT,
       label: 'Liên hệ',
-      icon: 'iconoir-chat-bubble',
+      icon: 'ph-headset',
     },
     {
       id: ScreenName.PROFILE,
       label: 'Tài Khoản',
-      icon: 'iconoir-user',
+      icon: 'ph-user',
     },
   ];
 
@@ -50,7 +50,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
                     onClick={() => onNavigate(ScreenName.CREATE_WARRANTY)}
                     className="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center hover:scale-105 transition-transform active:scale-95 border-4 border-white pointer-events-auto"
                   >
-                    <i className="iconoir-plus text-3xl font-bold"></i>
+                    <i className="ph-bold ph-plus text-3xl"></i>
                   </button>
                </div>
              );
@@ -60,9 +60,8 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
           
           let highlight = isActive;
           // Maintain highlight for sub-screens
-          if (currentScreen === ScreenName.CREATE_WARRANTY && item.id === ScreenName.WARRANTY) highlight = false; // Don't highlight warranty tab when creating, user is focused on action
+          if (currentScreen === ScreenName.CREATE_WARRANTY && item.id === ScreenName.WARRANTY) highlight = false; 
           if (currentScreen === ScreenName.HISTORY && item.id === ScreenName.PROFILE) highlight = true;
-          // Support is now a main tab, so we don't need special highlight logic for it against Home
           if (currentScreen === ScreenName.WARRANTY_DETAIL && item.id === ScreenName.WARRANTY) highlight = true;
 
           return (
@@ -73,8 +72,8 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
             >
               <div className="relative">
                 <i 
-                  className={`${item.icon} transition-colors duration-200 text-[24px] ${
-                    highlight ? 'text-primary stroke-2' : 'text-gray-400 group-hover:text-primary/70'
+                  className={`ph-bold ${item.icon} transition-colors duration-200 text-[24px] ${
+                    highlight ? 'text-primary' : 'text-gray-400 group-hover:text-primary/70'
                   }`}
                 ></i>
                  {item.id === ScreenName.SUPPORT && !highlight && (
