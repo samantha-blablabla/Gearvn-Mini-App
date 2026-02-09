@@ -75,39 +75,43 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
   );
 
   return (
-    <div className="min-h-screen bg-background-light flex flex-col">
-       {/* Top Nav */}
-       <div className="sticky top-0 z-20 flex items-center bg-white px-4 py-3 border-b border-gray-100 justify-between">
-          <button onClick={onBack} className="text-gray-900 flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2">
-             <i className="iconoir-nav-arrow-left text-xl"></i>
-          </button>
-          <h1 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
+    <div className="min-h-screen bg-background-light pb-24">
+       {/* Combined Sticky Header to fix sticking issues */}
+       <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100">
+           {/* Top Nav */}
+           <div className="flex items-center px-4 h-14 justify-between">
+              <button onClick={onBack} className="text-gray-900 flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2">
+                 <i className="iconoir-nav-arrow-left text-xl"></i>
+              </button>
+              <h1 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
+           </div>
+
+           {/* Search & Filter */}
+           <div className="pb-3 space-y-3">
+              <div className="px-4">
+                  <label className="flex flex-col w-full relative">
+                     <div className="flex w-full items-stretch rounded-xl h-11 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
+                        <div className="text-gray-500 flex items-center justify-center pl-3">
+                           <i className="iconoir-search text-xl"></i>
+                        </div>
+                        <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-sm font-medium" placeholder="Tìm theo mã đơn hàng..." />
+                     </div>
+                  </label>
+              </div>
+              
+              {/* Filter List - Fix width error by removing negative margins and using container padding */}
+              <div className="flex gap-2 overflow-x-auto hide-scrollbar px-4 pb-1 w-full">
+                 {renderFilterButton('ALL', 'Tất cả')}
+                 {renderFilterButton('PROCESSING', 'Đang xử lý')}
+                 {renderFilterButton('SHIPPING', 'Đang giao')}
+                 {renderFilterButton('COMPLETED', 'Hoàn tất')}
+                 {renderFilterButton('CANCELLED', 'Đã hủy')}
+              </div>
+           </div>
        </div>
 
-       {/* Search & Filter */}
-       <div className="bg-white px-4 py-3 space-y-4 shadow-sm z-10 sticky top-[65px]">
-          <label className="flex flex-col w-full relative">
-             <div className="flex w-full items-stretch rounded-xl h-11 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
-                <div className="text-gray-500 flex items-center justify-center pl-3">
-                   <i className="iconoir-search text-xl"></i>
-                </div>
-                <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-sm font-medium" placeholder="Tìm theo mã đơn hàng..." />
-             </div>
-          </label>
-          {/* Scrollable Container with flex-nowrap to ensure horizontal scrolling */}
-          <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 pb-1 flex-nowrap whitespace-nowrap">
-             {renderFilterButton('ALL', 'Tất cả')}
-             {renderFilterButton('PROCESSING', 'Đang xử lý')}
-             {renderFilterButton('SHIPPING', 'Đang giao')}
-             {renderFilterButton('COMPLETED', 'Hoàn tất')}
-             {renderFilterButton('CANCELLED', 'Đã hủy')}
-          </div>
-       </div>
-
-       {/* List */}
-       {/* Added overflow-y-scroll to enforce scrollbar presence to prevent layout shift */}
-       <div className="flex-1 overflow-y-scroll px-4 py-4 space-y-4 pb-24">
-          
+       {/* List Content - Removed inner scroll to allow sticky to work naturally */}
+       <div className="px-4 py-4 space-y-4">
           {filteredOrders.length === 0 ? (
              <div className="flex flex-col items-center justify-center py-12 text-gray-400">
                 <i className="iconoir-box-iso text-4xl mb-2"></i>
@@ -132,7 +136,6 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                 </div>
                 <div className="flex items-center gap-4 py-3 border-y border-gray-50">
                     <div className={`bg-gray-100 rounded-lg size-16 shrink-0 bg-cover bg-center border border-gray-100 ${item.status === 'CANCELLED' ? 'grayscale' : ''}`} style={{backgroundImage: `url("${item.image}")`}}></div>
-                    {/* Added w-0 to force truncation in flex container */}
                     <div className="flex-1 min-w-0 w-0">
                       <p className={`text-sm font-bold truncate ${item.status === 'CANCELLED' ? 'text-gray-600' : 'text-gray-900'}`}>{item.productName}</p>
                       <p className="text-gray-500 text-xs mt-1">{item.productDesc}</p>
