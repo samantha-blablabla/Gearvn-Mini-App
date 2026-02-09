@@ -7,6 +7,12 @@ import CreateWarrantyScreen from './screens/CreateWarrantyScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import SupportScreen from './screens/SupportScreen';
 import WarrantyDetailScreen from './screens/WarrantyDetailScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import HelpCenterScreen from './screens/HelpCenterScreen';
+import ServiceAppointmentsScreen from './screens/ServiceAppointmentsScreen';
+import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
+import TermsOfServiceScreen from './screens/TermsOfServiceScreen';
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -30,6 +36,24 @@ const App: React.FC = () => {
         navigateTo(ScreenName.HOME); // Or Warranty list
         break;
       case ScreenName.HISTORY:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.SHIPPING_ADDRESS:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.SETTINGS:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.HELP_CENTER:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.SERVICE_APPOINTMENTS:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.PRIVACY_POLICY:
+        navigateTo(ScreenName.PROFILE);
+        break;
+      case ScreenName.TERMS_OF_SERVICE:
         navigateTo(ScreenName.PROFILE);
         break;
       case ScreenName.REWARDS:
@@ -66,6 +90,12 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.PROFILE && <ProfileScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.SHIPPING_ADDRESS && <ShippingAddressScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.SETTINGS && <SettingsScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.HELP_CENTER && <HelpCenterScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.SERVICE_APPOINTMENTS && <ServiceAppointmentsScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.PRIVACY_POLICY && <PrivacyPolicyScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.WARRANTY)} />}
 
