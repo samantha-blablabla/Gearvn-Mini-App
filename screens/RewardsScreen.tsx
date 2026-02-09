@@ -3,9 +3,10 @@ import { ScreenName } from '../types';
 
 interface RewardsScreenProps {
   onBack: () => void;
+  onNavigate: (screen: ScreenName) => void;
 }
 
-const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
+const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => {
   return (
     <div className="min-h-screen bg-background-light pb-24">
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
@@ -15,7 +16,10 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Ưu đãi Gearvn</h1>
           <div className="flex items-center justify-end w-10 -mr-2">
-            <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors">
+            <button 
+              onClick={() => onNavigate(ScreenName.MY_REWARDS)}
+              className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors"
+            >
               <i className="iconoir-clock text-gray-900 text-xl"></i>
             </button>
           </div>
@@ -37,14 +41,20 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
                   <p className="text-gray-500 text-sm mt-1 font-medium">Hạng thành viên: Gold Member</p>
                 </div>
               </div>
-              <button className="bg-primary text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+              <button 
+                onClick={() => onNavigate(ScreenName.MY_REWARDS)}
+                className="bg-primary text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all"
+              >
                   Đổi quà
               </button>
             </div>
             <div className="mt-4 pt-4 border-t border-dashed border-gray-200 flex justify-between items-center text-xs">
               <span className="text-gray-500">600 pts sắp hết hạn vào 31/12</span>
-              <button className="text-primary font-bold flex items-center hover:underline gap-1">
-                  Xem chi tiết <i className="iconoir-nav-arrow-right text-[14px]"></i>
+              <button 
+                onClick={() => onNavigate(ScreenName.POINTS_POLICY)}
+                className="text-primary font-bold flex items-center hover:underline gap-1"
+              >
+                  Chính sách <i className="iconoir-nav-arrow-right text-[14px]"></i>
               </button>
             </div>
           </div>
@@ -73,12 +83,20 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
         {/* Rewards Grid */}
         <div className="px-4 pt-6 pb-2 flex justify-between items-end">
           <h2 className="text-gray-900 text-xl font-bold">Phần thưởng độc quyền</h2>
-          <button className="text-primary text-sm font-bold">Xem tất cả</button>
+          <button 
+            onClick={() => onNavigate(ScreenName.ALL_REWARDS)}
+            className="text-primary text-sm font-bold"
+          >
+            Xem tất cả
+          </button>
         </div>
 
         <div className="grid grid-cols-2 gap-4 p-4 pt-0">
           {/* Item 1 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
+          <div 
+            onClick={() => onNavigate(ScreenName.REWARD_DETAIL)}
+            className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full"
+          >
             <div className="relative">
               <div 
                 className="aspect-video bg-center bg-cover bg-gray-100" 
@@ -87,7 +105,6 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
               <div className="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-sm">Hot</div>
             </div>
             <div className="p-3 flex flex-col flex-1">
-              {/* Force min-height to ensure 2 lines of space is reserved */}
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Voucher Gearvn Giảm 500k</h3>
               <div className="mt-auto">
                  <div className="flex items-center gap-1 mb-3">
@@ -102,7 +119,10 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
           </div>
 
           {/* Item 2 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
+          <div 
+             onClick={() => onNavigate(ScreenName.REWARD_DETAIL)}
+             className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full"
+          >
             <div className="relative">
               <div 
                 className="aspect-video bg-center bg-contain bg-no-repeat bg-[#1a1a1a]"
@@ -110,7 +130,6 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
               ></div>
             </div>
             <div className="p-3 flex flex-col flex-1">
-              {/* Title with fixed height to align with Item 1 */}
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Chuột Asus ROG Keris</h3>
               <div className="mt-auto">
                 <div className="flex items-center gap-1 mb-3">
@@ -125,7 +144,10 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
           </div>
 
           {/* Item 3 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
+          <div 
+             onClick={() => onNavigate(ScreenName.REWARD_DETAIL)}
+             className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full"
+          >
             <div className="relative">
                <div 
                 className="aspect-video bg-center bg-contain bg-no-repeat bg-[#e0f1f1]"
@@ -147,7 +169,10 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
           </div>
 
            {/* Item 4 */}
-           <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
+           <div 
+             onClick={() => onNavigate(ScreenName.REWARD_DETAIL)}
+             className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full"
+           >
             <div className="relative">
                <div 
                 className="aspect-video bg-center bg-cover bg-gray-100"

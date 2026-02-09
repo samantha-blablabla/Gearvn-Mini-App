@@ -105,10 +105,16 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
              </div>
 
              {/* Bottom Row: ID & QR */}
-             <div className="flex justify-between items-center pt-4 border-t border-white/10">
-                <p className="text-[11px] font-mono text-gray-400 tracking-wider">ID: 070XFJBR6LTDK</p>
-                <button className="flex items-center gap-1.5 text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors backdrop-blur-md">
-                   Xem QR <i className="iconoir-qr-code"></i>
+             <div className="flex justify-between items-end pt-4 border-t border-white/10">
+                <div className="flex flex-col gap-1">
+                   <p className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Mã thành viên</p>
+                   <p className="text-sm font-mono text-gray-200 tracking-wider">070XFJBR6LTDK</p>
+                </div>
+                <button 
+                  onClick={() => onNavigate(ScreenName.POINTS_POLICY)}
+                  className="flex items-center gap-2 text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition-colors backdrop-blur-md active:scale-95 border border-white/5"
+                >
+                   Xem QR <i className="iconoir-qr-code text-base"></i>
                 </button>
              </div>
           </div>

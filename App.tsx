@@ -14,6 +14,10 @@ import ServiceAppointmentsScreen from './screens/ServiceAppointmentsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import TermsOfServiceScreen from './screens/TermsOfServiceScreen';
 import HotDealsScreen from './screens/HotDealsScreen';
+import PointsPolicyScreen from './screens/PointsPolicyScreen';
+import MyRewardsScreen from './screens/MyRewardsScreen';
+import RewardDetailScreen from './screens/RewardDetailScreen';
+import AllRewardsScreen from './screens/AllRewardsScreen';
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -72,6 +76,19 @@ const App: React.FC = () => {
       case ScreenName.HOT_DEALS:
         navigateTo(ScreenName.HOME);
         break;
+      // New Reward Routes
+      case ScreenName.POINTS_POLICY:
+        navigateTo(ScreenName.REWARDS);
+        break;
+      case ScreenName.MY_REWARDS:
+        navigateTo(ScreenName.REWARDS);
+        break;
+      case ScreenName.REWARD_DETAIL:
+        navigateTo(ScreenName.REWARDS);
+        break;
+      case ScreenName.ALL_REWARDS:
+        navigateTo(ScreenName.REWARDS);
+        break;
       default:
         navigateTo(ScreenName.HOME);
     }
@@ -90,7 +107,7 @@ const App: React.FC = () => {
     <div className="antialiased text-gray-900 bg-background-light min-h-screen">
       {currentScreen === ScreenName.HOME && <HomeScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.WARRANTY && <WarrantyScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
-      {currentScreen === ScreenName.REWARDS && <RewardsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
+      {currentScreen === ScreenName.REWARDS && <RewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.PROFILE && <ProfileScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
@@ -103,6 +120,12 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.WARRANTY)} />}
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
+      
+      {/* New Reward Screens */}
+      {currentScreen === ScreenName.POINTS_POLICY && <PointsPolicyScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}
+      {currentScreen === ScreenName.MY_REWARDS && <MyRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
+      {currentScreen === ScreenName.REWARD_DETAIL && <RewardDetailScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}
+      {currentScreen === ScreenName.ALL_REWARDS && <AllRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
 
       {showBottomNav && (
         <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />

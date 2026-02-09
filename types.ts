@@ -1,3 +1,4 @@
+
 export enum ScreenName {
   HOME = 'HOME',
   WARRANTY = 'WARRANTY',
@@ -14,6 +15,11 @@ export enum ScreenName {
   PRIVACY_POLICY = 'PRIVACY_POLICY',
   TERMS_OF_SERVICE = 'TERMS_OF_SERVICE',
   HOT_DEALS = 'HOT_DEALS',
+  // New Screens
+  POINTS_POLICY = 'POINTS_POLICY',
+  MY_REWARDS = 'MY_REWARDS',
+  REWARD_DETAIL = 'REWARD_DETAIL',
+  ALL_REWARDS = 'ALL_REWARDS',
 }
 
 export interface Product {
