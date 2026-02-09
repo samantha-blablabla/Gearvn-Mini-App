@@ -166,17 +166,19 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
                    <h3 className="font-bold text-gray-900 text-sm leading-tight line-clamp-1 mb-2">{activeWarranty.productName}</h3>
                    
-                   {/* Progress */}
+                   {/* Progress with Status Text */}
                    <div className="space-y-1.5">
                       <div className="flex justify-between items-end">
-                         <span className="text-[10px] font-semibold text-gray-500">Tiến độ sửa chữa</span>
-                         <span className="text-[10px] font-bold text-orange-600">{activeWarranty.progress}%</span>
+                         <span className="text-[10px] font-medium text-gray-400">Tiến độ</span>
+                         <span className="text-[10px] font-bold text-orange-600 uppercase tracking-wide">{activeWarranty.status}</span>
                       </div>
                       <div className="h-1.5 w-full bg-orange-50 rounded-full overflow-hidden">
                          <div 
-                            className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
+                            className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full relative"
                             style={{ width: `${activeWarranty.progress}%` }}
-                         ></div>
+                         >
+                            <div className="absolute top-0 right-0 bottom-0 w-full bg-gradient-to-l from-white/20 to-transparent"></div>
+                         </div>
                       </div>
                    </div>
                 </div>
