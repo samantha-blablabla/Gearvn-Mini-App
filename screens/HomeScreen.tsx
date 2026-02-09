@@ -150,15 +150,15 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           </div>
 
           <div 
-            onClick={() => onNavigate(ScreenName.REWARDS)}
+            onClick={() => onNavigate(ScreenName.HOT_DEALS)}
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-              <i className="iconoir-medal text-orange-500 text-xl"></i>
+              <i className="iconoir-fire text-orange-500 text-xl"></i>
             </div>
             <div>
-              <h3 className="font-bold text-sm">Tích Điểm</h3>
-              <p className="text-[11px] text-gray-500 mt-0.5">Quản lý voucher</p>
+              <h3 className="font-bold text-sm">Khuyến Mãi</h3>
+              <p className="text-[11px] text-gray-500 mt-0.5">Săn deal hot</p>
             </div>
           </div>
 

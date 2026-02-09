@@ -10,10 +10,8 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
     <div className="min-h-screen bg-background-light flex flex-col pb-24">
        <header className="sticky top-0 z-50 bg-white/80 ios-blur border-b border-gray-100">
         <div className="flex items-center justify-between px-4 h-16">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-            <i className="iconoir-nav-arrow-left text-2xl text-gray-900"></i>
-          </button>
-          <h1 className="text-lg font-bold tracking-tight text-gray-900">Hỗ Trợ & Liên Hệ</h1>
+          <div className="size-10"></div> {/* Spacer for alignment */}
+          <h1 className="text-lg font-bold tracking-tight text-gray-900">Liên hệ hỗ trợ</h1>
           <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2">
             <i className="iconoir-bell text-2xl text-gray-900"></i>
           </button>

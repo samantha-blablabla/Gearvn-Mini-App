@@ -25,9 +25,9 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
       icon: '',
     },
     {
-      id: ScreenName.REWARDS,
-      label: 'Ưu Đãi',
-      icon: 'iconoir-gift',
+      id: ScreenName.SUPPORT,
+      label: 'Liên hệ',
+      icon: 'iconoir-chat-bubble',
     },
     {
       id: ScreenName.PROFILE,
@@ -62,7 +62,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
           // Maintain highlight for sub-screens
           if (currentScreen === ScreenName.CREATE_WARRANTY && item.id === ScreenName.WARRANTY) highlight = false; // Don't highlight warranty tab when creating, user is focused on action
           if (currentScreen === ScreenName.HISTORY && item.id === ScreenName.PROFILE) highlight = true;
-          if (currentScreen === ScreenName.SUPPORT && item.id === ScreenName.HOME) highlight = false;
+          // Support is now a main tab, so we don't need special highlight logic for it against Home
           if (currentScreen === ScreenName.WARRANTY_DETAIL && item.id === ScreenName.WARRANTY) highlight = true;
 
           return (
@@ -77,7 +77,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
                     highlight ? 'text-primary stroke-2' : 'text-gray-400 group-hover:text-primary/70'
                   }`}
                 ></i>
-                 {item.id === ScreenName.REWARDS && !highlight && (
+                 {item.id === ScreenName.SUPPORT && !highlight && (
                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-primary rounded-full border border-white"></span>
                  )}
               </div>

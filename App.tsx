@@ -99,7 +99,7 @@ const App: React.FC = () => {
   const showBottomNav = [
     ScreenName.HOME,
     ScreenName.WARRANTY,
-    ScreenName.REWARDS,
+    ScreenName.SUPPORT, // Changed from REWARDS
     ScreenName.PROFILE,
   ].includes(currentScreen);
 
