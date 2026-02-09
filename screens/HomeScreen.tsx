@@ -132,46 +132,61 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
 
       <main className="max-w-md mx-auto pt-4">
         
-        {/* Warranty Tracking Widget - NEW */}
+        {/* Warranty Tracking Widget - REFINED */}
         {activeWarranty.hasActive && (
           <div 
             onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-            className="mx-4 mb-4 bg-white rounded-xl p-4 shadow-lg shadow-orange-500/10 border-l-4 border-orange-500 relative overflow-hidden cursor-pointer hover:bg-gray-50 transition-colors group"
+            className="mx-4 mb-4 bg-white rounded-xl p-4 border border-orange-100 shadow-sm relative overflow-hidden cursor-pointer active:scale-[0.98] transition-all group"
           >
+             {/* Background decoration */}
+             <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+
              {/* Header */}
              <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-2">
-                   <div className="relative flex h-3 w-3">
+                   <div className="relative flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
                    </div>
-                   <span className="text-xs font-bold text-orange-600 uppercase tracking-wider">Bảo hành đang xử lý</span>
+                   <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wide">Bảo hành đang xử lý</span>
                 </div>
-                <span className="text-[10px] font-medium text-gray-400 flex items-center gap-1">
+                <span className="text-[10px] font-medium text-gray-400 flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-full">
                    <i className="ph-bold ph-clock"></i> {activeWarranty.lastUpdate}
                 </span>
              </div>
 
-             {/* Content */}
-             <div className="flex gap-3 items-center">
-                <div className="size-12 rounded-lg bg-gray-50 border border-gray-100 p-1 shrink-0">
-                   <img src={activeWarranty.image} className="w-full h-full object-contain" alt="Product" />
+             {/* Main Content */}
+             <div className="flex gap-4">
+                {/* Image */}
+                <div className="w-16 h-16 rounded-lg bg-[#F3F4F6] border border-gray-100 p-1 flex items-center justify-center shrink-0">
+                   <img src={activeWarranty.image} className="w-full h-full object-contain mix-blend-multiply" alt="Product" />
                 </div>
-                <div className="flex-1 min-w-0">
-                   <h3 className="font-bold text-gray-900 text-sm truncate">{activeWarranty.productName}</h3>
+                
+                {/* Info */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                   <h3 className="font-bold text-gray-900 text-sm leading-tight line-clamp-1 mb-2">{activeWarranty.productName}</h3>
                    
-                   {/* Mini Progress Bar */}
-                   <div className="mt-2">
-                      <div className="flex justify-between text-[10px] text-gray-500 mb-1">
-                         <span>Tiến độ</span>
-                         <span className="font-bold text-orange-600">{activeWarranty.progress}%</span>
+                   {/* Progress */}
+                   <div className="space-y-1.5">
+                      <div className="flex justify-between items-end">
+                         <span className="text-[10px] font-semibold text-gray-500">Tiến độ sửa chữa</span>
+                         <span className="text-[10px] font-bold text-orange-600">{activeWarranty.progress}%</span>
                       </div>
-                      <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                         <div className="h-full bg-orange-500 w-[60%] rounded-full animate-pulse"></div>
+                      <div className="h-1.5 w-full bg-orange-50 rounded-full overflow-hidden">
+                         <div 
+                            className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
+                            style={{ width: `${activeWarranty.progress}%` }}
+                         ></div>
                       </div>
                    </div>
                 </div>
-                <i className="ph-bold ph-caret-right text-gray-300 group-hover:text-orange-500 transition-colors"></i>
+                
+                {/* Arrow */}
+                <div className="flex items-center justify-center pl-1">
+                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors">
+                        <i className="ph-bold ph-caret-right"></i>
+                    </div>
+                </div>
              </div>
           </div>
         )}
