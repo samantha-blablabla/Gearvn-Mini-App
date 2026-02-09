@@ -64,10 +64,10 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
   const renderFilterButton = (status: OrderStatus, label: string) => (
     <button 
       onClick={() => setFilter(status)}
-      className={`flex h-8 shrink-0 items-center justify-center rounded-full px-4 text-xs font-bold transition-all ${
+      className={`flex h-8 shrink-0 items-center justify-center rounded-full px-4 text-xs font-bold transition-all border ${
         filter === status 
-          ? 'bg-primary text-white shadow-md shadow-primary/20' 
-          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          ? 'bg-primary text-white border-primary shadow-md shadow-primary/20' 
+          : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
       }`}
     >
       {label}
@@ -105,7 +105,8 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
        </div>
 
        {/* List */}
-       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 pb-24">
+       {/* Added overflow-y-scroll to enforce scrollbar presence to prevent layout shift */}
+       <div className="flex-1 overflow-y-scroll px-4 py-4 space-y-4 pb-24">
           
           {filteredOrders.length === 0 ? (
              <div className="flex flex-col items-center justify-center py-12 text-gray-400">
@@ -131,7 +132,8 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                 </div>
                 <div className="flex items-center gap-4 py-3 border-y border-gray-50">
                     <div className={`bg-gray-100 rounded-lg size-16 shrink-0 bg-cover bg-center border border-gray-100 ${item.status === 'CANCELLED' ? 'grayscale' : ''}`} style={{backgroundImage: `url("${item.image}")`}}></div>
-                    <div className="flex-1 min-w-0">
+                    {/* Added w-0 to force truncation in flex container */}
+                    <div className="flex-1 min-w-0 w-0">
                       <p className={`text-sm font-bold truncate ${item.status === 'CANCELLED' ? 'text-gray-600' : 'text-gray-900'}`}>{item.productName}</p>
                       <p className="text-gray-500 text-xs mt-1">{item.productDesc}</p>
                     </div>

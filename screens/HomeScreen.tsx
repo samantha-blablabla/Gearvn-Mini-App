@@ -42,81 +42,79 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <div className="pb-24">
-      {/* Header */}
-      <header className="sticky top-0 z-30 bg-white/80 ios-blur px-4 py-3 flex items-center justify-between border-b border-gray-100">
-        <div className="flex items-center gap-3">
-          <div className="size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md shadow-primary/30">
-            <i className="iconoir-flash text-xl"></i>
-          </div>
-          <div>
-            <h1 className="text-lg font-extrabold leading-none tracking-tight text-primary uppercase">Gearvn</h1>
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Customer Care</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
-            <i className="iconoir-bell text-gray-700 text-xl"></i>
-            <span className="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white"></span>
-          </button>
-          <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-            <i className="iconoir-search text-gray-700 text-xl"></i>
-          </button>
-        </div>
-      </header>
+    <div className="pb-24 bg-background-light min-h-screen">
+      {/* Red Header Section */}
+      <div className="bg-primary pt-[calc(env(safe-area-inset-top)+16px)] px-5 pb-24 rounded-b-[32px] relative overflow-hidden shadow-lg shadow-primary/20">
+         {/* Decorative background elements */}
+         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+         <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/10 rounded-full blur-3xl -ml-12 -mb-12 pointer-events-none"></div>
 
-      <main className="max-w-md mx-auto">
-        {/* Welcome */}
-        <div className="px-4 pt-6 pb-2">
-          <p className="text-sm font-medium text-gray-500">Xin chào,</p>
-          <h2 className="text-2xl font-bold text-gray-900">Nguyễn Minh Hoàng</h2>
-        </div>
-
-        {/* Membership Card */}
-        <div className="px-4 py-4">
-          <div className="relative h-52 w-full rounded-2xl overflow-hidden shadow-xl shadow-red-900/10 bg-gradient-to-br from-[#2a2a2a] to-[#4a4a4a] text-white p-6 flex flex-col justify-between border border-white/10 group cursor-pointer hover:scale-[1.02] transition-transform duration-300">
-             {/* Abstract Card Patterns */}
-             <div className="absolute top-0 right-0 w-48 h-48 bg-primary/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
-             <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -ml-10 -mb-10"></div>
-             
-             <div className="flex justify-between items-start relative z-10">
-               <div>
-                 <p className="text-[10px] uppercase tracking-widest opacity-70 font-bold">Hạng Thành Viên</p>
-                 <h3 className="text-xl font-extrabold flex items-center gap-2 mt-1">
-                   GOLD MEMBER
-                   <i className="iconoir-star-solid text-yellow-400 text-sm"></i>
-                 </h3>
-               </div>
-               <div className="text-right">
-                 <p className="text-[10px] uppercase tracking-widest opacity-70 font-bold">Điểm Tích Lũy</p>
-                 <p className="text-2xl font-black text-primary mt-1">1,250 <span className="text-sm font-medium text-white/80">pts</span></p>
-               </div>
-             </div>
-
-             <div className="flex justify-between items-end relative z-10">
-               <div className="flex flex-col gap-2">
-                 <p className="text-[10px] opacity-60 font-mono tracking-wider">ID: GV-99283401</p>
-                 {/* Barcode simulation */}
-                 <div className="flex gap-1 h-8 items-center opacity-80">
-                   <div className="w-1 bg-white h-full rounded-sm"></div>
-                   <div className="w-2 bg-white h-full rounded-sm"></div>
-                   <div className="w-0.5 bg-white h-full rounded-sm"></div>
-                   <div className="w-3 bg-white h-full rounded-sm"></div>
-                   <div className="w-1.5 bg-white h-full rounded-sm"></div>
-                   <div className="w-2 bg-white h-full rounded-sm"></div>
-                   <div className="w-1 bg-white h-full rounded-sm"></div>
-                   <div className="w-4 bg-white h-full rounded-sm"></div>
-                   <div className="w-1.5 bg-white h-full rounded-sm"></div>
-                 </div>
-               </div>
-               <button className="bg-white/10 hover:bg-white/20 active:bg-white/30 backdrop-blur-md px-4 py-2 rounded-lg text-xs font-bold border border-white/10 flex items-center gap-2 transition-colors">
-                 <i className="iconoir-qr-code text-base"></i>
-                 MÃ ƯU ĐÃI
+         <div className="flex justify-between items-center relative z-10">
+            <div>
+               <h1 className="text-white font-black text-2xl tracking-tight">GEARVN MEMBER</h1>
+               <p className="text-white/80 text-xs font-medium mt-1">Xin chào, Nguyễn Minh Hoàng</p>
+            </div>
+            <div className="flex gap-3">
+               <button className="bg-white/20 backdrop-blur-md size-10 flex items-center justify-center rounded-full text-white hover:bg-white/30 transition-colors">
+                  <i className="iconoir-bell text-xl"></i>
+                  <span className="absolute top-2 right-2 size-2.5 bg-yellow-400 rounded-full border-2 border-primary"></span>
                </button>
+            </div>
+         </div>
+      </div>
+
+      {/* Membership Card - Floating */}
+      <div className="px-4 -mt-16 relative z-20">
+          <div className="w-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl shadow-gray-900/10 text-white p-5 border border-white/10 relative overflow-hidden group">
+             {/* Card Gloss */}
+             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/5 to-transparent pointer-events-none"></div>
+             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+             
+             {/* Top Row: Name & Rank */}
+             <div className="flex justify-between items-start mb-6">
+                <div>
+                   <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Tên thành viên</p>
+                   <h2 className="font-bold text-lg leading-tight">Nguyễn Minh Hoàng</h2>
+                </div>
+                <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-3 py-1 rounded-full shadow-lg shadow-yellow-500/20 flex items-center gap-1.5 border border-white/20">
+                   <i className="iconoir-star-solid text-white text-xs"></i>
+                   <span className="text-[10px] font-black text-white uppercase tracking-wide">Gold</span>
+                </div>
+             </div>
+
+             {/* Points */}
+             <div className="mb-6">
+                <div className="flex items-baseline gap-1">
+                   <span className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">1,250</span>
+                   <span className="text-sm font-medium text-gray-400">điểm</span>
+                </div>
+             </div>
+
+             {/* Progress Bar */}
+             <div className="mb-6 relative">
+                <div className="flex justify-between items-end mb-2">
+                   <span className="text-[11px] font-medium text-gray-300">Tiến độ lên <span className="text-blue-300 font-bold">Diamond</span></span>
+                   <span className="text-[10px] font-bold text-gray-500">45%</span>
+                </div>
+                <div className="h-1.5 w-full bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
+                   <div className="h-full bg-gradient-to-r from-primary to-orange-500 w-[45%] rounded-full shadow-[0_0_10px_rgba(236,19,19,0.5)]"></div>
+                </div>
+                <p className="text-[10px] text-gray-500 mt-1.5 flex items-center gap-1">
+                   Cần thêm <span className="text-white font-bold">1,500</span> điểm để thăng hạng
+                </p>
+             </div>
+
+             {/* Bottom Row: ID & QR */}
+             <div className="flex justify-between items-center pt-4 border-t border-white/10">
+                <p className="text-[11px] font-mono text-gray-400 tracking-wider">ID: 070XFJBR6LTDK</p>
+                <button className="flex items-center gap-1.5 text-xs font-bold text-white bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors backdrop-blur-md">
+                   Xem QR <i className="iconoir-qr-code"></i>
+                </button>
              </div>
           </div>
-        </div>
+      </div>
 
+      <main className="max-w-md mx-auto pt-4">
         {/* Quick Actions */}
         <div className="px-4 py-2 grid grid-cols-2 gap-3">
           <div 
@@ -175,10 +173,9 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
         {/* Hot Deals */}
         <div className="py-4">
           <div className="px-4 flex justify-between items-center mb-4">
-            <h2 className="text-xl font-extrabold flex items-center gap-2">
+            <h2 className="text-xl font-extrabold flex items-center gap-2 text-gray-900">
               Hot Deals 
-              {/* Changed icon to standard flash to ensure visibility */}
-              <i className="iconoir-flash text-primary animate-pulse text-xl"></i>
+              <i className="iconoir-fire text-primary animate-pulse text-xl"></i>
             </h2>
             <button 
               onClick={() => onNavigate(ScreenName.HOT_DEALS)}
@@ -189,7 +186,6 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             </button>
           </div>
           
-          {/* Added flex-nowrap to enforce horizontal layout */}
           <div className="flex overflow-x-auto gap-4 px-4 pb-4 hide-scrollbar snap-x snap-mandatory flex-nowrap">
             {hotDeals.map((deal) => (
               <div key={deal.id} className="min-w-[160px] w-[160px] bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex-shrink-0 snap-start">

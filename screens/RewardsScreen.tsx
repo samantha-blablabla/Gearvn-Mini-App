@@ -78,7 +78,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
 
         <div className="grid grid-cols-2 gap-4 p-4 pt-0">
           {/* Item 1 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
             <div className="relative">
               <div 
                 className="aspect-video bg-center bg-cover bg-gray-100" 
@@ -86,75 +86,85 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
               ></div>
               <div className="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase shadow-sm">Hot</div>
             </div>
-            <div className="p-3 flex flex-col flex-grow">
-              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Voucher Gearvn Giảm 500k</h3>
-              <div className="mt-2 flex items-center gap-1">
-                <i className="iconoir-star-solid text-primary text-[16px]"></i>
-                <p className="text-primary text-sm font-bold">1,000 pts</p>
+            <div className="p-3 flex flex-col flex-1">
+              {/* Force min-height to ensure 2 lines of space is reserved */}
+              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Voucher Gearvn Giảm 500k</h3>
+              <div className="mt-auto">
+                 <div className="flex items-center gap-1 mb-3">
+                   <i className="iconoir-star-solid text-primary text-[16px]"></i>
+                   <p className="text-primary text-sm font-bold">1,000 pts</p>
+                 </div>
+                 <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
+                     Redeem
+                 </button>
               </div>
-              <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
-                  Redeem
-              </button>
             </div>
           </div>
 
           {/* Item 2 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
             <div className="relative">
               <div 
                 className="aspect-video bg-center bg-contain bg-no-repeat bg-[#1a1a1a]"
                 style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBc6rKjJV94Z1kEYvyWr89qdHmJy49TALaJySpbqGswpa-z4K9NUdxyjdHD2rH70GkcBFmt-6tT05ziQr9ySayAPjjXZf0zplER6t6FBUZW77UAew6aXuBRnov1aZpDB9fBvZgtdPV6NmGGlDIGEu4NmxMK_lqWCUIZ_pYN0vF5aGT_DG7f8higX7slcVqHf_e64FOnynh29OOFdH46RsmBlB6jK3Pl2zgEQrX7txAgO8nSdfhoC60vFczsSxrOfy9md7p_rn1-RgE")'}}
               ></div>
             </div>
-            <div className="p-3 flex flex-col flex-grow">
-              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Chuột Asus ROG Keris</h3>
-              <div className="mt-2 flex items-center gap-1">
-                <i className="iconoir-star-solid text-primary text-[16px]"></i>
-                <p className="text-primary text-sm font-bold">5,000 pts</p>
+            <div className="p-3 flex flex-col flex-1">
+              {/* Title with fixed height to align with Item 1 */}
+              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Chuột Asus ROG Keris</h3>
+              <div className="mt-auto">
+                <div className="flex items-center gap-1 mb-3">
+                    <i className="iconoir-star-solid text-primary text-[16px]"></i>
+                    <p className="text-primary text-sm font-bold">5,000 pts</p>
+                </div>
+                <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
+                    Redeem
+                </button>
               </div>
-              <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
-                  Redeem
-              </button>
             </div>
           </div>
 
           {/* Item 3 */}
-          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+          <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
             <div className="relative">
                <div 
                 className="aspect-video bg-center bg-contain bg-no-repeat bg-[#e0f1f1]"
                 style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDoZRrsq9N8R5mjVohetAH2Mwl6zUizXDfIKjAGiPUgFJH01fXenvcW51ngPMDIOyg8eqpNqkYEtMw5mtbo8o-lroFtxamsSPfiP8KBYN3u5xSqduimdonRLNPgrpT0rWNSwevtSprA8z2amlYlJQVQe9oKdJbxDaSHrjYY9QAt0iwBp85n1GJqxb0Z-8zVJG3B1ckrzML3TYWCsx_Jt5eQ9YWp5kpcBIrQTaI2J24mFoAmG9XasP-eiEfmX32uxjuz1v0XVpnbWY")'}}
               ></div>
             </div>
-            <div className="p-3 flex flex-col flex-grow">
-              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Bàn phím Akko 3068v2</h3>
-              <div className="mt-2 flex items-center gap-1">
-                <i className="iconoir-star-solid text-primary text-[16px]"></i>
-                <p className="text-primary text-sm font-bold">3,500 pts</p>
+            <div className="p-3 flex flex-col flex-1">
+              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Bàn phím Akko 3068v2</h3>
+              <div className="mt-auto">
+                 <div className="flex items-center gap-1 mb-3">
+                   <i className="iconoir-star-solid text-primary text-[16px]"></i>
+                   <p className="text-primary text-sm font-bold">3,500 pts</p>
+                 </div>
+                 <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
+                     Redeem
+                 </button>
               </div>
-              <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
-                  Redeem
-              </button>
             </div>
           </div>
 
            {/* Item 4 */}
-           <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+           <div className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full">
             <div className="relative">
                <div 
                 className="aspect-video bg-center bg-cover bg-gray-100"
                 style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAJ-JtpYigBJmdqwql3Wbm8Y0JLXtp93JiVSWJkd8MrJ1PF_OQkjfCNTpLQmp3jt-wI2kxtSGqYmHwUAaYoJpcSiHM8480ml4usrpAsNEpbQx4Xmo62DxMLpyzKZmmPIxNswnLpn46pO1M_xOPoBD7kBaNl1xLpV5s8FZa7FAu0-moaySB7MXsQSPGfSqMbwabiaPKwwcmYzxPFVGyzvt5NGPABxI5Ul7wjbmvvzC7XWn4b_bFsmu8Q03w3-O2MKrKiwXFcjNNNX0")'}}
               ></div>
             </div>
-            <div className="p-3 flex flex-col flex-grow">
-              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Voucher Giảm 10% Linh kiện</h3>
-              <div className="mt-2 flex items-center gap-1">
-                <i className="iconoir-star-solid text-primary text-[16px]"></i>
-                <p className="text-primary text-sm font-bold">500 pts</p>
+            <div className="p-3 flex flex-col flex-1">
+              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">Voucher Giảm 10% Linh kiện</h3>
+              <div className="mt-auto">
+                <div className="flex items-center gap-1 mb-3">
+                  <i className="iconoir-star-solid text-primary text-[16px]"></i>
+                  <p className="text-primary text-sm font-bold">500 pts</p>
+                </div>
+                <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
+                    Redeem
+                </button>
               </div>
-              <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
-                  Redeem
-              </button>
             </div>
           </div>
         </div>

@@ -75,14 +75,15 @@ const HotDealsScreen: React.FC<HotDealsScreenProps> = ({ onBack }) => {
       <main className="p-4">
         <div className="grid grid-cols-2 gap-4">
             {allDeals.map((deal) => (
-              <div key={deal.id} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col">
+              <div key={deal.id} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col h-full">
                 <div className="relative h-40 w-full bg-[#F3F4F6] flex items-center justify-center p-4">
                   <img src={deal.image} alt={deal.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
                   <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm">{deal.discount}</div>
                 </div>
-                <div className="p-3 flex-1 flex flex-col justify-between">
-                  <h4 className="text-xs font-bold line-clamp-2 text-gray-800 leading-snug">{deal.name}</h4>
-                  <div className="mt-3">
+                <div className="p-3 flex-1 flex flex-col">
+                  {/* Fixed height for title to align rows */}
+                  <h4 className="text-xs font-bold line-clamp-2 text-gray-800 leading-snug h-[32px] mb-2">{deal.name}</h4>
+                  <div className="mt-auto">
                     <p className="text-primary font-bold text-sm">{deal.price}</p>
                     <p className="text-[10px] text-gray-400 line-through font-medium">{deal.oldPrice}</p>
                     <button className="w-full mt-2 bg-primary/10 text-primary text-xs font-bold py-1.5 rounded hover:bg-primary hover:text-white transition-colors">
