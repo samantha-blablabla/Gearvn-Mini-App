@@ -33,7 +33,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 border-b border-gray-100 justify-between">
         <button onClick={handleBack} className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 transition-colors -ml-2">
-            <i className="iconoir-arrow-left text-gray-900 text-xl"></i>
+            <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
         </button>
         <h2 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Tạo yêu cầu bảo hành</h2>
       </div>

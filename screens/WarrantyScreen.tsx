@@ -77,7 +77,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 1 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <i className="iconoir-refresh text-[14px] animate-spin"></i>
+                            <i className="iconoir-sync text-[14px] animate-spin"></i>
                           </div>
                           <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
                         </div>
@@ -209,7 +209,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
                  
                  <div className="px-12 py-8 flex flex-col items-center justify-center text-center opacity-50">
-                    <i className="iconoir-history text-4xl text-gray-300 mb-2"></i>
+                    <i className="iconoir-clock text-4xl text-gray-300 mb-2"></i>
                     <p className="text-sm font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
                  </div>
             </div>

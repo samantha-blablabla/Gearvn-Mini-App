@@ -27,7 +27,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                  <div className="w-full h-full rounded-full bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVd1HV2wKD9yXgv2a5L7IGSP53x7tMn60VW6nAZpkLlTDF2x_901FRy48SIFR4OkXlVTl3Wa8x_1oWtxE0Xec8Dp1kd8lQfDTN-oQYKUG2uA68agU8pXoA4zC20mg_i8XKjcUS6-Hg4idX4Qo5n66gqHzR6nBiE_e17LwDahIFB8-dTlNHks5QBVlBNZkqn3SbVflE__XE9Dx8D8cclQg88hDmqlc4wnRfxe02J2lUSc2l49otXehCrHkQxUtXiv_JDHuZ2LZFFME")'}}></div>
               </div>
               <div className="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-white shadow-md">
-                <i className="iconoir-edit-pencil text-xs block"></i>
+                <i className="iconoir-edit text-xs block"></i>
               </div>
             </div>
             

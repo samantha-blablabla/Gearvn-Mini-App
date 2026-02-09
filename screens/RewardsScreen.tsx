@@ -16,7 +16,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Ưu đãi Gearvn</h1>
           <div className="flex items-center justify-end w-10 -mr-2">
             <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors">
-              <i className="iconoir-history text-gray-900 text-xl"></i>
+              <i className="iconoir-clock text-gray-900 text-xl"></i>
             </button>
           </div>
         </div>
@@ -57,11 +57,11 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <p className="text-sm font-bold">Tất cả</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">
-            <i className="iconoir-ticket text-[20px] text-gray-600"></i>
+            <i className="iconoir-tag text-[20px] text-gray-600"></i>
             <p className="text-sm font-medium text-gray-700">Voucher</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">
-            <i className="iconoir-mouse text-[20px] text-gray-600"></i>
+            <i className="iconoir-gamepad text-[20px] text-gray-600"></i>
             <p className="text-sm font-medium text-gray-700">Gaming Gear</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">

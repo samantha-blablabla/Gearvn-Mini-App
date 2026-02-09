@@ -204,7 +204,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
               <p className="text-[10px] font-medium opacity-90 mt-1 uppercase tracking-widest bg-white/20 inline-block px-2 py-0.5 rounded">Ưu đãi giảm 50% vệ sinh PC</p>
             </div>
             <div className="relative z-10">
-              <i className="iconoir-pc-case text-white text-6xl opacity-40 rotate-12"></i>
+              <i className="iconoir-settings text-white text-6xl opacity-40 rotate-12"></i>
             </div>
             <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-xl"></div>
             <div className="absolute top-0 left-10 size-16 bg-white/10 rounded-full blur-xl"></div>

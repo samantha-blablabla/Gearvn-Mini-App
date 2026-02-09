@@ -35,7 +35,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
         {/* Timeline */}
         <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
             <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <i className="iconoir-history text-primary text-xl"></i>
+                <i className="iconoir-clock text-primary text-xl"></i>
                 Tiến độ xử lý
             </h3>
             
@@ -44,7 +44,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <i className="iconoir-refresh text-base animate-spin"></i>
+                             <i className="iconoir-sync text-base animate-spin"></i>
                         </div>
                     </div>
                     <div>
