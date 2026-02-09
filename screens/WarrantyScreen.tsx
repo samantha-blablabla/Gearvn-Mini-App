@@ -15,11 +15,11 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors">
-            <span className="material-symbols-outlined text-gray-900">arrow_back_ios_new</span>
+            <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-primary text-lg font-bold leading-tight tracking-tight text-center flex-1">Quản lý Bảo hành</h1>
           <button className="p-2 -mr-2 rounded-full hover:bg-gray-100 transition-colors">
-            <span className="material-symbols-outlined text-gray-900">search</span>
+            <i className="iconoir-search text-gray-900 text-xl"></i>
           </button>
         </div>
         {/* Tabs */}
@@ -77,7 +77,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 1 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <span className="material-symbols-outlined text-[14px] animate-spin">sync</span>
+                            <i className="iconoir-refresh text-[14px] animate-spin"></i>
                           </div>
                           <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
                         </div>
@@ -89,7 +89,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 2 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <span className="material-symbols-outlined text-[14px]">check</span>
+                            <i className="iconoir-check text-[14px]"></i>
                           </div>
                           <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
                         </div>
@@ -101,7 +101,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                         {/* Step 3 */}
                         <div className="flex flex-col items-center">
                           <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
-                            <span className="material-symbols-outlined text-[14px]">check</span>
+                            <i className="iconoir-check text-[14px]"></i>
                           </div>
                         </div>
                         <div className="pt-0.5">
@@ -145,7 +145,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                 {/* Info Tip */}
                 <div className="mx-4 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary">info</span>
+                  <i className="iconoir-info-circle text-primary text-xl"></i>
                   <div className="text-xs leading-relaxed">
                     <p className="font-bold text-primary mb-1">Quy định bảo hành Gearvn</p>
                     <p className="text-gray-600">Thời gian xử lý trung bình từ 3-7 ngày làm việc. Quý khách vui lòng giữ hóa đơn hoặc tin nhắn SMS tiếp nhận.</p>
@@ -209,22 +209,12 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
                  
                  <div className="px-12 py-8 flex flex-col items-center justify-center text-center opacity-50">
-                    <span className="material-symbols-outlined text-4xl text-gray-300 mb-2">history_toggle_off</span>
+                    <i className="iconoir-history text-4xl text-gray-300 mb-2"></i>
                     <p className="text-sm font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
                  </div>
             </div>
         )}
       </main>
-
-      {/* FAB */}
-      <div className="fixed bottom-24 right-6 z-40">
-        <button 
-            onClick={() => onNavigate(ScreenName.CREATE_WARRANTY)}
-            className="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center hover:scale-105 transition-transform active:scale-95 group"
-        >
-          <span className="material-symbols-outlined text-3xl group-active:rotate-90 transition-transform duration-300">add</span>
-        </button>
-      </div>
     </div>
   );
 };

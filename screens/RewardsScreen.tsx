@@ -11,12 +11,12 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <span className="material-symbols-outlined text-gray-900">arrow_back_ios_new</span>
+             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Ưu đãi Gearvn</h1>
           <div className="flex items-center justify-end w-10 -mr-2">
             <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors">
-              <span className="material-symbols-outlined text-gray-900">history</span>
+              <i className="iconoir-history text-gray-900 text-xl"></i>
             </button>
           </div>
         </div>
@@ -30,7 +30,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <div className="flex justify-between items-center relative z-10">
               <div className="flex items-center gap-4">
                 <div className="flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary">
-                  <span className="material-symbols-outlined text-3xl fill-1">stars</span>
+                  <i className="iconoir-star-solid text-3xl"></i>
                 </div>
                 <div>
                   <p className="text-primary text-[24px] font-bold leading-none">1,500 pts</p>
@@ -43,8 +43,8 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             </div>
             <div className="mt-4 pt-4 border-t border-dashed border-gray-200 flex justify-between items-center text-xs">
               <span className="text-gray-500">600 pts sắp hết hạn vào 31/12</span>
-              <button className="text-primary font-bold flex items-center hover:underline">
-                  Xem chi tiết <span className="material-symbols-outlined text-[14px] ml-0.5">chevron_right</span>
+              <button className="text-primary font-bold flex items-center hover:underline gap-1">
+                  Xem chi tiết <i className="iconoir-nav-arrow-right text-[14px]"></i>
               </button>
             </div>
           </div>
@@ -53,19 +53,19 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
         {/* Filter Chips */}
         <div className="flex gap-3 px-4 py-2 overflow-x-auto hide-scrollbar">
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-md shadow-primary/20 transition-transform active:scale-95">
-            <span className="material-symbols-outlined text-[20px]">grid_view</span>
+            <i className="iconoir-view-grid text-[20px]"></i>
             <p className="text-sm font-bold">Tất cả</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">
-            <span className="material-symbols-outlined text-[20px] text-gray-600">confirmation_number</span>
+            <i className="iconoir-ticket text-[20px] text-gray-600"></i>
             <p className="text-sm font-medium text-gray-700">Voucher</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">
-            <span className="material-symbols-outlined text-[20px] text-gray-600">mouse</span>
+            <i className="iconoir-mouse text-[20px] text-gray-600"></i>
             <p className="text-sm font-medium text-gray-700">Gaming Gear</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-200 px-5 transition-transform active:scale-95 hover:bg-gray-50">
-            <span className="material-symbols-outlined text-[20px] text-gray-600">memory</span>
+            <i className="iconoir-cpu text-[20px] text-gray-600"></i>
             <p className="text-sm font-medium text-gray-700">Linh kiện</p>
           </button>
         </div>
@@ -89,7 +89,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <div className="p-3 flex flex-col flex-grow">
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Voucher Gearvn Giảm 500k</h3>
               <div className="mt-2 flex items-center gap-1">
-                <span className="material-symbols-outlined text-primary text-[16px] fill-1">stars</span>
+                <i className="iconoir-star-solid text-primary text-[16px]"></i>
                 <p className="text-primary text-sm font-bold">1,000 pts</p>
               </div>
               <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
@@ -109,7 +109,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <div className="p-3 flex flex-col flex-grow">
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Chuột Asus ROG Keris</h3>
               <div className="mt-2 flex items-center gap-1">
-                <span className="material-symbols-outlined text-primary text-[16px] fill-1">stars</span>
+                <i className="iconoir-star-solid text-primary text-[16px]"></i>
                 <p className="text-primary text-sm font-bold">5,000 pts</p>
               </div>
               <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
@@ -129,7 +129,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <div className="p-3 flex flex-col flex-grow">
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Bàn phím Akko 3068v2</h3>
               <div className="mt-2 flex items-center gap-1">
-                <span className="material-symbols-outlined text-primary text-[16px] fill-1">stars</span>
+                <i className="iconoir-star-solid text-primary text-[16px]"></i>
                 <p className="text-primary text-sm font-bold">3,500 pts</p>
               </div>
               <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
@@ -149,7 +149,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack }) => {
             <div className="p-3 flex flex-col flex-grow">
               <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2">Voucher Giảm 10% Linh kiện</h3>
               <div className="mt-2 flex items-center gap-1">
-                <span className="material-symbols-outlined text-primary text-[16px] fill-1">stars</span>
+                <i className="iconoir-star-solid text-primary text-[16px]"></i>
                 <p className="text-primary text-sm font-bold">500 pts</p>
               </div>
               <button className="mt-3 w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">

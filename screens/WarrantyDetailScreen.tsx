@@ -12,7 +12,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <span className="material-symbols-outlined text-gray-900">arrow_back_ios_new</span>
+             <i className="iconoir-nav-arrow-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Chi tiết bảo hành</h1>
         </div>
@@ -35,7 +35,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
         {/* Timeline */}
         <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
             <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary">history</span>
+                <i className="iconoir-history text-primary text-xl"></i>
                 Tiến độ xử lý
             </h3>
             
@@ -44,7 +44,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <span className="material-symbols-outlined text-base animate-spin">sync</span>
+                             <i className="iconoir-refresh text-base animate-spin"></i>
                         </div>
                     </div>
                     <div>
@@ -58,7 +58,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <span className="material-symbols-outlined text-base">check</span>
+                             <i className="iconoir-check text-base"></i>
                         </div>
                     </div>
                     <div>
@@ -72,7 +72,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <span className="material-symbols-outlined text-base">check</span>
+                             <i className="iconoir-check text-base"></i>
                         </div>
                     </div>
                     <div>
@@ -108,11 +108,11 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 flex gap-3 z-50">
           <button className="flex-1 bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
-              <span className="material-symbols-outlined">chat</span>
+              <i className="iconoir-chat-bubble"></i>
               Chat hỗ trợ
           </button>
           <button className="flex-1 bg-primary text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-              <span className="material-symbols-outlined">call</span>
+              <i className="iconoir-phone"></i>
               Gọi hotline
           </button>
       </div>

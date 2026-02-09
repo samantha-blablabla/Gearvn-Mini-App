@@ -39,7 +39,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
       <header className="sticky top-0 z-30 bg-white/80 ios-blur px-4 py-3 flex items-center justify-between border-b border-gray-100">
         <div className="flex items-center gap-3">
           <div className="size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md shadow-primary/30">
-            <span className="material-symbols-outlined font-bold">bolt</span>
+            <i className="iconoir-flash text-xl"></i>
           </div>
           <div>
             <h1 className="text-lg font-extrabold leading-none tracking-tight text-primary uppercase">Gearvn</h1>
@@ -48,11 +48,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
         </div>
         <div className="flex items-center gap-2">
           <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
-            <span className="material-symbols-outlined text-gray-700">notifications</span>
+            <i className="iconoir-bell text-gray-700 text-xl"></i>
             <span className="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white"></span>
           </button>
           <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-            <span className="material-symbols-outlined text-gray-700">search</span>
+            <i className="iconoir-search text-gray-700 text-xl"></i>
           </button>
         </div>
       </header>
@@ -76,7 +76,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                  <p className="text-[10px] uppercase tracking-widest opacity-70 font-bold">Hạng Thành Viên</p>
                  <h3 className="text-xl font-extrabold flex items-center gap-2 mt-1">
                    GOLD MEMBER
-                   <span className="material-symbols-outlined text-yellow-400 text-sm fill-1">stars</span>
+                   <i className="iconoir-star-solid text-yellow-400 text-sm"></i>
                  </h3>
                </div>
                <div className="text-right">
@@ -102,7 +102,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                  </div>
                </div>
                <button className="bg-white/10 hover:bg-white/20 active:bg-white/30 backdrop-blur-md px-4 py-2 rounded-lg text-xs font-bold border border-white/10 flex items-center gap-2 transition-colors">
-                 <span className="material-symbols-outlined text-base">qr_code_2</span>
+                 <i className="iconoir-qr-code text-base"></i>
                  MÃ ƯU ĐÃI
                </button>
              </div>
@@ -116,7 +116,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary">handyman</span>
+              <i className="iconoir-wrench text-primary text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Gửi Bảo Hành</h3>
@@ -129,7 +129,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-blue-500">package_2</span>
+              <i className="iconoir-box text-blue-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Tra Cứu Đơn</h3>
@@ -142,7 +142,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-orange-500">loyalty</span>
+              <i className="iconoir-medal text-orange-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Tích Điểm</h3>
@@ -155,7 +155,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
              className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-green-500">storefront</span>
+              <i className="iconoir-shop text-green-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Cửa Hàng</h3>
@@ -169,11 +169,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           <div className="px-4 flex justify-between items-center mb-4">
             <h2 className="text-xl font-extrabold flex items-center gap-2">
               Hot Deals 
-              <span className="material-symbols-outlined text-primary animate-pulse fill-1">local_fire_department</span>
+              <i className="iconoir-fire text-primary animate-pulse text-xl"></i>
             </h2>
-            <button className="text-primary text-sm font-bold flex items-center hover:underline">
+            <button className="text-primary text-sm font-bold flex items-center hover:underline gap-1">
               Xem tất cả
-              <span className="material-symbols-outlined text-sm">chevron_right</span>
+              <i className="iconoir-nav-arrow-right text-sm"></i>
             </button>
           </div>
           
@@ -204,7 +204,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
               <p className="text-[10px] font-medium opacity-90 mt-1 uppercase tracking-widest bg-white/20 inline-block px-2 py-0.5 rounded">Ưu đãi giảm 50% vệ sinh PC</p>
             </div>
             <div className="relative z-10">
-              <span className="material-symbols-outlined text-white text-6xl opacity-40 rotate-12">settings_input_component</span>
+              <i className="iconoir-pc-case text-white text-6xl opacity-40 rotate-12"></i>
             </div>
             <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-xl"></div>
             <div className="absolute top-0 left-10 size-16 bg-white/10 rounded-full blur-xl"></div>

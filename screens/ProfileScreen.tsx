@@ -12,9 +12,9 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
       <div className="sticky top-0 z-50 bg-white/80 ios-blur px-6 py-3 flex justify-between items-center border-b border-gray-100">
         <span className="text-sm font-bold text-gray-900">9:41</span>
         <div className="flex gap-1.5 items-center text-gray-900">
-          <span className="material-symbols-outlined text-sm">signal_cellular_4_bar</span>
-          <span className="material-symbols-outlined text-sm">wifi</span>
-          <span className="material-symbols-outlined text-sm">battery_full</span>
+          <i className="iconoir-signal text-sm"></i>
+          <i className="iconoir-wifi text-sm"></i>
+          <i className="iconoir-battery-full text-sm"></i>
         </div>
       </div>
 
@@ -27,13 +27,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                  <div className="w-full h-full rounded-full bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVd1HV2wKD9yXgv2a5L7IGSP53x7tMn60VW6nAZpkLlTDF2x_901FRy48SIFR4OkXlVTl3Wa8x_1oWtxE0Xec8Dp1kd8lQfDTN-oQYKUG2uA68agU8pXoA4zC20mg_i8XKjcUS6-Hg4idX4Qo5n66gqHzR6nBiE_e17LwDahIFB8-dTlNHks5QBVlBNZkqn3SbVflE__XE9Dx8D8cclQg88hDmqlc4wnRfxe02J2lUSc2l49otXehCrHkQxUtXiv_JDHuZ2LZFFME")'}}></div>
               </div>
               <div className="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-white shadow-md">
-                <span className="material-symbols-outlined text-xs block">edit</span>
+                <i className="iconoir-edit-pencil text-xs block"></i>
               </div>
             </div>
             
             <h1 className="mt-4 text-2xl font-extrabold tracking-tight text-gray-900">Nguyễn Hoàng Nam</h1>
             <p className="text-primary font-bold text-sm flex items-center gap-1 mt-1 bg-primary/5 px-3 py-1 rounded-full">
-                <span className="material-symbols-outlined text-sm fill-1">workspace_premium</span>
+                <i className="iconoir-crown text-sm"></i>
                 Thành viên Vàng
             </p>
 
@@ -56,21 +56,21 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              <button onClick={() => onNavigate(ScreenName.HISTORY)} className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors border-b border-gray-50">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">shopping_bag</span>
+                    <i className="iconoir-shopping-bag text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Lịch sử mua hàng</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
 
              <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors border-b border-gray-50">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">location_on</span>
+                    <i className="iconoir-map-pin text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Địa chỉ giao hàng</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
 
              <button 
@@ -79,21 +79,21 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              >
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">headset_mic</span>
+                    <i className="iconoir-headset text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Liên hệ Gearvn</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
 
              <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">settings</span>
+                    <i className="iconoir-settings text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Cài đặt</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
           </div>
 
@@ -101,25 +101,25 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              <button onClick={() => onNavigate(ScreenName.WARRANTY)} className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors border-b border-gray-50">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">verified</span>
+                    <i className="iconoir-shield-check text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Thông tin bảo hành</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
              <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="size-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">help_center</span>
+                    <i className="iconoir-help-circle text-xl"></i>
                   </div>
                   <span className="font-bold text-[15px] text-gray-800">Trung tâm trợ giúp</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <i className="iconoir-nav-arrow-right text-gray-300"></i>
              </button>
           </div>
 
           <button className="w-full mt-4 py-4 px-6 flex items-center justify-center gap-2 text-primary font-bold active:bg-gray-50 transition-colors bg-white rounded-2xl border border-gray-100 shadow-sm">
-             <span className="material-symbols-outlined text-xl">logout</span>
+             <i className="iconoir-log-out text-xl"></i>
              Đăng xuất
           </button>
           

@@ -11,7 +11,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
        {/* Top Nav */}
        <div className="sticky top-0 z-20 flex items-center bg-white px-4 py-3 border-b border-gray-100 justify-between">
           <button onClick={onBack} className="text-gray-900 flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2">
-             <span className="material-symbols-outlined">arrow_back_ios_new</span>
+             <i className="iconoir-nav-arrow-left text-xl"></i>
           </button>
           <h1 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
        </div>
@@ -21,7 +21,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
           <label className="flex flex-col w-full relative">
              <div className="flex w-full items-stretch rounded-xl h-11 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
                 <div className="text-gray-500 flex items-center justify-center pl-3">
-                   <span className="material-symbols-outlined text-xl">search</span>
+                   <i className="iconoir-search text-xl"></i>
                 </div>
                 <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-sm font-medium" placeholder="Tìm theo mã đơn hàng..." />
              </div>
@@ -58,7 +58,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                 <div>
                    <p className="text-primary font-bold text-lg">25.990.000₫</p>
                    <p className="text-green-600 text-xs flex items-center gap-1 font-semibold">
-                      <span className="material-symbols-outlined text-sm leading-none">stars</span>
+                      <i className="iconoir-star-solid text-sm leading-none"></i>
                       +259 điểm tích lũy
                    </p>
                 </div>
@@ -86,7 +86,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                 <div>
                    <p className="text-primary font-bold text-lg">1.250.000₫</p>
                    <p className="text-blue-600 text-xs flex items-center gap-1 font-semibold">
-                      <span className="material-symbols-outlined text-sm leading-none">local_shipping</span>
+                      <i className="iconoir-delivery-truck text-sm leading-none"></i>
                       Đang đến kho trung chuyển
                    </p>
                 </div>
