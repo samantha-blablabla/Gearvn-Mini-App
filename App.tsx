@@ -13,6 +13,7 @@ import HelpCenterScreen from './screens/HelpCenterScreen';
 import ServiceAppointmentsScreen from './screens/ServiceAppointmentsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import TermsOfServiceScreen from './screens/TermsOfServiceScreen';
+import HotDealsScreen from './screens/HotDealsScreen';
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -68,6 +69,9 @@ const App: React.FC = () => {
       case ScreenName.WARRANTY_DETAIL:
         navigateTo(ScreenName.WARRANTY);
         break;
+      case ScreenName.HOT_DEALS:
+        navigateTo(ScreenName.HOME);
+        break;
       default:
         navigateTo(ScreenName.HOME);
     }
@@ -98,6 +102,7 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.WARRANTY)} />}
+      {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
 
       {showBottomNav && (
         <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />

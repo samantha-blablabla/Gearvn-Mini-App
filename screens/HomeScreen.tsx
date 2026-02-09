@@ -30,6 +30,14 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
       oldPrice: "2.600.000đ",
       discount: "-40%",
       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo-C2djq42-Z6x61oTMA9jF8wCtl0fUxI1il_o3yjxE24lFoAvdBIHLkvSrfxagrt_oqXEo-q4G3NM8RAmwHWvvodhtVqp-bqLwex9p42Oyis2Jkfd4oBkOdiQj1uM_5zS58jMgGgK6oxyR1Ay1kp070sFlPSTvWZKr3aD7Mh2gIha2tcUM9cDWuf56PxVbSt_7vTj8DEO3oGApZYrPf57ve3yNGUwmDZdceJhI0Vj25mm5SPem41E6_JEZbBhN21F2pMrbm08HvY"
+    },
+    {
+      id: 4,
+      name: "Laptop MSI Gaming GF63 Thin",
+      price: "15.490.000đ",
+      oldPrice: "17.990.000đ",
+      discount: "-14%",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAU9t34xmbElpa01q8W52cIXEkseS7SH66iIJ3pQFlHNsyq3U98AjLjiRPSEUW2v8d5MXZo2lm_u0BvScXUVTrinjJ2_8fjpO_vrdPzVpsasNBTT3tpOjrIrxpVeFLLbaMCUEfYzOAiB_4nKAaJ9y71rwA16gFD-uPwMfFCL4Agco7LsQDLjSJuT3qmwTnEpMzhg3KD1wqBa5Kn9WQ1welJlk5pLNEbDvpoDdCMyvWYObGtlKLTJBYAEl6m853wUCbvFRNjAcndUHs"
     }
   ];
 
@@ -169,15 +177,20 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           <div className="px-4 flex justify-between items-center mb-4">
             <h2 className="text-xl font-extrabold flex items-center gap-2">
               Hot Deals 
-              <i className="iconoir-fire text-primary animate-pulse text-xl"></i>
+              {/* Changed icon to standard flash to ensure visibility */}
+              <i className="iconoir-flash text-primary animate-pulse text-xl"></i>
             </h2>
-            <button className="text-primary text-sm font-bold flex items-center hover:underline gap-1">
+            <button 
+              onClick={() => onNavigate(ScreenName.HOT_DEALS)}
+              className="text-primary text-sm font-bold flex items-center hover:underline gap-1"
+            >
               Xem tất cả
               <i className="iconoir-nav-arrow-right text-sm"></i>
             </button>
           </div>
           
-          <div className="flex overflow-x-auto gap-4 px-4 pb-4 hide-scrollbar snap-x snap-mandatory">
+          {/* Added flex-nowrap to enforce horizontal layout */}
+          <div className="flex overflow-x-auto gap-4 px-4 pb-4 hide-scrollbar snap-x snap-mandatory flex-nowrap">
             {hotDeals.map((deal) => (
               <div key={deal.id} className="min-w-[160px] w-[160px] bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex-shrink-0 snap-start">
                 <div className="relative h-40 w-full bg-[#F3F4F6] flex items-center justify-center p-4">

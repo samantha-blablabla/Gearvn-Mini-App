@@ -13,6 +13,7 @@ export enum ScreenName {
   SERVICE_APPOINTMENTS = 'SERVICE_APPOINTMENTS',
   PRIVACY_POLICY = 'PRIVACY_POLICY',
   TERMS_OF_SERVICE = 'TERMS_OF_SERVICE',
+  HOT_DEALS = 'HOT_DEALS',
 }
 
 export interface Product {
