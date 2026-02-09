@@ -7,20 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: "#ec1313",
-              "background-light": "#f8f6f6",
-              "background-dark": "#221010",
+              primary: "#E30019", // GearVN Red (Deeper)
+              "primary-dark": "#C40016",
+              "background-light": "#F2F4F6", // iOS Light Gray
+              "background-dark": "#1C1C1E",
+              "card-white": "#FFFFFF",
+              "text-primary": "#111827",
+              "text-secondary": "#6B7280",
             },
             fontFamily: {
               sans: ["Inter", "sans-serif"],
             },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+              'glow': '0 4px 15px -3px rgba(227, 0, 25, 0.2)',
+            }
           },
         },
       }
@@ -41,6 +49,9 @@
         user-select: none;
         -webkit-user-select: none;
         overscroll-behavior-y: none; /* Prevent browser bounce */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
 
       /* Allow text selection only in inputs */
@@ -76,6 +87,7 @@
       .ios-blur {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.85);
       }
       
       /* Icon adjustments */

@@ -64,10 +64,10 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
   const renderFilterButton = (status: OrderStatus, label: string) => (
     <button 
       onClick={() => setFilter(status)}
-      className={`flex h-8 shrink-0 items-center justify-center rounded-full px-4 text-xs font-bold transition-all border ${
+      className={`flex h-9 shrink-0 items-center justify-center rounded-full px-4 text-[13px] font-bold transition-all border ${
         filter === status 
-          ? 'bg-primary text-white border-primary shadow-md shadow-primary/20' 
-          : 'bg-gray-100 text-gray-600 border-transparent hover:bg-gray-200'
+          ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20' 
+          : 'bg-white text-text-secondary border-gray-200 hover:bg-gray-50'
       }`}
     >
       {label}
@@ -76,31 +76,31 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
 
   return (
     <div className="min-h-screen bg-background-light pb-24">
-       {/* Combined Sticky Header to fix sticking issues */}
-       <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100">
+       {/* Combined Sticky Header */}
+       <div className="sticky top-0 z-40 bg-white/95 ios-blur shadow-sm border-b border-gray-100">
            {/* Top Nav */}
            <div className="flex items-center px-4 h-14 justify-between">
-              <button onClick={onBack} className="text-gray-900 flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2">
-                 <i className="ph-bold ph-caret-left text-xl"></i>
+              <button onClick={onBack} className="text-text-primary flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2 active:scale-90">
+                 <i className="ph-bold ph-caret-left text-2xl"></i>
               </button>
-              <h1 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
+              <h1 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
            </div>
 
            {/* Search & Filter */}
            <div className="pb-3 space-y-3">
-              <div className="px-4">
+              <div className="px-5">
                   <label className="flex flex-col w-full relative">
-                     <div className="flex w-full items-stretch rounded-xl h-11 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
-                        <div className="text-gray-500 flex items-center justify-center pl-3">
+                     <div className="flex w-full items-stretch rounded-[14px] h-12 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
+                        <div className="text-gray-400 flex items-center justify-center pl-4">
                            <i className="ph-bold ph-magnifying-glass text-xl"></i>
                         </div>
-                        <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-sm font-medium" placeholder="Tìm theo mã đơn hàng..." />
+                        <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-[15px] font-medium" placeholder="Tìm theo mã đơn hàng..." />
                      </div>
                   </label>
               </div>
               
-              {/* Filter List - Fix width error by removing negative margins and using container padding */}
-              <div className="flex gap-2 overflow-x-auto hide-scrollbar px-4 pb-1 w-full">
+              {/* Filter List */}
+              <div className="flex gap-2.5 overflow-x-auto hide-scrollbar px-5 pb-1 w-full">
                  {renderFilterButton('ALL', 'Tất cả')}
                  {renderFilterButton('PROCESSING', 'Đang xử lý')}
                  {renderFilterButton('SHIPPING', 'Đang giao')}
@@ -110,22 +110,22 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
            </div>
        </div>
 
-       {/* List Content - Removed inner scroll to allow sticky to work naturally */}
-       <div className="px-4 py-4 space-y-4">
+       {/* List Content */}
+       <div className="px-5 py-5 space-y-5">
           {filteredOrders.length === 0 ? (
-             <div className="flex flex-col items-center justify-center py-12 text-gray-400">
-                <i className="ph-bold ph-package text-4xl mb-2"></i>
-                <p className="text-sm">Không tìm thấy đơn hàng nào</p>
+             <div className="flex flex-col items-center justify-center py-20 text-gray-300">
+                <i className="ph-fill ph-package text-6xl mb-3"></i>
+                <p className="text-[14px] font-medium">Không tìm thấy đơn hàng nào</p>
              </div>
           ) : (
             filteredOrders.map((item) => (
-              <div key={item.id} className={`bg-white rounded-xl p-4 border border-gray-100 shadow-sm ${item.status === 'CANCELLED' ? 'opacity-70' : ''}`}>
-                <div className="flex justify-between items-start mb-3">
+              <div key={item.id} className={`bg-white rounded-[20px] p-5 border border-gray-100 shadow-soft ${item.status === 'CANCELLED' ? 'opacity-70' : ''}`}>
+                <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-gray-900 font-bold text-base">{item.id}</h3>
-                      <p className="text-gray-500 text-xs mt-0.5">Ngày mua: {item.date}</p>
+                      <h3 className="text-text-primary font-bold text-[16px]">{item.id}</h3>
+                      <p className="text-text-secondary text-[12px] mt-0.5">Ngày mua: {item.date}</p>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider ${
+                    <span className={`text-[11px] font-bold px-2.5 py-1 rounded-[8px] uppercase tracking-wider ${
                       item.status === 'COMPLETED' ? 'bg-green-100 text-green-700' :
                       item.status === 'SHIPPING' ? 'bg-blue-100 text-blue-600' :
                       item.status === 'PROCESSING' ? 'bg-orange-100 text-orange-600' :
@@ -134,38 +134,38 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                       {item.statusText}
                     </span>
                 </div>
-                <div className="flex items-center gap-4 py-3 border-y border-gray-50">
-                    <div className={`bg-gray-100 rounded-lg size-16 shrink-0 bg-cover bg-center border border-gray-100 ${item.status === 'CANCELLED' ? 'grayscale' : ''}`} style={{backgroundImage: `url("${item.image}")`}}></div>
+                <div className="flex items-center gap-4 py-4 border-y border-gray-50">
+                    <div className={`bg-[#F9FAFB] rounded-[12px] size-[72px] shrink-0 bg-contain bg-center bg-no-repeat border border-gray-100 ${item.status === 'CANCELLED' ? 'grayscale' : ''}`} style={{backgroundImage: `url("${item.image}")`}}></div>
                     <div className="flex-1 min-w-0 w-0">
-                      <p className={`text-sm font-bold truncate ${item.status === 'CANCELLED' ? 'text-gray-600' : 'text-gray-900'}`}>{item.productName}</p>
-                      <p className="text-gray-500 text-xs mt-1">{item.productDesc}</p>
+                      <p className={`text-[15px] font-bold leading-snug line-clamp-2 ${item.status === 'CANCELLED' ? 'text-gray-500' : 'text-text-primary'}`}>{item.productName}</p>
+                      <p className="text-text-secondary text-[13px] mt-1">{item.productDesc}</p>
                     </div>
                 </div>
-                <div className="flex justify-between items-center mt-4">
+                <div className="flex justify-between items-end mt-4">
                     <div>
-                      <p className={`font-bold text-lg ${item.status === 'CANCELLED' ? 'text-gray-400 line-through' : 'text-primary'}`}>{item.price}</p>
+                      <p className={`font-black text-[18px] tracking-tight ${item.status === 'CANCELLED' ? 'text-gray-400 line-through' : 'text-primary'}`}>{item.price}</p>
                       
                       {item.status === 'COMPLETED' && item.points > 0 && (
-                         <p className="text-green-600 text-xs flex items-center gap-1 font-semibold">
+                         <p className="text-green-600 text-[12px] flex items-center gap-1 font-bold mt-1">
                             <i className="ph-fill ph-star text-sm leading-none"></i>
-                            +{item.points} điểm tích lũy
+                            +{item.points} điểm
                          </p>
                       )}
                       
                       {item.status === 'SHIPPING' && (
-                         <p className="text-blue-600 text-xs flex items-center gap-1 font-semibold">
-                            <i className="ph-bold ph-truck text-sm leading-none"></i>
+                         <p className="text-blue-600 text-[12px] flex items-center gap-1 font-bold mt-1">
+                            <i className="ph-fill ph-truck text-sm leading-none"></i>
                             {item.shippingStatus}
                          </p>
                       )}
 
                       {item.status === 'CANCELLED' && (
-                         <p className="text-gray-400 text-xs">Lý do: {item.reason}</p>
+                         <p className="text-gray-400 text-[12px] mt-1 font-medium">Lý do: {item.reason}</p>
                       )}
                     </div>
-                    <button className={`text-sm font-bold border px-4 py-2 rounded-lg transition-all ${
+                    <button className={`text-[13px] font-bold border px-4 h-9 rounded-[10px] transition-all ${
                        item.status === 'CANCELLED' 
-                       ? 'text-gray-500 border-gray-200 hover:bg-gray-50' 
+                       ? 'text-text-secondary border-gray-200 hover:bg-gray-50' 
                        : (item.status === 'PROCESSING' || item.status === 'SHIPPING' || item.status === 'COMPLETED') 
                          ? 'text-primary border-primary/20 bg-primary/5 hover:bg-primary hover:text-white'
                          : ''

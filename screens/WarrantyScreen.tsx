@@ -10,59 +10,58 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
   const [activeTab, setActiveTab] = useState<'PROCESSING' | 'HISTORY'>('PROCESSING');
 
   return (
-    <div className="min-h-screen bg-background-light pb-24">
+    <div className="min-h-screen bg-background-light pb-28">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-        <div className="flex items-center p-4 justify-between">
-          <button onClick={onBack} className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors">
-            <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
+      <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-200">
+        <div className="flex items-center p-4 justify-between h-14">
+          <button onClick={onBack} className="size-10 flex items-center justify-center -ml-2 rounded-full hover:bg-gray-100 transition-colors active:scale-90">
+            <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
           </button>
-          <h1 className="text-primary text-lg font-bold leading-tight tracking-tight text-center flex-1 pr-8">Quản lý Bảo hành</h1>
-          {/* Removed Search Button as requested */}
+          <h1 className="text-text-primary text-[17px] font-bold leading-tight tracking-tight text-center flex-1 pr-8">Quản lý Bảo hành</h1>
         </div>
-        {/* Tabs */}
+        {/* Tabs - Height 48px for touch */}
         <div className="flex px-4 gap-8">
           <button 
             onClick={() => setActiveTab('PROCESSING')}
-            className={`flex flex-col items-center justify-center border-b-[3px] pb-3 pt-2 px-2 cursor-pointer transition-all flex-1 ${
+            className={`flex flex-col items-center justify-center border-b-[3px] h-12 px-2 cursor-pointer transition-all flex-1 ${
                 activeTab === 'PROCESSING' ? 'border-primary text-primary' : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}
           >
-            <p className="text-sm font-bold">Đang xử lý</p>
+            <p className="text-[14px] font-bold">Đang xử lý</p>
           </button>
           <button 
              onClick={() => setActiveTab('HISTORY')}
-             className={`flex flex-col items-center justify-center border-b-[3px] pb-3 pt-2 px-2 cursor-pointer transition-all flex-1 ${
+             className={`flex flex-col items-center justify-center border-b-[3px] h-12 px-2 cursor-pointer transition-all flex-1 ${
                 activeTab === 'HISTORY' ? 'border-primary text-primary' : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}
           >
-            <p className="text-sm font-bold">Lịch sử</p>
+            <p className="text-[14px] font-bold">Lịch sử</p>
           </button>
         </div>
       </header>
 
-      <main className="py-4 space-y-4">
+      <main className="py-6 space-y-5">
         {activeTab === 'PROCESSING' ? (
             <>
                 {/* Claim Card 1 */}
-                <div className="px-4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <div className="p-4 flex gap-4">
+                <div className="px-5">
+                  <div className="bg-white rounded-[20px] shadow-soft overflow-hidden border border-transparent">
+                    <div className="p-5 flex gap-4">
                       <div 
-                        className="w-24 h-24 bg-center bg-no-repeat bg-contain bg-gray-50 rounded-lg flex-shrink-0 border border-gray-100"
+                        className="size-24 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100"
                         style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8cMOAdL1G8lSJI51mJK5TwV9J0bXw-hga_moNy168ChyCKOKHwlRWGamHvWckLQR9jnoK2v6PeSzR7y7e5tSFJ5QK7tPZidZfZ7My854mjchgY1D-7HIpiDfa7nyEvUQ_QVVHliJ6ZwUY1FhB3cZ4T1EY8y_sdtZbewWVxmLQnD2HCk__6FExw2XBRZXTZeUPsgV5jPHLH0Q-F1ViLxUW0jZDoxlhUd073Rp_80jV7avMXWgEfm6tvrB8Qy8HV0nYfpYy0qw5ft8")'}}
                       ></div>
-                      <div className="flex flex-col justify-between flex-1">
+                      <div className="flex flex-col justify-between flex-1 py-1">
                         <div>
-                          <div className="flex justify-between items-start">
-                            <h3 className="font-bold text-base leading-tight text-gray-900 line-clamp-2">Laptop ASUS ROG Strix G15</h3>
-                            <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase whitespace-nowrap ml-2">Đang xử lý</span>
+                          <div className="flex justify-between items-start gap-2">
+                            <h3 className="font-bold text-[15px] leading-tight text-text-primary line-clamp-2">Laptop ASUS ROG Strix G15</h3>
+                            <span className="bg-primary/10 text-primary text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Đang xử lý</span>
                           </div>
-                          <p className="text-gray-500 text-xs mt-1 font-mono">S/N: G513-2023-001</p>
+                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: G513-2023-001</p>
                         </div>
                         <button 
                            onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-                           className="self-end bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                           className="self-end bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
                         >
                             Xem chi tiết
                         </button>
@@ -70,41 +69,41 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     </div>
                     
                     {/* Stepper */}
-                    <div className="px-4 pb-6 pt-2 border-t border-gray-50">
-                      <div className="grid grid-cols-[24px_1fr] gap-x-3 gap-y-0">
+                    <div className="px-5 pb-6 pt-3 border-t border-gray-50">
+                      <div className="grid grid-cols-[24px_1fr] gap-x-4 gap-y-0">
                         {/* Step 1 */}
                         <div className="flex flex-col items-center">
-                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
+                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
                             <i className="ph-bold ph-arrows-clockwise text-[14px] animate-spin"></i>
                           </div>
-                          <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
+                          <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                         </div>
-                        <div className="pb-6 pt-0.5">
-                          <p className="text-sm font-bold text-primary leading-none">Đang kiểm tra</p>
-                          <p className="text-[11px] text-gray-500 mt-1">Hôm nay, 10:30 • Đang xác định lỗi phần cứng</p>
+                        <div className="pb-7 pt-0.5">
+                          <p className="text-[14px] font-bold text-primary leading-none">Đang kiểm tra</p>
+                          <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">Hôm nay, 10:30 • Đang xác định lỗi phần cứng</p>
                         </div>
 
                         {/* Step 2 */}
                         <div className="flex flex-col items-center">
-                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
+                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
                             <i className="ph-bold ph-check text-[14px]"></i>
                           </div>
-                          <div className="w-[2px] bg-primary h-full -mt-2 -mb-2"></div>
+                          <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                         </div>
-                        <div className="pb-6 pt-0.5">
-                          <p className="text-sm font-semibold text-gray-900 leading-none">Đã tiếp nhận</p>
-                          <p className="text-[11px] text-gray-500 mt-1">24/10/2023 • Tại Gearvn CMT8, Q.3</p>
+                        <div className="pb-7 pt-0.5">
+                          <p className="text-[14px] font-semibold text-text-primary leading-none">Đã tiếp nhận</p>
+                          <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">24/10/2023 • Tại Gearvn CMT8, Q.3</p>
                         </div>
 
                         {/* Step 3 */}
                         <div className="flex flex-col items-center">
-                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10">
+                          <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
                             <i className="ph-bold ph-check text-[14px]"></i>
                           </div>
                         </div>
                         <div className="pt-0.5">
-                          <p className="text-sm font-semibold text-gray-900 leading-none">Tạo yêu cầu</p>
-                          <p className="text-[11px] text-gray-500 mt-1">23/10/2023 • Qua ứng dụng Gearvn Sync</p>
+                          <p className="text-[14px] font-semibold text-text-primary leading-none">Tạo yêu cầu</p>
+                          <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">23/10/2023 • Qua ứng dụng Gearvn Sync</p>
                         </div>
                       </div>
                     </div>
@@ -112,26 +111,26 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
 
                 {/* Claim Card 2 */}
-                <div className="px-4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <div className="p-4 flex gap-4">
+                <div className="px-5">
+                  <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden">
+                    <div className="p-5 flex gap-4">
                       <div 
-                        className="w-24 h-24 bg-center bg-no-repeat bg-contain bg-gray-50 rounded-lg flex-shrink-0 border border-gray-100"
+                        className="size-24 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100"
                         style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTA8EaIQxO_inNoACJm21LcUNbcyYAvpxsNttev9j449z4qqO211FcMOWg93kehMjlbAUywiXKQdJ8Wc7Qkcyn6d_81ae_cCHsFWRWdS8FXEMASBLOmesxuRNR4CtXhzk3sBTvjhInJBgq1j5FCOIcZGzE8Ey_i18ZEan1DZxYQBWcttzLiCUM8CGKrMWOt00Bgumc0azj6xD1oMb5BlQYDC7OmO49jWask7sdZFX7VeXnC3iWsxu5qeCqbM1_Lt1a1XYxbs-oi4c")'}}
                       ></div>
-                      <div className="flex flex-col justify-between flex-1">
+                      <div className="flex flex-col justify-between flex-1 py-1">
                         <div>
-                          <div className="flex justify-between items-start">
-                            <h3 className="font-bold text-base leading-tight text-gray-900 line-clamp-2">Bàn phím Akko 3098B Multi-mode</h3>
-                            <span className="bg-orange-100 text-orange-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase whitespace-nowrap ml-2">Đang sửa chữa</span>
+                          <div className="flex justify-between items-start gap-2">
+                            <h3 className="font-bold text-[15px] leading-tight text-text-primary line-clamp-2">Bàn phím Akko 3098B Multi-mode</h3>
+                            <span className="bg-orange-100 text-orange-600 text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Đang sửa chữa</span>
                           </div>
-                          <p className="text-gray-500 text-xs mt-1 font-mono">S/N: AK-3098B-V2-0922</p>
+                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: AK-3098B-V2-0922</p>
                         </div>
                         <div className="flex items-center justify-between mt-2">
-                          <p className="text-[10px] text-gray-400">Cập nhật: 21/10/2023</p>
+                          <p className="text-[11px] text-text-secondary font-medium">Cập nhật: 21/10/2023</p>
                           <button 
                              onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-                             className="bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                             className="bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
                           >
                               Xem chi tiết
                           </button>
@@ -142,35 +141,35 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
 
                 {/* Info Tip */}
-                <div className="mx-4 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-start gap-3">
-                  <i className="ph-bold ph-info text-primary text-xl"></i>
-                  <div className="text-xs leading-relaxed">
+                <div className="mx-5 p-4 bg-primary/5 border border-primary/10 rounded-[16px] flex items-start gap-3">
+                  <i className="ph-fill ph-info text-primary text-xl mt-0.5"></i>
+                  <div className="text-[13px] leading-relaxed">
                     <p className="font-bold text-primary mb-1">Quy định bảo hành Gearvn</p>
-                    <p className="text-gray-600">Thời gian xử lý trung bình từ 3-7 ngày làm việc. Quý khách vui lòng giữ hóa đơn hoặc tin nhắn SMS tiếp nhận.</p>
+                    <p className="text-text-secondary">Thời gian xử lý trung bình từ 3-7 ngày làm việc. Quý khách vui lòng giữ hóa đơn hoặc tin nhắn SMS tiếp nhận.</p>
                   </div>
                 </div>
             </>
         ) : (
             <div className="space-y-4">
                 {/* History Item 1 */}
-                <div className="px-4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden opacity-80 hover:opacity-100 transition-opacity">
-                    <div className="p-4 flex gap-4">
+                <div className="px-5">
+                  <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+                    <div className="p-5 flex gap-4">
                       <div 
-                        className="w-20 h-20 bg-center bg-no-repeat bg-contain bg-gray-50 rounded-lg flex-shrink-0 border border-gray-100 grayscale"
+                        className="size-20 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100 grayscale"
                         style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhbqn8oEvmnOKeK03rnvsGiy5zDNuKeH7h8xdx21TDPRCcNogKnMH91l1i1V9Fwamut-yi8lxShUUHpzAw5PX3YqaxVPljgnknmrpxFpuaK8s20JBNd4tFLVcB5vP_NXZBG9mtTUee_jHJPFh6RdobW2cjAYF2sFBFoBexOK6HDyti3VrqWuRUHxqcltLLNspakmvS4ykRfE1QlMrN-X9gyb5G3017ppzFHSl3w_0w1X9jSBjamgxel-6e-1aoRvaMQ1tSMWxiK5E")'}}
                       ></div>
                       <div className="flex flex-col justify-between flex-1">
                         <div>
-                          <div className="flex justify-between items-start">
-                            <h3 className="font-bold text-sm leading-tight text-gray-900 line-clamp-2">Chuột Logitech G502 HERO</h3>
-                             <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase whitespace-nowrap ml-2">Hoàn tất</span>
+                          <div className="flex justify-between items-start gap-2">
+                            <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Chuột Logitech G502 HERO</h3>
+                             <span className="bg-green-100 text-green-700 text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Hoàn tất</span>
                           </div>
-                          <p className="text-gray-500 text-xs mt-1 font-mono">S/N: 2133LZ03829</p>
+                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: 2133LZ03829</p>
                         </div>
                         <div className="flex items-center justify-between mt-2">
-                            <p className="text-[10px] text-gray-400">Trả hàng: 10/08/2023</p>
-                             <button className="text-gray-500 text-xs font-bold border border-gray-200 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors">
+                            <p className="text-[11px] text-text-secondary font-medium">Trả hàng: 10/08/2023</p>
+                             <button className="text-text-secondary text-[12px] font-bold border border-gray-200 px-3 h-8 rounded-[8px] hover:bg-gray-50 transition-colors">
                                 Chi tiết
                             </button>
                         </div>
@@ -180,24 +179,24 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                 </div>
 
                 {/* History Item 2 */}
-                <div className="px-4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden opacity-80 hover:opacity-100 transition-opacity">
-                    <div className="p-4 flex gap-4">
+                <div className="px-5">
+                  <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+                    <div className="p-5 flex gap-4">
                       <div 
-                        className="w-20 h-20 bg-center bg-no-repeat bg-contain bg-gray-50 rounded-lg flex-shrink-0 border border-gray-100 grayscale"
+                        className="size-20 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100 grayscale"
                         style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo-C2djq42-Z6x61oTMA9jF8wCtl0fUxI1il_o3yjxE24lFoAvdBIHLkvSrfxagrt_oqXEo-q4G3NM8RAmwHWvvodhtVqp-bqLwex9p42Oyis2Jkfd4oBkOdiQj1uM_5zS58jMgGgK6oxyR1Ay1kp070sFlPSTvWZKr3aD7Mh2gIha2tcUM9cDWuf56PxVbSt_7vTj8DEO3oGApZYrPf57ve3yNGUwmDZdceJhI0Vj25mm5SPem41E6_JEZbBhN21F2pMrbm08HvY")'}}
                       ></div>
                       <div className="flex flex-col justify-between flex-1">
                         <div>
-                          <div className="flex justify-between items-start">
-                            <h3 className="font-bold text-sm leading-tight text-gray-900 line-clamp-2">Tai nghe HyperX Cloud II</h3>
-                             <span className="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase whitespace-nowrap ml-2">Đã hủy</span>
+                          <div className="flex justify-between items-start gap-2">
+                            <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Tai nghe HyperX Cloud II</h3>
+                             <span className="bg-gray-100 text-gray-600 text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Đã hủy</span>
                           </div>
-                          <p className="text-gray-500 text-xs mt-1 font-mono">S/N: HPX-C2-9982</p>
+                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: HPX-C2-9982</p>
                         </div>
                          <div className="flex items-center justify-between mt-2">
-                            <p className="text-[10px] text-gray-400">Ngày: 05/06/2023</p>
-                             <button className="text-gray-500 text-xs font-bold border border-gray-200 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors">
+                            <p className="text-[11px] text-text-secondary font-medium">Ngày: 05/06/2023</p>
+                             <button className="text-text-secondary text-[12px] font-bold border border-gray-200 px-3 h-8 rounded-[8px] hover:bg-gray-50 transition-colors">
                                 Chi tiết
                             </button>
                         </div>
@@ -206,9 +205,9 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                   </div>
                 </div>
                  
-                 <div className="px-12 py-8 flex flex-col items-center justify-center text-center opacity-50">
+                 <div className="px-12 py-12 flex flex-col items-center justify-center text-center opacity-40">
                     <i className="ph-bold ph-clock text-4xl text-gray-300 mb-2"></i>
-                    <p className="text-sm font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
+                    <p className="text-[13px] font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
                  </div>
             </div>
         )}
