@@ -137,7 +137,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           </div>
 
           <div 
-            onClick={() => onNavigate(ScreenName.HISTORY)}
+            onClick={() => onNavigate(ScreenName.ORDER_SEARCH)}
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
@@ -154,7 +154,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-              <i className="iconoir-fire text-orange-500 text-xl"></i>
+              <i className="iconoir-fire-flame text-orange-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Khuyến Mãi</h3>
@@ -167,7 +167,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
              className="bg-white p-4 rounded-xl border border-gray-100 flex flex-col gap-3 shadow-sm active:scale-95 transition-all cursor-pointer hover:shadow-md"
           >
             <div className="size-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-              <i className="iconoir-shop text-green-500 text-xl"></i>
+              <i className="iconoir-store text-green-500 text-xl"></i>
             </div>
             <div>
               <h3 className="font-bold text-sm">Cửa Hàng</h3>
@@ -181,7 +181,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
           <div className="px-4 flex justify-between items-center mb-4">
             <h2 className="text-xl font-extrabold flex items-center gap-2 text-gray-900">
               Hot Deals 
-              <i className="iconoir-fire text-primary animate-pulse text-xl"></i>
+              <i className="iconoir-fire-flame text-primary animate-pulse text-xl"></i>
             </h2>
             <button 
               onClick={() => onNavigate(ScreenName.HOT_DEALS)}

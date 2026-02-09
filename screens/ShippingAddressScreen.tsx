@@ -41,11 +41,11 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                 <i className="iconoir-edit text-sm"></i> Sửa
+                 <i className="iconoir-edit-pencil text-sm"></i> Sửa
               </button>
               {/* Delete is disabled for default */}
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-300 bg-gray-50 rounded-lg cursor-not-allowed flex items-center justify-center gap-2">
-                 <i className="iconoir-trash text-sm"></i> Xóa
+                 <i className="iconoir-bin text-sm"></i> Xóa
               </button>
            </div>
         </div>
@@ -65,10 +65,10 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                 <i className="iconoir-edit text-sm"></i> Sửa
+                 <i className="iconoir-edit-pencil text-sm"></i> Sửa
               </button>
               <button className="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2">
-                 <i className="iconoir-trash text-sm"></i> Xóa
+                 <i className="iconoir-bin text-sm"></i> Xóa
               </button>
            </div>
            

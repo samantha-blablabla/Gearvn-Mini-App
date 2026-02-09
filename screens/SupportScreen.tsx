@@ -80,7 +80,7 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="relative flex flex-col items-center">
                 <div className="size-10 bg-primary rounded-full border-4 border-white shadow-xl flex items-center justify-center overflow-hidden animate-bounce">
-                  <i className="iconoir-shop text-white text-xl"></i>
+                  <i className="iconoir-store text-white text-xl"></i>
                 </div>
                 <div className="w-2 h-1 bg-black/30 rounded-full blur-[2px] mt-1"></div>
               </div>
@@ -103,7 +103,7 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
                 <i className="iconoir-phone text-sm"></i> Gọi Cửa Hàng
               </button>
               <button className="flex items-center justify-center gap-2 h-10 bg-primary text-white font-bold rounded-lg text-sm hover:bg-primary/90 shadow-md shadow-primary/20 transition-colors">
-                <i className="iconoir-map text-sm"></i> Chỉ Đường
+                <i className="iconoir-map-pin text-sm"></i> Chỉ Đường
               </button>
             </div>
           </div>

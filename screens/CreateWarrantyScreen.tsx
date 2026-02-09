@@ -229,7 +229,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex flex-col items-center text-center gap-2 ${shippingMethod === 'store' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2 rounded-full ${shippingMethod === 'store' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-                   <i className="iconoir-shop"></i>
+                   <i className="iconoir-store"></i>
                 </div>
                 <span className={`text-sm font-bold ${shippingMethod === 'store' ? 'text-primary' : 'text-gray-600'}`}>Gửi tại cửa hàng</span>
              </div>

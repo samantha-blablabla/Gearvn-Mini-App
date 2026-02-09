@@ -50,7 +50,7 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ onBack }) => {
 
               <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors">
                  <div className="flex items-center gap-3">
-                    <i className="iconoir-user-badge-check text-gray-500 text-lg"></i>
+                    <i className="iconoir-user-check text-gray-500 text-lg"></i>
                     <span className="text-sm font-medium text-gray-900">Liên kết tài khoản</span>
                  </div>
                  <span className="text-xs text-gray-400 mr-1">Google, Facebook</span>
@@ -78,7 +78,7 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ onBack }) => {
 
               <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors border-b border-gray-50">
                  <div className="flex items-center gap-3">
-                    <i className="iconoir-language text-gray-500 text-lg"></i>
+                    <i className="iconoir-globe text-gray-500 text-lg"></i>
                     <span className="text-sm font-medium text-gray-900">Ngôn ngữ</span>
                  </div>
                  <span className="text-xs text-gray-500 mr-2">Tiếng Việt</span>
@@ -110,7 +110,7 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ onBack }) => {
               
               <button className="w-full flex items-center justify-between p-4 active:bg-gray-50 transition-colors">
                  <div className="flex items-center gap-3">
-                    <i className="iconoir-privacy-policy text-gray-500 text-lg"></i>
+                    <i className="iconoir-shield-check text-gray-500 text-lg"></i>
                     <span className="text-sm font-medium text-gray-900">Chính sách bảo mật</span>
                  </div>
                  <i className="iconoir-nav-arrow-right text-gray-300"></i>
@@ -120,7 +120,7 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ onBack }) => {
 
         <div className="pt-4 flex justify-center">
             <button className="text-red-500 text-sm font-bold flex items-center gap-2 hover:bg-red-50 px-4 py-2 rounded-lg transition-colors">
-                <i className="iconoir-trash text-base"></i>
+                <i className="iconoir-bin text-base"></i>
                 Yêu cầu xóa tài khoản
             </button>
         </div>

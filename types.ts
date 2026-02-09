@@ -20,6 +20,7 @@ export enum ScreenName {
   MY_REWARDS = 'MY_REWARDS',
   REWARD_DETAIL = 'REWARD_DETAIL',
   ALL_REWARDS = 'ALL_REWARDS',
+  ORDER_SEARCH = 'ORDER_SEARCH',
 }
 
 export interface Product {
