@@ -37,8 +37,9 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white/90 ios-blur border-t border-gray-200 pb-[env(safe-area-inset-bottom)] z-40">
-      <div className="flex justify-between items-end h-16 max-w-md mx-auto px-2 relative">
+    // Changed fixed positioning to be centered and max-width constrained
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white/90 ios-blur border-t border-gray-200 pb-[env(safe-area-inset-bottom)] z-40">
+      <div className="flex justify-between items-end h-16 px-2 relative">
         
         {/* Render Nav Items */}
         {navItems.map((item, index) => {
@@ -68,7 +69,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
             <button
               key={item.id}
               onClick={() => onNavigate(item.id as ScreenName)}
-              className={`flex flex-col items-center gap-1 h-full justify-center group w-1/5 pb-1`}
+              className={`flex flex-col items-center gap-1 h-full justify-center group w-1/5 pb-1 active:scale-95 transition-transform`}
             >
               <div className="relative">
                 <i 

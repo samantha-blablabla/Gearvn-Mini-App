@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>Gearvn Sync</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,10 +26,45 @@
       }
     </script>
     <style>
+      :root {
+        --app-max-width: 430px;
+      }
+      
       body {
         font-family: 'Inter', sans-serif;
+        background-color: #111; /* Dark background for desktop */
+        margin: 0;
+        padding: 0;
+        /* Mobile App Feel optimizations */
         -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        user-select: none;
+        -webkit-user-select: none;
+        overscroll-behavior-y: none; /* Prevent browser bounce */
       }
+
+      /* Allow text selection only in inputs */
+      input, textarea {
+        user-select: text;
+        -webkit-user-select: text;
+      }
+
+      /* Prevent dragging images (app feel) */
+      img {
+        -webkit-user-drag: none;
+        user-drag: none;
+        pointer-events: none; /* Let clicks pass through if needed, or just stop drag */
+      }
+
+      /* Hide Scrollbar Global */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       .hide-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -37,15 +72,24 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
       .ios-blur {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
       }
+      
       /* Icon adjustments */
       i[class^="ph"] {
-        font-size: 1.5rem; /* Default 24px */
+        font-size: 1.5rem;
         display: inline-block;
         vertical-align: middle;
+      }
+      
+      /* App Container Alignment */
+      #root {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
       }
     </style>
   <script type="importmap">
@@ -58,7 +102,7 @@
 }
 </script>
 </head>
-  <body class="bg-background-light text-gray-900">
+  <body>
     <div id="root"></div>
   </body>
 </html>

@@ -32,7 +32,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
     <div className="min-h-screen bg-background-light pb-32">
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 border-b border-gray-100 justify-between">
-        <button onClick={handleBack} className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 transition-colors -ml-2">
+        <button onClick={handleBack} className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
         </button>
         <h2 className="text-gray-900 text-lg font-bold leading-tight flex-1 text-center pr-8">Tạo yêu cầu bảo hành</h2>
@@ -84,7 +84,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
             {/* Product 1 */}
             <div 
                 onClick={() => setSelectedProduct(1)}
-                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm ${selectedProduct === 1 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
+                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm active:scale-[0.98] ${selectedProduct === 1 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
             >
               <div className="h-20 w-20 rounded-lg bg-white p-1 overflow-hidden shrink-0 border border-gray-100">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU9t34xmbElpa01q8W52cIXEkseS7SH66iIJ3pQFlHNsyq3U98AjLjiRPSEUW2v8d5MXZo2lm_u0BvScXUVTrinjJ2_8fjpO_vrdPzVpsasNBTT3tpOjrIrxpVeFLLbaMCUEfYzOAiB_4nKAaJ9y71rwA16gFD-uPwMfFCL4Agco7LsQDLjSJuT3qmwTnEpMzhg3KD1wqBa5Kn9WQ1welJlk5pLNEbDvpoDdCMyvWYObGtlKLTJBYAEl6m853wUCbvFRNjAcndUHs" alt="Laptop" className="w-full h-full object-contain" />
@@ -104,7 +104,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
             {/* Product 2 */}
             <div 
                 onClick={() => setSelectedProduct(2)}
-                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm ${selectedProduct === 2 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
+                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm active:scale-[0.98] ${selectedProduct === 2 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
             >
               <div className="h-20 w-20 rounded-lg bg-gray-50 p-1 overflow-hidden shrink-0 border border-gray-100">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZgCdVBaSGN69UV7RN1d8GXknQ0AYGBAtzPHox2F94LrT4a8JG7rXwQt07NWP1RIWgDsaai6gS5XhjkTN68eOGkgKUj8wGqmWX33czp4g8mr3Pn50btwpVH05OBJVC_qp88DWfxWE60OEC1PQURWnr9GDWAq1pvwUUSCDTLl-5X6qvu4atZTyts5FAuT0uok7oAKhO5ekt2KJd6j3kaUQEhCqrGGvWM8GiA5Byq9lcvCWeipBxz1cPOibPOPA47L1PRYA9n_Wi8U" alt="Keyboard" className="w-full h-full object-contain" />
@@ -124,7 +124,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
             {/* Product 3 */}
             <div 
                 onClick={() => setSelectedProduct(3)}
-                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm ${selectedProduct === 3 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
+                className={`relative flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all shadow-sm active:scale-[0.98] ${selectedProduct === 3 ? 'border-primary bg-primary/5' : 'border-transparent bg-white hover:bg-gray-50'}`}
             >
               <div className="h-20 w-20 rounded-lg bg-gray-50 p-1 overflow-hidden shrink-0 border border-gray-100">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhbqn8oEvmnOKeK03rnvsGiy5zDNuKeH7h8xdx21TDPRCcNogKnMH91l1i1V9Fwamut-yi8lxShUUHpzAw5PX3YqaxVPljgnknmrpxFpuaK8s20JBNd4tFLVcB5vP_NXZBG9mtTUee_jHJPFh6RdobW2cjAYF2sFBFoBexOK6HDyti3VrqWuRUHxqcltLLNspakmvS4ykRfE1QlMrN-X9gyb5G3017ppzFHSl3w_0w1X9jSBjamgxel-6e-1aoRvaMQ1tSMWxiK5E" alt="Mouse" className="w-full h-full object-contain" />
@@ -168,7 +168,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                 <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Sản phẩm</p>
                 <p className="text-sm font-bold text-gray-900 line-clamp-1">Laptop ASUS ROG Strix G15</p>
              </div>
-             <button onClick={() => setStep(1)} className="ml-auto text-primary text-xs font-bold px-3 py-1.5 bg-white rounded-lg border border-gray-200 hover:bg-gray-50">Thay đổi</button>
+             <button onClick={() => setStep(1)} className="ml-auto text-primary text-xs font-bold px-3 py-1.5 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 active:scale-95 transition-transform">Thay đổi</button>
           </div>
 
           <div className="space-y-4">
@@ -198,7 +198,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
              <div className="space-y-2">
                <label className="block text-sm font-bold text-gray-900">Hình ảnh / Video minh họa</label>
                <div className="grid grid-cols-4 gap-2">
-                  <button className="aspect-square rounded-xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors">
+                  <button className="aspect-square rounded-xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors active:scale-95">
                      <i className="ph-bold ph-image text-2xl"></i>
                      <span className="text-[10px] font-bold mt-1">Thêm</span>
                   </button>
@@ -226,7 +226,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
           <div className="grid grid-cols-2 gap-3">
              <div 
                onClick={() => setShippingMethod('store')}
-               className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex flex-col items-center text-center gap-2 ${shippingMethod === 'store' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
+               className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${shippingMethod === 'store' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2 rounded-full ${shippingMethod === 'store' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
                    <i className="ph-bold ph-storefront"></i>
@@ -236,7 +236,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
              
              <div 
                onClick={() => setShippingMethod('pickup')}
-               className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex flex-col items-center text-center gap-2 ${shippingMethod === 'pickup' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
+               className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${shippingMethod === 'pickup' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2 rounded-full ${shippingMethod === 'pickup' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
                    <i className="ph-bold ph-truck"></i>
@@ -292,7 +292,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                           <i className="ph-bold ph-map-pin text-primary"></i>
                           Nguyễn Hoàng Nam
                        </span>
-                       <button className="text-primary text-xs font-bold">Thay đổi</button>
+                       <button className="text-primary text-xs font-bold active:scale-90">Thay đổi</button>
                     </div>
                     <p className="text-sm text-gray-600 ml-8">0909 123 456</p>
                     <p className="text-sm text-gray-600 ml-8 mt-1">123 Đường 3/2, Phường 11, Quận 10, TP. Hồ Chí Minh</p>
@@ -326,19 +326,19 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
         </div>
       )}
 
-      {/* Footer Actions */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 z-50 flex gap-3">
+      {/* Footer Actions - Fixed positioning updated for Container Strategy */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-50 flex gap-3">
          {step > 1 && (
              <button 
                 onClick={handleBack}
-                className="w-1/3 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 font-bold py-3.5 rounded-xl transition-colors"
+                className="w-1/3 bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 font-bold py-3.5 rounded-xl transition-all active:scale-95"
              >
                 Quay lại
              </button>
          )}
          <button 
             onClick={handleNext} 
-            className={`bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg shadow-primary/30 flex items-center justify-center gap-2 ${step > 1 ? 'w-2/3' : 'w-full'}`}
+            className={`bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl transition-all active:scale-95 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 ${step > 1 ? 'w-2/3' : 'w-full'}`}
          >
             {step === 3 ? 'Hoàn tất yêu cầu' : 'Tiếp tục'}
             <i className={`text-lg ${step === 3 ? 'ph-bold ph-check' : 'ph-bold ph-caret-right'}`}></i>

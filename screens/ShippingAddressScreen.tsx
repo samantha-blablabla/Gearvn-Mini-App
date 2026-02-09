@@ -11,11 +11,11 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
              <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Địa chỉ giao hàng</h1>
-          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2">
+          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2 active:scale-90">
             <i className="ph-bold ph-plus text-gray-900 text-xl"></i>
           </button>
         </div>
@@ -40,7 +40,7 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
            </div>
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
-              <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+              <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
                  <i className="ph-bold ph-pencil-simple text-sm"></i> Sửa
               </button>
               {/* Delete is disabled for default */}
@@ -64,22 +64,22 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
            </div>
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
-              <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+              <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
                  <i className="ph-bold ph-pencil-simple text-sm"></i> Sửa
               </button>
-              <button className="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2">
+              <button className="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
                  <i className="ph-bold ph-trash text-sm"></i> Xóa
               </button>
            </div>
            
-           <button className="w-full mt-3 py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">
+           <button className="w-full mt-3 py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors active:scale-95">
               Thiết lập mặc định
            </button>
         </div>
       </main>
       
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 z-50">
-          <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-50">
+          <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
               <i className="ph-bold ph-plus text-lg"></i>
               Thêm địa chỉ mới
           </button>

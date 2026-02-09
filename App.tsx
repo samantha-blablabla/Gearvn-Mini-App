@@ -35,11 +35,9 @@ const App: React.FC = () => {
   };
 
   const goBack = () => {
-    // Simple back logic: mostly go back to Home or previous logical parent
-    // In a real app, use a stack
     switch (currentScreen) {
       case ScreenName.CREATE_WARRANTY:
-        navigateTo(ScreenName.HOME); // Or Warranty list
+        navigateTo(ScreenName.HOME);
         break;
       case ScreenName.HISTORY:
         navigateTo(ScreenName.PROFILE);
@@ -72,17 +70,16 @@ const App: React.FC = () => {
         navigateTo(ScreenName.HOME);
         break;
       case ScreenName.SUPPORT:
-        navigateTo(ScreenName.HOME); // Typically accessed from Home
+        navigateTo(ScreenName.HOME);
         break;
       case ScreenName.WARRANTY_DETAIL:
-        navigateTo(ScreenName.HOME); // Changed to HOME as requested
+        navigateTo(ScreenName.HOME);
         break;
       case ScreenName.HOT_DEALS:
         navigateTo(ScreenName.HOME);
         break;
-      // New Reward Routes
       case ScreenName.POINTS_POLICY:
-        navigateTo(ScreenName.HOME); // Changed from REWARDS to HOME as requested
+        navigateTo(ScreenName.HOME);
         break;
       case ScreenName.MY_REWARDS:
         navigateTo(ScreenName.REWARDS);
@@ -98,17 +95,21 @@ const App: React.FC = () => {
     }
   };
 
-  // Determine if BottomNav should be visible
-  // Usually hidden on detailed sub-pages like Create Warranty or specific history
   const showBottomNav = [
     ScreenName.HOME,
     ScreenName.WARRANTY,
-    ScreenName.SUPPORT, // Changed from REWARDS
+    ScreenName.SUPPORT,
     ScreenName.PROFILE,
   ].includes(currentScreen);
 
   return (
-    <div className="antialiased text-gray-900 bg-background-light min-h-screen">
+    // Mobile Container Strategy:
+    // 1. max-w-[430px]: Limits width to iPhone Pro Max size
+    // 2. w-full: Takes full width on mobile
+    // 3. min-h-screen: Ensures full height
+    // 4. shadow-2xl: Pops out on desktop
+    // 5. relative: For absolute positioning inside
+    <div className="w-full max-w-[430px] min-h-screen bg-background-light relative shadow-2xl overflow-x-hidden">
       {currentScreen === ScreenName.HOME && <HomeScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.WARRANTY && <WarrantyScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.REWARDS && <RewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
@@ -126,7 +127,6 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       
-      {/* New Reward Screens */}
       {currentScreen === ScreenName.POINTS_POLICY && <PointsPolicyScreen onBack={goBack} />}
       {currentScreen === ScreenName.MY_REWARDS && <MyRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.REWARD_DETAIL && <RewardDetailScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}

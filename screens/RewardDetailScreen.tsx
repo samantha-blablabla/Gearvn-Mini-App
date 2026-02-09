@@ -11,7 +11,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/0">
         <div className="flex items-center p-4 justify-between">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white/80 backdrop-blur shadow-sm hover:bg-white transition-colors">
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white/80 backdrop-blur shadow-sm hover:bg-white transition-colors active:scale-90">
              <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
           </button>
         </div>
@@ -58,8 +58,8 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       </main>
 
       {/* Floating Action Button */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 z-50">
-          <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-50">
+          <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
               <i className="ph-bold ph-gift text-lg"></i>
               Đổi quà ngay
           </button>
