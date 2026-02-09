@@ -6,6 +6,16 @@ interface HomeScreenProps {
 }
 
 const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
+  // Mock data for active warranty - In real app, check if user has active claim
+  const activeWarranty = {
+    hasActive: true,
+    productName: "Laptop ASUS ROG Strix G15",
+    status: "Đang sửa chữa",
+    lastUpdate: "2h trước",
+    progress: 60,
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAU9t34xmbElpa01q8W52cIXEkseS7SH66iIJ3pQFlHNsyq3U98AjLjiRPSEUW2v8d5MXZo2lm_u0BvScXUVTrinjJ2_8fjpO_vrdPzVpsasNBTT3tpOjrIrxpVeFLLbaMCUEfYzOAiB_4nKAaJ9y71rwA16gFD-uPwMfFCL4Agco7LsQDLjSJuT3qmwTnEpMzhg3KD1wqBa5Kn9WQ1welJlk5pLNEbDvpoDdCMyvWYObGtlKLTJBYAEl6m853wUCbvFRNjAcndUHs"
+  };
+
   const hotDeals = [
     {
       id: 1,
@@ -121,6 +131,51 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
       </div>
 
       <main className="max-w-md mx-auto pt-4">
+        
+        {/* Warranty Tracking Widget - NEW */}
+        {activeWarranty.hasActive && (
+          <div 
+            onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
+            className="mx-4 mb-4 bg-white rounded-xl p-4 shadow-lg shadow-orange-500/10 border-l-4 border-orange-500 relative overflow-hidden cursor-pointer hover:bg-gray-50 transition-colors group"
+          >
+             {/* Header */}
+             <div className="flex justify-between items-center mb-3">
+                <div className="flex items-center gap-2">
+                   <div className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                   </div>
+                   <span className="text-xs font-bold text-orange-600 uppercase tracking-wider">Bảo hành đang xử lý</span>
+                </div>
+                <span className="text-[10px] font-medium text-gray-400 flex items-center gap-1">
+                   <i className="ph-bold ph-clock"></i> {activeWarranty.lastUpdate}
+                </span>
+             </div>
+
+             {/* Content */}
+             <div className="flex gap-3 items-center">
+                <div className="size-12 rounded-lg bg-gray-50 border border-gray-100 p-1 shrink-0">
+                   <img src={activeWarranty.image} className="w-full h-full object-contain" alt="Product" />
+                </div>
+                <div className="flex-1 min-w-0">
+                   <h3 className="font-bold text-gray-900 text-sm truncate">{activeWarranty.productName}</h3>
+                   
+                   {/* Mini Progress Bar */}
+                   <div className="mt-2">
+                      <div className="flex justify-between text-[10px] text-gray-500 mb-1">
+                         <span>Tiến độ</span>
+                         <span className="font-bold text-orange-600">{activeWarranty.progress}%</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                         <div className="h-full bg-orange-500 w-[60%] rounded-full animate-pulse"></div>
+                      </div>
+                   </div>
+                </div>
+                <i className="ph-bold ph-caret-right text-gray-300 group-hover:text-orange-500 transition-colors"></i>
+             </div>
+          </div>
+        )}
+
         {/* Quick Actions */}
         <div className="px-4 py-2 grid grid-cols-2 gap-3">
           <div 

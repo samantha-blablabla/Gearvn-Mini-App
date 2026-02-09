@@ -75,7 +75,7 @@ const App: React.FC = () => {
         navigateTo(ScreenName.HOME); // Typically accessed from Home
         break;
       case ScreenName.WARRANTY_DETAIL:
-        navigateTo(ScreenName.WARRANTY);
+        navigateTo(ScreenName.HOME); // Changed to HOME as requested
         break;
       case ScreenName.HOT_DEALS:
         navigateTo(ScreenName.HOME);
@@ -123,7 +123,7 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.PRIVACY_POLICY && <PrivacyPolicyScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
-      {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.WARRANTY)} />}
+      {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       
       {/* New Reward Screens */}
