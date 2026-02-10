@@ -22,6 +22,7 @@ import RewardDetailScreen from './screens/RewardDetailScreen';
 import AllRewardsScreen from './screens/AllRewardsScreen';
 import OrderLookupScreen from './screens/OrderLookupScreen';
 import OrderDetailScreen from './screens/OrderDetailScreen';
+import MinigameScreen from './screens/MinigameScreen'; // Import Minigame
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -33,9 +34,9 @@ const App: React.FC = () => {
   // Screens where BottomNav should be hidden to allow full-screen immersive flows or bottom actions
   const screensWithoutNav = [
     ScreenName.SERVICE_BOOKING,
-    ScreenName.SERVICE_BOOKING_SUCCESS, // Success screen shouldn't have nav
+    ScreenName.SERVICE_BOOKING_SUCCESS,
     ScreenName.CREATE_WARRANTY,
-    // Add other screens if needed (e.g. Order Detail if it has sticky footer)
+    ScreenName.MINIGAME, // Hide nav on game screen
   ];
 
   // Scroll to top on navigation change
@@ -56,6 +57,11 @@ const App: React.FC = () => {
     // Captures the current screen before navigating to Support, ensuring the Back button works intuitively.
     if (screen === ScreenName.SUPPORT) {
       setPreviousScreen(currentScreen);
+    }
+
+    // Save origin for Minigame too, so we can go back to where we were
+    if (screen === ScreenName.MINIGAME) {
+        setPreviousScreen(currentScreen);
     }
 
     setCurrentScreen(screen);
@@ -132,6 +138,14 @@ const App: React.FC = () => {
       case ScreenName.ORDER_DETAIL:
         navigateTo(ScreenName.HISTORY);
         break;
+      case ScreenName.MINIGAME:
+        // Return to where we opened the game from
+        if (previousScreen && previousScreen !== ScreenName.MINIGAME) {
+            navigateTo(previousScreen);
+        } else {
+            navigateTo(ScreenName.HOME);
+        }
+        break;
       default:
         navigateTo(ScreenName.HOME);
     }
@@ -139,11 +153,6 @@ const App: React.FC = () => {
 
   return (
     // Mobile Container Strategy:
-    // 1. max-w-[430px]: Limits width to iPhone Pro Max size
-    // 2. w-full: Takes full width on mobile
-    // 3. min-h-screen: Ensures full height
-    // 4. shadow-2xl: Pops out on desktop
-    // 5. relative: For absolute positioning inside
     <div className="w-full max-w-[430px] min-h-screen bg-background-light relative shadow-2xl overflow-x-hidden">
       {currentScreen === ScreenName.HOME && <HomeScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.WARRANTY && <WarrantyScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
@@ -175,6 +184,33 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.REWARD_DETAIL && <RewardDetailScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.ALL_REWARDS && <AllRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.ORDER_DETAIL && <OrderDetailScreen onNavigate={navigateTo} onBack={goBack} />}
+
+      {currentScreen === ScreenName.MINIGAME && <MinigameScreen onBack={goBack} />}
+
+      {/* Floating Game Button - Global Position */}
+      {/* Only show when NOT in the minigame or other full-screen flows (optional) */}
+      {currentScreen !== ScreenName.MINIGAME && currentScreen !== ScreenName.SERVICE_BOOKING && currentScreen !== ScreenName.CREATE_WARRANTY && (
+         <button
+            onClick={() => navigateTo(ScreenName.MINIGAME)}
+            className="fixed bottom-24 right-4 z-[60] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 group shadow-[0_0_20px_rgba(227,0,25,0.4)]"
+         >
+            {/* Pulsing rings */}
+            <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-20 animate-ping"></span>
+            <span className="absolute inline-flex h-12 w-12 rounded-full bg-primary/40 opacity-75 blur-sm"></span>
+            
+            {/* Main Button Body - Gradient */}
+            <div className="relative w-full h-full rounded-full bg-gradient-to-tr from-primary to-[#ff4d4d] flex items-center justify-center border-2 border-white/20 overflow-hidden">
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 animate-[shimmer_2s_infinite]"></div>
+                <i className="ph-fill ph-gift text-2xl text-white drop-shadow-md group-hover:rotate-12 transition-transform"></i>
+            </div>
+            
+            {/* Notification Badge */}
+            <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 border-2 border-white text-[10px] font-bold text-yellow-900 shadow-sm animate-bounce">
+              3
+            </span>
+         </button>
+      )}
 
       {/* Conditionally Render BottomNav */}
       {!screensWithoutNav.includes(currentScreen) && (
