@@ -29,8 +29,8 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
   };
 
   return (
-    // Increased pb to accommodate both bottom nav and sticky action buttons
-    <div className="min-h-screen bg-background-light pb-48">
+    // Reduced bottom padding (pb-32) as we removed the nav offset, but kept enough for the footer
+    <div className="min-h-screen bg-background-light pb-32">
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 ios-blur p-4 border-b border-gray-100 justify-between h-14">
         <button onClick={handleBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
@@ -328,8 +328,9 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
         </div>
       )}
 
-      {/* Footer Actions - Stacked above BottomNav */}
-      <div className="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+      {/* Footer Actions - Updated Position (Bottom 0) */}
+      {/* Moved to bottom-0 because App.tsx now hides BottomNav for this screen */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 pb-[calc(env(safe-area-inset-bottom)+16px)] z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
          {step > 1 && (
              <button 
                 onClick={handleBack}

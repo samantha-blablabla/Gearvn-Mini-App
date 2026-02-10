@@ -8,13 +8,14 @@ interface RewardsScreenProps {
 
 const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => {
   return (
-    <div className="min-h-screen bg-background-light pb-24">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100 px-4 h-14 flex items-center justify-between">
+    // Increased pb to account for taller bottom nav
+    <div className="min-h-screen bg-background-light pb-40">
+      {/* Header - HIG Update: Increased height via py-3 and min-h */}
+      <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100 px-4 py-3 min-h-[60px] flex items-center justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
              <i className="ph-bold ph-caret-left text-xl"></i>
           </button>
-          <h1 className="text-[16px] font-bold text-text-primary">Ưu đãi Gearvn</h1>
+          <h1 className="text-[17px] font-bold text-text-primary">Ưu đãi Gearvn</h1>
           <button 
             onClick={() => onNavigate(ScreenName.MY_REWARDS)}
             className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900"
@@ -23,7 +24,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => 
           </button>
       </header>
 
-      <main className="py-5 space-y-6">
+      <main className="py-6 space-y-6">
         {/* Points Card */}
         <div className="px-5">
           <div className="bg-white rounded-[24px] shadow-soft overflow-hidden relative border border-transparent">

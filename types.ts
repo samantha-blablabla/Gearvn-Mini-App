@@ -22,6 +22,7 @@ export enum ScreenName {
   ALL_REWARDS = 'ALL_REWARDS',
   ORDER_SEARCH = 'ORDER_SEARCH',
   ORDER_DETAIL = 'ORDER_DETAIL',
+  SERVICE_BOOKING = 'SERVICE_BOOKING', // New Booking Hub
 }
 
 export interface Product {

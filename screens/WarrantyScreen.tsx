@@ -10,10 +10,11 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
   const [activeTab, setActiveTab] = useState<'PROCESSING' | 'HISTORY'>('PROCESSING');
 
   return (
-    <div className="min-h-screen bg-background-light pb-28">
-      {/* Header */}
+    // Increased pb to account for taller bottom nav
+    <div className="min-h-screen bg-background-light pb-40">
+      {/* Header - HIG Update: Increased height via py-3 and min-h */}
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-200">
-        <div className="flex items-center p-4 justify-between h-14">
+        <div className="flex items-center px-4 py-3 min-h-[60px] justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
             <i className="ph-bold ph-caret-left text-xl"></i>
           </button>
@@ -190,13 +191,13 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                       <div className="flex flex-col justify-between flex-1">
                         <div>
                           <div className="flex justify-between items-start gap-2">
-                            <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Tai nghe HyperX Cloud II</h3>
-                             <span className="bg-gray-100 text-gray-600 text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Đã hủy</span>
+                            <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Tai nghe Kingston HyperX Cloud III</h3>
+                             <span className="bg-green-100 text-green-700 text-[11px] font-bold px-2 py-0.5 rounded-[6px] uppercase whitespace-nowrap">Hoàn tất</span>
                           </div>
-                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: HPX-C2-9982</p>
+                          <p className="text-text-secondary text-[12px] mt-1.5 font-mono font-medium">S/N: KHX-H3CL/WR</p>
                         </div>
-                         <div className="flex items-center justify-between mt-2">
-                            <p className="text-[11px] text-text-secondary font-medium">Ngày: 05/06/2023</p>
+                        <div className="flex items-center justify-between mt-2">
+                            <p className="text-[11px] text-text-secondary font-medium">Trả hàng: 05/06/2023</p>
                              <button className="text-text-secondary text-[12px] font-bold border border-gray-200 px-3 h-8 rounded-[8px] hover:bg-gray-50 transition-colors">
                                 Chi tiết
                             </button>
@@ -205,11 +206,6 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     </div>
                   </div>
                 </div>
-                 
-                 <div className="px-12 py-12 flex flex-col items-center justify-center text-center opacity-40">
-                    <i className="ph-bold ph-clock text-4xl text-gray-300 mb-2"></i>
-                    <p className="text-[13px] font-medium text-gray-400">Không còn lịch sử bảo hành nào khác trong 12 tháng qua.</p>
-                 </div>
             </div>
         )}
       </main>

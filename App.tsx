@@ -4,6 +4,7 @@ import WarrantyScreen from './screens/WarrantyScreen';
 import RewardsScreen from './screens/RewardsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import CreateWarrantyScreen from './screens/CreateWarrantyScreen';
+import ServiceBookingScreen from './screens/ServiceBookingScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import SupportScreen from './screens/SupportScreen';
 import WarrantyDetailScreen from './screens/WarrantyDetailScreen';
@@ -28,6 +29,13 @@ const App: React.FC = () => {
   // State to track where the user came from (Origin Tracking)
   const [previousScreen, setPreviousScreen] = useState<ScreenName>(ScreenName.HOME);
 
+  // Screens where BottomNav should be hidden to allow full-screen immersive flows or bottom actions
+  const screensWithoutNav = [
+    ScreenName.SERVICE_BOOKING,
+    ScreenName.CREATE_WARRANTY,
+    // Add other screens if needed (e.g. Order Detail if it has sticky footer)
+  ];
+
   // Scroll to top on navigation change
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,12 +49,22 @@ const App: React.FC = () => {
         setPreviousScreen(currentScreen);
       }
     }
+    
+    // Smart Tracking for Support Screen (Requested Update)
+    // Captures the current screen before navigating to Support, ensuring the Back button works intuitively.
+    if (screen === ScreenName.SUPPORT) {
+      setPreviousScreen(currentScreen);
+    }
+
     setCurrentScreen(screen);
   };
 
   const goBack = () => {
     switch (currentScreen) {
       case ScreenName.CREATE_WARRANTY:
+        navigateTo(ScreenName.HOME);
+        break;
+      case ScreenName.SERVICE_BOOKING:
         navigateTo(ScreenName.HOME);
         break;
       case ScreenName.HISTORY:
@@ -80,7 +98,12 @@ const App: React.FC = () => {
         navigateTo(ScreenName.HOME);
         break;
       case ScreenName.SUPPORT:
-        navigateTo(ScreenName.HOME);
+        // Use the tracked previous screen if it exists and makes sense, otherwise default to Home
+        if (previousScreen && previousScreen !== ScreenName.SUPPORT) {
+            navigateTo(previousScreen);
+        } else {
+            navigateTo(ScreenName.HOME);
+        }
         break;
       case ScreenName.WARRANTY_DETAIL:
         // Use the tracked previous screen
@@ -121,7 +144,10 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.WARRANTY && <WarrantyScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.REWARDS && <RewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.PROFILE && <ProfileScreen onNavigate={navigateTo} />}
+      
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
+      {currentScreen === ScreenName.SERVICE_BOOKING && <ServiceBookingScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
+      
       {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.ORDER_SEARCH && <OrderLookupScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SHIPPING_ADDRESS && <ShippingAddressScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
@@ -144,8 +170,10 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.ALL_REWARDS && <AllRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.ORDER_DETAIL && <OrderDetailScreen onNavigate={navigateTo} onBack={goBack} />}
 
-      {/* BottomNav is now always visible */}
-      <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />
+      {/* Conditionally Render BottomNav */}
+      {!screensWithoutNav.includes(currentScreen) && (
+        <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />
+      )}
     </div>
   );
 };

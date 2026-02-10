@@ -8,8 +8,9 @@ interface SupportScreenProps {
 const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
   return (
     <div className="min-h-screen bg-background-light flex flex-col pb-24">
+       {/* HIG Update: Min height 60px and py-3 for airy header */}
        <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
-        <div className="flex items-center justify-between px-4 h-14">
+        <div className="flex items-center justify-between px-4 py-3 min-h-[60px]">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
              <i className="ph-bold ph-caret-left text-xl"></i>
           </button>

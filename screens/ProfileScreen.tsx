@@ -13,7 +13,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
        <div className="bg-primary pt-[calc(env(safe-area-inset-top)+20px)] pb-24 px-5 rounded-b-[40px] relative z-0 shadow-glow">
           <div className="flex items-start justify-between mb-4 text-white">
              <div>
-               <h1 className="text-[26px] font-black tracking-tight">Tài Khoản</h1>
+               <h1 className="text-[26px] font-bold tracking-tight">Tài Khoản</h1>
                <p className="text-white/80 text-[13px] font-medium mt-1">Thông tin tài khoản thành viên</p>
              </div>
              <div className="flex gap-2">
@@ -44,13 +44,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 <div className="flex justify-between items-start">
                    <div>
                       <h2 className="font-bold text-[20px] leading-tight">Sam Nguyễn</h2>
-                      <p className="text-emerald-100 text-[13px] font-medium opacity-90">0929033523</p>
+                      <p className="text-emerald-100 text-[13px] font-medium opacity-90">sam.nguyen@gearvn.com</p>
                    </div>
-                   <span className="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-[8px] text-[11px] font-black uppercase flex items-center gap-1 border border-white/10">
+                   <span className="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-[8px] text-[11px] font-bold uppercase flex items-center gap-1 border border-white/10">
                       <i className="ph-fill ph-star text-yellow-300 text-xs"></i> G-PRO
                    </span>
                 </div>
-                <p className="font-black text-[24px] mt-1.5 tracking-tight">35.326 <span className="text-[13px] font-medium opacity-80">điểm</span></p>
+                <p className="font-bold text-[24px] mt-1.5 tracking-tight">35.326 <span className="text-[13px] font-medium opacity-80">điểm</span></p>
              </div>
           </div>
        </div>
@@ -74,21 +74,21 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
                       <i className="ph-bold ph-clock text-2xl"></i>
                    </div>
-                   <span className="text-[12px] font-semibold text-text-secondary">Đang xử lý</span>
+                   <span className="text-[12px] font-medium text-text-secondary">Đang xử lý</span>
                 </button>
                 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2.5 group">
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
                       <i className="ph-bold ph-truck text-2xl"></i>
                    </div>
-                   <span className="text-[12px] font-semibold text-text-secondary">Đang giao</span>
+                   <span className="text-[12px] font-medium text-text-secondary">Đang giao</span>
                 </button>
 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2.5 group relative">
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
                       <i className="ph-bold ph-check-circle text-2xl"></i>
                    </div>
-                   <span className="text-[12px] font-semibold text-text-secondary">Hoàn thành</span>
+                   <span className="text-[12px] font-medium text-text-secondary">Hoàn thành</span>
                    <div className="absolute -top-1 right-3 bg-primary text-white text-[10px] font-bold size-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">3</div>
                 </button>
              </div>
@@ -108,7 +108,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-calendar-blank text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Lịch hẹn dịch vụ</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Lịch hẹn dịch vụ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Xem các lịch hẹn đã đặt</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -122,7 +122,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-shopping-bag text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Lịch sử mua hàng</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Lịch sử mua hàng</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Xem các đơn hàng đã hoàn thành</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -143,7 +143,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-chat-circle text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Liên hệ hỗ trợ</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Liên hệ hỗ trợ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Chat với GearVN</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -157,7 +157,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-users text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Theo dõi GearVN</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Theo dõi GearVN</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Nhận thông báo ưu đãi</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -171,7 +171,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-shield-check text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Chính sách bảo mật</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Chính sách bảo mật</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Quyền riêng tư & bảo mật</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -185,7 +185,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                    <i className="ph-bold ph-file-text text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
-                   <p className="font-bold text-text-primary text-[15px]">Điều khoản dịch vụ</p>
+                   <p className="font-semibold text-text-primary text-[15px]">Điều khoản dịch vụ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Điều khoản sử dụng</p>
                 </div>
                 <i className="ph-bold ph-caret-right text-gray-300"></i>
@@ -193,7 +193,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
           </div>
           
           <div className="flex flex-col items-center gap-2 py-6">
-              <div className="flex items-center gap-2 text-primary font-black text-xl">
+              <div className="flex items-center gap-2 text-primary font-bold text-xl">
                  <i className="ph-bold ph-lightning"></i> GEARVN
               </div>
               <p className="text-[12px] text-gray-400 font-medium">GearVN Member • Version 1.1.3</p>

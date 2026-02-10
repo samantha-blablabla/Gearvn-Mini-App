@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScreenName } from '../types';
 
 interface HomeScreenProps {
@@ -6,7 +6,9 @@ interface HomeScreenProps {
 }
 
 const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
-  // Mock data for active warranty - In real app, check if user has active claim
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  // Mock data for active warranty
   const activeWarranty = {
     hasActive: true,
     productName: "Laptop ASUS ROG Strix G15",
@@ -40,263 +42,250 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
       oldPrice: "2.600.000đ",
       discount: "-40%",
       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo-C2djq42-Z6x61oTMA9jF8wCtl0fUxI1il_o3yjxE24lFoAvdBIHLkvSrfxagrt_oqXEo-q4G3NM8RAmwHWvvodhtVqp-bqLwex9p42Oyis2Jkfd4oBkOdiQj1uM_5zS58jMgGgK6oxyR1Ay1kp070sFlPSTvWZKr3aD7Mh2gIha2tcUM9cDWuf56PxVbSt_7vTj8DEO3oGApZYrPf57ve3yNGUwmDZdceJhI0Vj25mm5SPem41E6_JEZbBhN21F2pMrbm08HvY"
-    },
-    {
-      id: 4,
-      name: "Laptop MSI Gaming GF63 Thin",
-      price: "15.490.000đ",
-      oldPrice: "17.990.000đ",
-      discount: "-14%",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAU9t34xmbElpa01q8W52cIXEkseS7SH66iIJ3pQFlHNsyq3U98AjLjiRPSEUW2v8d5MXZo2lm_u0BvScXUVTrinjJ2_8fjpO_vrdPzVpsasNBTT3tpOjrIrxpVeFLLbaMCUEfYzOAiB_4nKAaJ9y71rwA16gFD-uPwMfFCL4Agco7LsQDLjSJuT3qmwTnEpMzhg3KD1wqBa5Kn9WQ1welJlk5pLNEbDvpoDdCMyvWYObGtlKLTJBYAEl6m853wUCbvFRNjAcndUHs"
     }
   ];
 
   return (
-    <div className="pb-28 bg-background-light min-h-screen">
-      {/* Red Header Section - Safe Area handled */}
-      <div className="bg-primary pt-[calc(env(safe-area-inset-top)+12px)] px-5 pb-24 rounded-b-[40px] relative overflow-hidden shadow-glow z-10">
-         {/* Decorative background elements */}
-         <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-         <div className="absolute bottom-0 left-0 w-60 h-60 bg-black/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
-
-         <div className="flex justify-between items-center relative z-10">
-            <div>
-               <h1 className="text-white font-black text-[26px] tracking-tight leading-none">GEARVN MEMBER</h1>
-               <p className="text-white/80 text-[13px] font-medium mt-1.5">Xin chào, Nguyễn Minh Hoàng</p>
-            </div>
-            <div className="flex gap-3">
-               <button className="bg-white/10 backdrop-blur-md size-11 flex items-center justify-center rounded-full text-white hover:bg-white/20 transition-all active:scale-95 relative border border-white/5">
-                  <i className="ph-bold ph-bell text-2xl"></i>
-                  <span className="absolute top-2.5 right-3 size-2.5 bg-yellow-400 rounded-full border-2 border-primary"></span>
-               </button>
-            </div>
-         </div>
+    <div className="relative min-h-screen bg-black overflow-hidden">
+      
+      {/* 1. Immersive Background Layer (Tech-Verse) */}
+      <div className="fixed top-0 left-0 w-full h-[70vh] z-0 overflow-hidden pointer-events-none">
+        {/* Abstract Tech Background Image */}
+        <div 
+           className="absolute inset-0 bg-cover bg-center opacity-80"
+           style={{
+               backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCiUj36XN7t7Hn76W0s55_yF0l7q7dC7z7wWw7pL9q8yD4v0x1jG4h3nF7kQ9w8e5rT6yU2iO4pL1aS3dF8gH5jK0lZ2xX4cV9bN7mQ1wE6rT5yU8iO3pL0aS2dF7gH5jK0lZ2xX4cV9bN7mQ1wE6rT5yU8iO3pL0aS2dF7gH4jK9lZ1xX3cV8bN6mQ0wE5r')`, // Placeholder for tech abstract
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+           }}
+        ></div>
+        {/* Red Overlay Gradient for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-primary/10 to-black"></div>
+        {/* Animated Particles/Fog Effect (CSS Simulation) */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent opacity-60 animate-pulse"></div>
       </div>
 
-      {/* Membership Card - Floating - Radius 24px */}
-      <div className="px-5 -mt-16 relative z-20">
-          <div className="w-full bg-gradient-to-br from-[#2C2C2E] to-[#1C1C1E] rounded-[24px] shadow-2xl shadow-black/20 text-white p-6 border border-white/10 relative overflow-hidden group">
-             {/* Card Gloss */}
-             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/5 to-transparent pointer-events-none"></div>
-             
-             {/* Top Row: Name & Rank */}
-             <div className="flex justify-between items-start mb-6">
-                <div>
-                   <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1.5">Tên thành viên</p>
-                   <h2 className="font-bold text-[18px] leading-tight">Nguyễn Minh Hoàng</h2>
-                </div>
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 px-3 py-1.5 rounded-full shadow-lg shadow-yellow-500/20 flex items-center gap-1.5 border border-white/20">
-                   <i className="ph-fill ph-star text-white text-xs"></i>
-                   <span className="text-[11px] font-black text-white uppercase tracking-wide">Gold</span>
-                </div>
-             </div>
-
-             {/* Points */}
-             <div className="mb-6">
-                <div className="flex items-baseline gap-1.5">
-                   <span className="text-[40px] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 leading-none">1,250</span>
-                   <span className="text-[13px] font-medium text-gray-400">điểm</span>
-                </div>
-             </div>
-
-             {/* Progress Bar */}
-             <div className="mb-6 relative">
-                <div className="flex justify-between items-end mb-2.5">
-                   <span className="text-[12px] font-medium text-gray-300">Tiến độ lên <span className="text-blue-300 font-bold">Diamond</span></span>
-                   <span className="text-[12px] font-bold text-gray-400">45%</span>
-                </div>
-                <div className="h-2 w-full bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
-                   <div className="h-full bg-gradient-to-r from-primary to-orange-500 w-[45%] rounded-full shadow-[0_0_12px_rgba(236,19,19,0.6)]"></div>
-                </div>
-                <p className="text-[11px] text-gray-500 mt-2 flex items-center gap-1 font-medium">
-                   Cần thêm <span className="text-white font-bold">1,500</span> điểm để thăng hạng
-                </p>
-             </div>
-
-             {/* Bottom Row: ID & QR */}
-             <div className="flex justify-between items-end pt-5 border-t border-white/10">
-                <div className="flex flex-col gap-1">
-                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Mã thành viên</p>
-                   <p className="text-[13px] font-mono text-gray-200 tracking-wider font-bold">070XFJBR6LTDK</p>
-                </div>
-                <button 
-                  onClick={() => onNavigate(ScreenName.POINTS_POLICY)}
-                  className="flex items-center gap-2 text-[11px] font-bold text-white bg-white/10 hover:bg-white/20 px-4 py-2.5 rounded-[14px] transition-all active:scale-95 border border-white/5"
-                >
-                   Xem QR <i className="ph-bold ph-qr-code text-lg"></i>
-                </button>
-             </div>
+      {/* 2. Transparent Header - HIG Update: Increased top padding */}
+      <div className="fixed top-0 w-full z-20 pt-[calc(env(safe-area-inset-top)+20px)] px-5 flex justify-between items-center text-white">
+          <div className="flex flex-col">
+              <span className="text-[13px] font-medium opacity-80 tracking-wide">Good Afternoon,</span>
+              <span className="text-[20px] font-bold tracking-tight leading-none">Minh Hoàng</span>
+          </div>
+          <div className="flex gap-3">
+              <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform">
+                  <i className="ph-bold ph-scan text-xl"></i>
+              </button>
+              <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform relative">
+                  <i className="ph-bold ph-bell text-xl"></i>
+                  <span className="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border border-black/50"></span>
+              </button>
           </div>
       </div>
 
-      <main className="max-w-md mx-auto pt-6 pb-6">
-        
-        {/* Warranty Tracking Widget - Card Radius 20px */}
-        {activeWarranty.hasActive && (
+      {/* 3. The "G-Core" 3D Flip Card Container */}
+      <div className="relative z-10 w-full h-[400px] flex flex-col items-center justify-center perspective-1000 mt-14">
+          
+          {/* Card Element */}
           <div 
-            onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-            className="mx-5 mb-6 bg-white rounded-[20px] p-5 shadow-soft relative overflow-hidden cursor-pointer active:scale-[0.98] transition-all group border border-transparent hover:border-orange-100"
+            className={`w-[340px] h-[200px] relative transform-style-3d transition-transform duration-700 ease-in-out shadow-[0_20px_50px_-12px_rgba(227,0,25,0.3)] ${isFlipped ? 'rotate-y-180' : ''}`}
           >
-             {/* Background decoration */}
-             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
-
-             {/* Header */}
-             <div className="flex justify-between items-center mb-4">
-                <div className="flex items-center gap-2.5">
-                   <div className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
-                   </div>
-                   <span className="text-[12px] font-bold text-orange-600 uppercase tracking-wide">Bảo hành đang xử lý</span>
-                </div>
-                <span className="text-[11px] font-bold text-gray-400 flex items-center gap-1.5 bg-gray-50 px-2.5 py-1 rounded-full">
-                   <i className="ph-bold ph-clock"></i> {activeWarranty.lastUpdate}
-                </span>
-             </div>
-
-             {/* Main Content */}
-             <div className="flex gap-4">
-                {/* Image */}
-                <div className="size-[72px] rounded-[14px] bg-[#F9FAFB] p-2 flex items-center justify-center shrink-0 border border-gray-100">
-                   <img src={activeWarranty.image} className="w-full h-full object-contain mix-blend-multiply" alt="Product" />
-                </div>
-                
-                {/* Info */}
-                <div className="flex-1 min-w-0 flex flex-col justify-center">
-                   <h3 className="font-bold text-text-primary text-[15px] leading-snug line-clamp-1 mb-2.5">{activeWarranty.productName}</h3>
-                   
-                   {/* Progress with Status Text */}
-                   <div className="space-y-2">
-                      <div className="flex justify-between items-end">
-                         <span className="text-[11px] font-semibold text-text-secondary">Tiến độ</span>
-                         <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wide">{activeWarranty.status}</span>
+              {/* FRONT FACE: Identity */}
+              <div className="absolute inset-0 w-full h-full backface-hidden rounded-[24px] bg-gradient-to-br from-[#E30019] to-[#8a000f] p-6 text-white overflow-hidden border border-white/10">
+                  {/* Texture & Branding */}
+                  <div className="absolute -right-4 -bottom-12 text-[100px] font-black opacity-10 leading-none tracking-tighter select-none">GEAR<br/>UP</div>
+                  <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between">
+                      <div className="flex justify-between items-start">
+                          <img src="https://gearvn.com/wp-content/uploads/2019/06/Logo-Gearvn-White.png" className="h-6 object-contain" alt="Gearvn" /> {/* Text Logo simulation */}
+                          <div className="bg-white/20 backdrop-blur-md px-2 py-1 rounded-[6px] border border-white/10">
+                             <i className="ph-bold ph-qr-code text-lg"></i>
+                          </div>
                       </div>
-                      <div className="h-2 w-full bg-orange-50 rounded-full overflow-hidden">
-                         <div 
-                            className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full relative"
-                            style={{ width: `${activeWarranty.progress}%` }}
-                         >
-                            <div className="absolute top-0 right-0 bottom-0 w-full bg-gradient-to-l from-white/20 to-transparent"></div>
-                         </div>
+                      
+                      <div>
+                          <div className="flex items-end gap-2 mb-1">
+                             <h2 className="text-[28px] font-extrabold leading-none tracking-tight">GOLD</h2>
+                             <span className="text-[12px] font-bold opacity-80 mb-1">MEMBER</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-yellow-300 mb-3">
+                              <i className="ph-fill ph-lightning text-lg"></i>
+                              <span className="text-[16px] font-bold font-mono">1,250 PTS</span>
+                          </div>
+                          
+                          {/* Slim Progress */}
+                          <div className="h-1 w-full bg-black/20 rounded-full overflow-hidden">
+                              <div className="h-full w-[60%] bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.8)]"></div>
+                          </div>
                       </div>
-                   </div>
-                </div>
-                
-                {/* Arrow */}
-                <div className="flex items-center justify-center pl-1">
-                    <div className="size-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors">
-                        <i className="ph-bold ph-caret-right text-lg"></i>
+                  </div>
+              </div>
+
+              {/* BACK FACE: Mainboard Benefits */}
+              <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-[24px] bg-gradient-to-br from-gray-300 to-gray-400 p-1 overflow-hidden border border-gray-400 shadow-inner">
+                  {/* Metal Texture */}
+                  <div className="w-full h-full bg-[#E5E7EB] rounded-[20px] relative overflow-hidden p-4 flex flex-col">
+                      {/* Circuit Lines Decoration */}
+                      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+                          backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
+                          backgroundSize: '10px 10px'
+                      }}></div>
+                      
+                      <div className="relative z-10 flex justify-between items-center mb-3">
+                          <h3 className="font-bold text-gray-800 text-[14px] uppercase tracking-wider flex items-center gap-1">
+                              <i className="ph-bold ph-cpu text-primary"></i> CORE BENEFITS
+                          </h3>
+                          <span className="text-[9px] font-mono text-gray-500">v1.1.3 // ONLINE</span>
+                      </div>
+
+                      {/* Chip Grid */}
+                      <div className="grid grid-cols-2 gap-2 flex-1">
+                          {/* Active Chip */}
+                          <div className="bg-white/80 border border-white rounded-[12px] p-2 flex flex-col items-center justify-center shadow-sm relative overflow-hidden group">
+                              <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_rgba(34,197,94,0.8)]"></div>
+                              <i className="ph-fill ph-truck text-2xl text-gray-800 mb-1 group-active:scale-90 transition-transform"></i>
+                              <span className="text-[10px] font-bold text-gray-700">FreeShip</span>
+                          </div>
+                          
+                          {/* Active Chip */}
+                          <div className="bg-white/80 border border-white rounded-[12px] p-2 flex flex-col items-center justify-center shadow-sm relative overflow-hidden group">
+                               <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_rgba(34,197,94,0.8)]"></div>
+                              <i className="ph-fill ph-percent text-2xl text-gray-800 mb-1 group-active:scale-90 transition-transform"></i>
+                              <span className="text-[10px] font-bold text-gray-700">-5% Gear</span>
+                          </div>
+
+                          {/* Active Chip */}
+                          <div className="bg-white/80 border border-white rounded-[12px] p-2 flex flex-col items-center justify-center shadow-sm relative overflow-hidden group">
+                               <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_rgba(34,197,94,0.8)]"></div>
+                              <i className="ph-fill ph-wrench text-2xl text-gray-800 mb-1 group-active:scale-90 transition-transform"></i>
+                              <span className="text-[10px] font-bold text-gray-700">Vệ sinh PC</span>
+                          </div>
+
+                          {/* Inactive Chip */}
+                          <div className="bg-gray-200/50 border border-gray-200 rounded-[12px] p-2 flex flex-col items-center justify-center opacity-60 grayscale">
+                              <i className="ph-fill ph-cake text-2xl text-gray-500 mb-1"></i>
+                              <span className="text-[10px] font-bold text-gray-500">Sinh nhật</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          {/* Flip Trigger Button - Connected to card */}
+          <button 
+             onClick={() => setIsFlipped(!isFlipped)}
+             className="mt-6 flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/80 text-[12px] font-semibold hover:bg-white/10 transition-colors active:scale-95"
+          >
+              <i className="ph-bold ph-arrows-left-right"></i>
+              {isFlipped ? 'Xem mặt trước' : 'Quyền lợi của tôi'}
+          </button>
+
+           {/* Floating Action Pill */}
+          <div className="absolute -bottom-6 z-30 animate-float">
+             <button 
+                onClick={() => onNavigate(ScreenName.CREATE_WARRANTY)}
+                className="bg-white/90 backdrop-blur-xl text-primary font-bold text-[14px] px-8 py-3.5 rounded-full shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5)] border border-white hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+             >
+                 <i className="ph-bold ph-wrench text-lg"></i>
+                 GỬI BẢO HÀNH
+             </button>
+          </div>
+      </div>
+
+      {/* 4. Sliding Bottom Sheet (The Content Layer) - HIG Update: Increased pb to 40 for bottom nav space */}
+      <div className="relative z-20 mt-12 bg-background-light min-h-screen rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-40">
+          {/* Sheet Handle */}
+          <div className="w-full flex justify-center pt-3 pb-1">
+              <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+          </div>
+
+          <div className="px-5 pt-4">
+              <div className="flex justify-between items-center mb-5">
+                 <h2 className="text-[18px] font-semibold text-text-primary">Dịch vụ nổi bật</h2>
+                 <button onClick={() => onNavigate(ScreenName.ORDER_SEARCH)} className="text-primary text-[13px] font-bold">Tra cứu đơn</button>
+              </div>
+
+              {/* Quick Services Grid */}
+              <div className="grid grid-cols-4 gap-3 mb-8">
+                  <button onClick={() => onNavigate(ScreenName.HOT_DEALS)} className="flex flex-col items-center gap-2 group">
+                      <div className="size-14 rounded-[20px] bg-white shadow-soft flex items-center justify-center text-orange-500 group-active:scale-95 transition-transform border border-transparent group-hover:border-orange-100">
+                          <i className="ph-fill ph-fire text-2xl"></i>
+                      </div>
+                      <span className="text-[11px] font-bold text-text-secondary text-center">Hot Deals</span>
+                  </button>
+                   <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2 group">
+                      <div className="size-14 rounded-[20px] bg-white shadow-soft flex items-center justify-center text-blue-500 group-active:scale-95 transition-transform border border-transparent group-hover:border-blue-100">
+                          <i className="ph-fill ph-package text-2xl"></i>
+                      </div>
+                      <span className="text-[11px] font-bold text-text-secondary text-center">Đơn hàng</span>
+                  </button>
+                   <button onClick={() => onNavigate(ScreenName.SUPPORT)} className="flex flex-col items-center gap-2 group">
+                      <div className="size-14 rounded-[20px] bg-white shadow-soft flex items-center justify-center text-green-500 group-active:scale-95 transition-transform border border-transparent group-hover:border-green-100">
+                          <i className="ph-fill ph-chat-circle text-2xl"></i>
+                      </div>
+                      <span className="text-[11px] font-bold text-text-secondary text-center">Hỗ trợ</span>
+                  </button>
+                   <button onClick={() => onNavigate(ScreenName.WARRANTY)} className="flex flex-col items-center gap-2 group">
+                      <div className="size-14 rounded-[20px] bg-white shadow-soft flex items-center justify-center text-red-500 group-active:scale-95 transition-transform border border-transparent group-hover:border-red-100">
+                          <i className="ph-fill ph-shield-check text-2xl"></i>
+                      </div>
+                      <span className="text-[11px] font-bold text-text-secondary text-center">Bảo hành</span>
+                  </button>
+              </div>
+
+              {/* Warranty Status Widget (Mini) */}
+              {activeWarranty.hasActive && (
+                  <div onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)} className="mb-8 bg-white p-4 rounded-[20px] shadow-soft border border-orange-100/50 flex items-center gap-4 active:scale-[0.98] transition-transform">
+                      <div className="size-12 rounded-[12px] bg-orange-50 flex items-center justify-center text-orange-500 relative shrink-0">
+                          <div className="absolute top-0 right-0 size-2.5 bg-red-500 rounded-full border-2 border-white animate-pulse"></div>
+                          <i className="ph-bold ph-wrench text-xl"></i>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                          <p className="text-[11px] font-bold text-orange-600 uppercase tracking-wide mb-0.5">Đang xử lý</p>
+                          <p className="text-[14px] font-semibold text-text-primary line-clamp-1">{activeWarranty.productName}</p>
+                          <p className="text-[12px] text-text-secondary mt-0.5">Cập nhật: {activeWarranty.lastUpdate}</p>
+                      </div>
+                      <i className="ph-bold ph-caret-right text-gray-300"></i>
+                  </div>
+              )}
+
+              {/* Trending Section */}
+              <div className="mb-4">
+                 <h2 className="text-[18px] font-semibold text-text-primary mb-4 flex items-center gap-2">
+                    Xu hướng
+                    <span className="bg-red-100 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-[4px]">HOT</span>
+                 </h2>
+                 <div className="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x snap-mandatory">
+                    {hotDeals.map((deal) => (
+                      <div key={deal.id} className="min-w-[160px] bg-white rounded-[18px] p-3 shadow-soft snap-start border border-gray-100">
+                          <div className="h-32 bg-[#F9FAFB] rounded-[14px] mb-3 flex items-center justify-center p-2 relative">
+                              <img src={deal.image} className="max-w-full max-h-full object-contain mix-blend-multiply" />
+                              <div className="absolute top-2 left-2 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-[4px]">{deal.discount}</div>
+                          </div>
+                          <h4 className="text-[13px] font-bold text-text-primary line-clamp-2 h-[36px] leading-snug">{deal.name}</h4>
+                          <div className="mt-2">
+                              <p className="text-primary font-bold text-[15px]">{deal.price}</p>
+                          </div>
+                      </div>
+                    ))}
+                 </div>
+              </div>
+              
+              {/* Banner Promo */}
+                <div className="w-full h-32 rounded-[24px] bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden flex items-center justify-between p-6 relative shadow-lg shadow-gray-500/10 active:scale-[0.98] transition-transform">
+                    <div className="relative z-10 text-white">
+                    <h3 className="text-[18px] font-black leading-tight">BUILD PC<br/>NHẬN QUÀ</h3>
+                    <p className="text-[10px] font-bold opacity-70 mt-2 uppercase tracking-widest border border-white/20 inline-block px-2.5 py-1 rounded-lg">Xem chi tiết</p>
+                    </div>
+                    <div className="relative z-10">
+                    <i className="ph-fill ph-desktop-tower text-white text-6xl opacity-20 rotate-12"></i>
                     </div>
                 </div>
-             </div>
-          </div>
-        )}
 
-        {/* Quick Actions - Grid 2 - Touch target optimized */}
-        <div className="px-5 py-2 grid grid-cols-2 gap-4">
-          <div 
-            onClick={() => onNavigate(ScreenName.CREATE_WARRANTY)}
-            className="bg-white p-4 rounded-[20px] flex flex-col gap-3 shadow-soft active:scale-95 transition-all cursor-pointer border border-transparent hover:border-gray-100"
-          >
-            <div className="size-11 rounded-[14px] bg-red-50 flex items-center justify-center">
-              <i className="ph-bold ph-wrench text-primary text-2xl"></i>
-            </div>
-            <div>
-              <h3 className="font-bold text-[15px] text-text-primary">Gửi Bảo Hành</h3>
-              <p className="text-[12px] text-text-secondary mt-0.5 font-medium">Hỗ trợ nhanh 24/7</p>
-            </div>
           </div>
+      </div>
 
-          <div 
-            onClick={() => onNavigate(ScreenName.ORDER_SEARCH)}
-            className="bg-white p-4 rounded-[20px] flex flex-col gap-3 shadow-soft active:scale-95 transition-all cursor-pointer border border-transparent hover:border-gray-100"
-          >
-            <div className="size-11 rounded-[14px] bg-blue-50 flex items-center justify-center">
-              <i className="ph-bold ph-package text-blue-600 text-2xl"></i>
-            </div>
-            <div>
-              <h3 className="font-bold text-[15px] text-text-primary">Tra Cứu Đơn</h3>
-              <p className="text-[12px] text-text-secondary mt-0.5 font-medium">Theo dõi vận chuyển</p>
-            </div>
-          </div>
-
-          <div 
-            onClick={() => onNavigate(ScreenName.HOT_DEALS)}
-            className="bg-white p-4 rounded-[20px] flex flex-col gap-3 shadow-soft active:scale-95 transition-all cursor-pointer border border-transparent hover:border-gray-100"
-          >
-            <div className="size-11 rounded-[14px] bg-orange-50 flex items-center justify-center">
-              <i className="ph-bold ph-fire text-orange-500 text-2xl"></i>
-            </div>
-            <div>
-              <h3 className="font-bold text-[15px] text-text-primary">Khuyến Mãi</h3>
-              <p className="text-[12px] text-text-secondary mt-0.5 font-medium">Săn deal hot</p>
-            </div>
-          </div>
-
-          <div 
-             onClick={() => onNavigate(ScreenName.SUPPORT)}
-             className="bg-white p-4 rounded-[20px] flex flex-col gap-3 shadow-soft active:scale-95 transition-all cursor-pointer border border-transparent hover:border-gray-100"
-          >
-            <div className="size-11 rounded-[14px] bg-green-50 flex items-center justify-center">
-              <i className="ph-bold ph-storefront text-green-600 text-2xl"></i>
-            </div>
-            <div>
-              <h3 className="font-bold text-[15px] text-text-primary">Cửa Hàng</h3>
-              <p className="text-[12px] text-text-secondary mt-0.5 font-medium">Tìm chi nhánh gần nhất</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Hot Deals - Section Header Typography */}
-        <div className="py-6">
-          <div className="px-5 flex justify-between items-center mb-5">
-            <h2 className="text-[20px] font-extrabold flex items-center gap-2 text-text-primary tracking-tight">
-              Hot Deals 
-              <i className="ph-bold ph-fire text-primary animate-pulse text-2xl"></i>
-            </h2>
-            <button 
-              onClick={() => onNavigate(ScreenName.HOT_DEALS)}
-              className="text-primary text-[13px] font-bold flex items-center hover:underline gap-1 py-1"
-            >
-              Xem tất cả
-              <i className="ph-bold ph-caret-right text-sm"></i>
-            </button>
-          </div>
-          
-          <div className="flex overflow-x-auto gap-4 px-5 pb-4 hide-scrollbar snap-x snap-mandatory flex-nowrap">
-            {hotDeals.map((deal) => (
-              <div key={deal.id} className="min-w-[170px] w-[170px] bg-white rounded-[18px] overflow-hidden border border-transparent shadow-soft flex-shrink-0 snap-start active:scale-[0.98] transition-transform">
-                <div className="relative h-44 w-full bg-[#F9FAFB] flex items-center justify-center p-5">
-                  <img src={deal.image} alt={deal.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
-                  <div className="absolute top-2.5 left-2.5 bg-primary text-white text-[11px] font-black px-2 py-0.5 rounded-[6px] shadow-sm">{deal.discount}</div>
-                </div>
-                <div className="p-3.5">
-                  <h4 className="text-[13px] font-bold line-clamp-2 min-h-[36px] text-text-primary leading-snug">{deal.name}</h4>
-                  <div className="mt-2.5">
-                    <p className="text-primary font-bold text-[15px]">{deal.price}</p>
-                    <p className="text-[11px] text-text-secondary line-through font-medium">{deal.oldPrice}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Banner Promo */}
-        <div className="px-5 py-2 mb-8">
-          <div className="w-full h-36 rounded-[24px] bg-gradient-to-r from-primary to-orange-600 overflow-hidden flex items-center justify-between p-6 relative shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
-            <div className="relative z-10 text-white">
-              <h3 className="text-[20px] font-black leading-tight">THÁNG VÀNG<br/>BẢO TRÌ PC</h3>
-              <p className="text-[10px] font-bold opacity-90 mt-2 uppercase tracking-widest bg-white/20 inline-block px-2.5 py-1 rounded-lg backdrop-blur-sm">Ưu đãi giảm 50% vệ sinh PC</p>
-            </div>
-            <div className="relative z-10">
-              <i className="ph-bold ph-gear text-white text-7xl opacity-40 rotate-12"></i>
-            </div>
-            <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-xl"></div>
-            <div className="absolute top-0 left-10 size-16 bg-white/10 rounded-full blur-xl"></div>
-          </div>
-        </div>
-      </main>
     </div>
   );
 };
