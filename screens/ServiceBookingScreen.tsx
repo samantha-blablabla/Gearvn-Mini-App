@@ -230,8 +230,8 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
     if (step < 3) {
       setStep(step + 1);
     } else {
-      // Simulate submission
-      onNavigate(ScreenName.SERVICE_APPOINTMENTS);
+      // Simulate submission and go to Success Screen
+      onNavigate(ScreenName.SERVICE_BOOKING_SUCCESS);
     }
   };
 

@@ -5,6 +5,7 @@ import RewardsScreen from './screens/RewardsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import CreateWarrantyScreen from './screens/CreateWarrantyScreen';
 import ServiceBookingScreen from './screens/ServiceBookingScreen';
+import ServiceBookingSuccessScreen from './screens/ServiceBookingSuccessScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import SupportScreen from './screens/SupportScreen';
 import WarrantyDetailScreen from './screens/WarrantyDetailScreen';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
   // Screens where BottomNav should be hidden to allow full-screen immersive flows or bottom actions
   const screensWithoutNav = [
     ScreenName.SERVICE_BOOKING,
+    ScreenName.SERVICE_BOOKING_SUCCESS, // Success screen shouldn't have nav
     ScreenName.CREATE_WARRANTY,
     // Add other screens if needed (e.g. Order Detail if it has sticky footer)
   ];
@@ -66,6 +68,9 @@ const App: React.FC = () => {
         break;
       case ScreenName.SERVICE_BOOKING:
         navigateTo(ScreenName.HOME);
+        break;
+      case ScreenName.SERVICE_BOOKING_SUCCESS:
+        navigateTo(ScreenName.HOME); // Back from success goes home
         break;
       case ScreenName.HISTORY:
         navigateTo(ScreenName.PROFILE);
@@ -147,6 +152,7 @@ const App: React.FC = () => {
       
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SERVICE_BOOKING && <ServiceBookingScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
+      {currentScreen === ScreenName.SERVICE_BOOKING_SUCCESS && <ServiceBookingSuccessScreen onNavigate={navigateTo} />}
       
       {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.ORDER_SEARCH && <OrderLookupScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}

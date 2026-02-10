@@ -23,6 +23,7 @@ export enum ScreenName {
   ORDER_SEARCH = 'ORDER_SEARCH',
   ORDER_DETAIL = 'ORDER_DETAIL',
   SERVICE_BOOKING = 'SERVICE_BOOKING', // New Booking Hub
+  SERVICE_BOOKING_SUCCESS = 'SERVICE_BOOKING_SUCCESS', // New Success Screen
 }
 
 export interface Product {
