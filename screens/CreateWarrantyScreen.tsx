@@ -29,7 +29,8 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
   };
 
   return (
-    <div className="min-h-screen bg-background-light pb-32">
+    // Increased pb to accommodate both bottom nav and sticky action buttons
+    <div className="min-h-screen bg-background-light pb-48">
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 ios-blur p-4 border-b border-gray-100 justify-between h-14">
         <button onClick={handleBack} className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
@@ -326,8 +327,8 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
         </div>
       )}
 
-      {/* Footer Actions - Fixed positioning updated for Container Strategy */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 pb-[calc(env(safe-area-inset-bottom)+16px)] z-50 flex gap-3">
+      {/* Footer Actions - Stacked above BottomNav */}
+      <div className="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
          {step > 1 && (
              <button 
                 onClick={handleBack}

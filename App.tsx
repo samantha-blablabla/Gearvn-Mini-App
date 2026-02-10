@@ -19,6 +19,7 @@ import MyRewardsScreen from './screens/MyRewardsScreen';
 import RewardDetailScreen from './screens/RewardDetailScreen';
 import AllRewardsScreen from './screens/AllRewardsScreen';
 import OrderLookupScreen from './screens/OrderLookupScreen';
+import OrderDetailScreen from './screens/OrderDetailScreen';
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -100,17 +101,13 @@ const App: React.FC = () => {
       case ScreenName.ALL_REWARDS:
         navigateTo(ScreenName.REWARDS);
         break;
+      case ScreenName.ORDER_DETAIL:
+        navigateTo(ScreenName.HISTORY);
+        break;
       default:
         navigateTo(ScreenName.HOME);
     }
   };
-
-  const showBottomNav = [
-    ScreenName.HOME,
-    ScreenName.WARRANTY,
-    ScreenName.SUPPORT,
-    ScreenName.PROFILE,
-  ].includes(currentScreen);
 
   return (
     // Mobile Container Strategy:
@@ -125,7 +122,7 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.REWARDS && <RewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.PROFILE && <ProfileScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
-      {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
+      {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.ORDER_SEARCH && <OrderLookupScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SHIPPING_ADDRESS && <ShippingAddressScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.SETTINGS && <SettingsScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
@@ -133,9 +130,10 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.SERVICE_APPOINTMENTS && <ServiceAppointmentsScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.PRIVACY_POLICY && <PrivacyPolicyScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
-      {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       
-      {/* Updated to use goBack for smart navigation */}
+      {/* Support Screen now uses onBack for navigation */}
+      {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={goBack} />}
+      
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={goBack} />}
       
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
@@ -144,10 +142,10 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.MY_REWARDS && <MyRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.REWARD_DETAIL && <RewardDetailScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.ALL_REWARDS && <AllRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
+      {currentScreen === ScreenName.ORDER_DETAIL && <OrderDetailScreen onNavigate={navigateTo} onBack={goBack} />}
 
-      {showBottomNav && (
-        <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />
-      )}
+      {/* BottomNav is now always visible */}
+      <BottomNav currentScreen={currentScreen} onNavigate={navigateTo} />
     </div>
   );
 };

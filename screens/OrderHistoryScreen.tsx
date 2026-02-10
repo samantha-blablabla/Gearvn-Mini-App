@@ -3,11 +3,12 @@ import { ScreenName } from '../types';
 
 interface OrderHistoryScreenProps {
   onBack: () => void;
+  onNavigate?: (screen: ScreenName) => void;
 }
 
 type OrderStatus = 'ALL' | 'PROCESSING' | 'SHIPPING' | 'COMPLETED' | 'CANCELLED';
 
-const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
+const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack, onNavigate }) => {
   const [filter, setFilter] = useState<OrderStatus>('ALL');
 
   // Mock Data
@@ -163,7 +164,9 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack }) => {
                          <p className="text-gray-400 text-[12px] mt-1 font-medium">Lý do: {item.reason}</p>
                       )}
                     </div>
-                    <button className={`text-[13px] font-bold border px-4 h-9 rounded-[10px] transition-all ${
+                    <button 
+                       onClick={() => onNavigate && onNavigate(ScreenName.ORDER_DETAIL)}
+                       className={`text-[13px] font-bold border px-4 h-9 rounded-[10px] transition-all active:scale-95 ${
                        item.status === 'CANCELLED' 
                        ? 'text-text-secondary border-gray-200 hover:bg-gray-50' 
                        : (item.status === 'PROCESSING' || item.status === 'SHIPPING' || item.status === 'COMPLETED') 

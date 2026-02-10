@@ -7,7 +7,8 @@ interface WarrantyDetailScreenProps {
 
 const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) => {
   return (
-    <div className="min-h-screen bg-background-light pb-24">
+    // Increased pb to accommodate the taller solid drawer
+    <div className="min-h-screen bg-background-light pb-64">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
@@ -106,15 +107,36 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
         </div>
       </main>
 
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 flex gap-3 z-50">
-          <button className="flex-1 bg-white border border-gray-200 text-gray-700 font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors active:scale-95">
-              <i className="ph-bold ph-chat-circle"></i>
-              Chat hỗ trợ
-          </button>
-          <button className="flex-1 bg-primary text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
-              <i className="ph-bold ph-phone"></i>
-              Gọi hotline
-          </button>
+      {/* Floating Action Buttons - Solid Drawer Implementation */}
+      {/* z-30 to sit BEHIND BottomNav (z-40) but capture clicks in padded area */}
+      {/* pb-[calc(88px+env...)] accounts for BottomNav height (64px) + padding (24px) */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-50 p-4 pb-[calc(88px+env(safe-area-inset-bottom))] z-30 shadow-[0_-4px_20px_-2px_rgba(0,0,0,0.05)] rounded-t-[24px]">
+          {/* Human Touch / Status Indicator */}
+          <div className="flex items-center justify-center gap-2 mb-3.5">
+             <div className="flex -space-x-2">
+                <div className="size-6 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                   <img src="https://i.pravatar.cc/100?img=33" alt="Support" className="w-full h-full object-cover" />
+                </div>
+                <div className="size-6 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
+                   <img src="https://i.pravatar.cc/100?img=47" alt="Support" className="w-full h-full object-cover" />
+                </div>
+                <div className="size-6 rounded-full border-2 border-white bg-green-100 flex items-center justify-center">
+                   <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+             </div>
+             <p className="text-[12px] font-medium text-gray-500">Kỹ thuật viên đang trực tuyến</p>
+          </div>
+
+          <div className="flex gap-3">
+            <button className="flex-1 bg-gray-100 text-gray-800 font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors active:scale-95">
+                <i className="ph-fill ph-chat-circle-text text-xl text-gray-600"></i>
+                Chat hỗ trợ
+            </button>
+            <button className="flex-1 bg-primary text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 active:scale-95">
+                <i className="ph-fill ph-phone-call text-xl"></i>
+                Gọi hotline
+            </button>
+          </div>
       </div>
     </div>
   );

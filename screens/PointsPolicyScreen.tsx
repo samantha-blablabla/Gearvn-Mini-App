@@ -9,9 +9,10 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState<'QR' | 'BENEFITS'>('QR');
 
   return (
-    <div className="min-h-screen bg-background-light pb-24">
-      {/* Background Decor */}
-      <div className="fixed top-0 left-0 w-full h-[500px] bg-gradient-to-b from-gray-900 to-background-light z-0"></div>
+    <div className="min-h-screen bg-background-light pb-24 relative overflow-hidden">
+      {/* Background Decor - Changed from fixed to absolute to contain within mobile frame */}
+      {/* Reduced height to 380px so the gradient ends before the ticket cutouts, ensuring they blend with the solid background */}
+      <div className="absolute top-0 left-0 w-full h-[380px] bg-gradient-to-b from-gray-900 to-background-light z-0"></div>
 
       {/* Header */}
       <div className="relative z-10 pt-[calc(env(safe-area-inset-top)+16px)] px-5 mb-6">
@@ -90,15 +91,15 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                <div className="bg-white rounded-[24px] overflow-hidden shadow-soft relative">
                    {/* Top Part: QR */}
                    <div className="p-8 pb-10 flex flex-col items-center justify-center bg-white">
-                        <div className="border-[3px] border-gray-900 rounded-[20px] p-2 mb-6">
+                        <div className="p-2 mb-6 max-w-full">
                              <img 
                                 src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=070XFJBR6LTDK" 
                                 alt="Member QR" 
-                                className="w-52 h-52 mix-blend-multiply"
+                                className="w-52 h-52 max-w-full mix-blend-multiply opacity-90"
                             />
                         </div>
                         <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1.5">Mã thành viên</p>
-                        <h3 className="text-2xl font-mono font-black text-gray-900 tracking-wider">070XFJBR6LTDK</h3>
+                        <h3 className="text-xl sm:text-2xl font-mono font-black text-gray-900 tracking-wider">070XFJBR6LTDK</h3>
                    </div>
 
                    {/* Ticket Cutout Effect */}

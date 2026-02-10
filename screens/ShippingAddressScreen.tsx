@@ -7,7 +7,8 @@ interface ShippingAddressScreenProps {
 
 const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack }) => {
   return (
-    <div className="min-h-screen bg-background-light pb-24">
+    // Increased pb to accommodate both bottom nav and sticky action buttons
+    <div className="min-h-screen bg-background-light pb-48">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
@@ -78,7 +79,8 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
         </div>
       </main>
       
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-50">
+      {/* Footer Action - Stacked above BottomNav */}
+      <div className="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
           <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
               <i className="ph-bold ph-plus text-lg"></i>
               Thêm địa chỉ mới
