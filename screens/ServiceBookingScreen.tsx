@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ScreenName } from '../types';
 
 interface ServiceBookingScreenProps {
@@ -8,11 +8,223 @@ interface ServiceBookingScreenProps {
 
 type ServiceType = 'WARRANTY' | 'CLEANING' | 'UPGRADE' | 'SOFTWARE' | null;
 
+// --- REUSABLE COMPONENTS ---
+
+interface CustomSelectProps {
+  options: string[];
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  icon?: string;
+}
+
+const CustomSelect: React.FC<CustomSelectProps> = ({ options, value, onChange, placeholder, icon }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div className={`relative ${isOpen ? 'z-50' : 'z-10'}`} ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full h-[50px] bg-[#F2F2F7] rounded-[12px] px-4 flex items-center justify-between transition-all duration-200 outline-none active:scale-[0.99] ${isOpen ? 'bg-white ring-2 ring-primary/20' : 'hover:bg-[#E5E5EA]'}`}
+      >
+        <div className="flex items-center gap-2 truncate pr-2">
+           {icon && <i className={`ph-bold ${icon} text-gray-500`}></i>}
+           <span className={`text-[15px] font-semibold truncate ${value ? 'text-text-primary' : 'text-gray-400'}`}>
+             {value || placeholder}
+           </span>
+        </div>
+        <i className={`ph-bold ph-caret-down text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`}></i>
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full mt-2 bg-white/95 backdrop-blur-xl rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top p-1.5">
+          <div className="max-h-[250px] overflow-y-auto hide-scrollbar">
+            {options.map((option, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  onChange(option);
+                  setIsOpen(false);
+                }}
+                className={`px-3 py-2.5 text-[14px] font-medium cursor-pointer flex items-center justify-between rounded-[10px] transition-all mb-0.5 last:mb-0 ${
+                  value === option 
+                    ? 'bg-white shadow-sm text-primary font-bold border border-gray-100' 
+                    : 'text-text-primary hover:bg-gray-100'
+                }`}
+              >
+                <span className="truncate">{option}</span>
+                {value === option && <i className="ph-bold ph-check text-primary"></i>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Custom Rounded Date Picker Component
+interface CustomDatePickerProps {
+    value: string;
+    onChange: (date: string) => void;
+}
+
+const CustomDatePicker: React.FC<CustomDatePickerProps> = ({ value, onChange }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    // Initialize view date based on value or today
+    const [viewDate, setViewDate] = useState(value ? new Date(value) : new Date());
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+    const firstDayOfMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1).getDay(); // 0 is Sunday
+
+    const handleDateClick = (day: number) => {
+        // Create date string manually to avoid timezone issues
+        const year = viewDate.getFullYear();
+        const month = String(viewDate.getMonth() + 1).padStart(2, '0');
+        const dayStr = String(day).padStart(2, '0');
+        const dateString = `${year}-${month}-${dayStr}`;
+        
+        onChange(dateString);
+        setIsOpen(false);
+    };
+
+    const changeMonth = (offset: number) => {
+        const newDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + offset, 1);
+        setViewDate(newDate);
+    };
+
+    const formatDateDisplay = (dateStr: string) => {
+        if (!dateStr) return 'Chọn ngày';
+        const [year, month, day] = dateStr.split('-');
+        return `${day}/${month}/${year}`;
+    };
+
+    return (
+        <div className={`relative ${isOpen ? 'z-50' : 'z-10'}`} ref={containerRef}>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={`w-full h-[50px] bg-[#F2F2F7] rounded-[12px] px-4 flex items-center justify-between transition-all duration-200 outline-none active:scale-[0.99] ${isOpen ? 'bg-white ring-2 ring-primary/20' : 'hover:bg-[#E5E5EA]'}`}
+            >
+                <div className="flex items-center gap-2 truncate pr-2">
+                    <i className="ph-bold ph-calendar-blank text-gray-500"></i>
+                    <span className="text-[15px] font-semibold text-text-primary">
+                        {formatDateDisplay(value)}
+                    </span>
+                </div>
+            </button>
+
+            {isOpen && (
+                <div className="absolute top-full left-0 mt-2 p-4 bg-white rounded-[24px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 min-w-[300px] animate-in fade-in zoom-in-95 duration-200 z-50">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-4">
+                        <button onClick={() => changeMonth(-1)} className="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors active:scale-90">
+                            <i className="ph-bold ph-caret-left"></i>
+                        </button>
+                        <span className="text-[15px] font-bold text-gray-900 capitalize">
+                            Tháng {viewDate.getMonth() + 1}, {viewDate.getFullYear()}
+                        </span>
+                        <button onClick={() => changeMonth(1)} className="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors active:scale-90">
+                            <i className="ph-bold ph-caret-right"></i>
+                        </button>
+                    </div>
+
+                    {/* Days Header */}
+                    <div className="grid grid-cols-7 mb-2 text-center">
+                        {['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'].map((day, i) => (
+                            <span key={i} className={`text-[12px] font-bold w-8 ${i === 0 || i === 6 ? 'text-red-400' : 'text-gray-400'}`}>{day}</span>
+                        ))}
+                    </div>
+
+                    {/* Calendar Grid */}
+                    <div className="grid grid-cols-7 gap-y-1 gap-x-1 justify-items-center">
+                        {Array.from({ length: firstDayOfMonth }).map((_, i) => (
+                            <div key={`empty-${i}`} className="w-9 h-9"></div>
+                        ))}
+                        {Array.from({ length: daysInMonth }).map((_, i) => {
+                            const day = i + 1;
+                            const currentCheckStr = `${viewDate.getFullYear()}-${String(viewDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                            const isSelected = value === currentCheckStr;
+                            const isToday = new Date().toISOString().split('T')[0] === currentCheckStr;
+
+                            return (
+                                <button
+                                    key={day}
+                                    onClick={() => handleDateClick(day)}
+                                    className={`w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-semibold transition-all active:scale-90 ${
+                                        isSelected 
+                                            ? 'bg-primary text-white shadow-md shadow-primary/30' 
+                                            : isToday 
+                                                ? 'bg-primary/10 text-primary font-bold' 
+                                                : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                >
+                                    {day}
+                                </button>
+                            );
+                        })}
+                    </div>
+                    
+                    <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between">
+                         <button 
+                            onClick={() => {onChange(''); setIsOpen(false)}}
+                            className="text-[12px] font-bold text-gray-400 hover:text-gray-600 px-2 py-1"
+                         >
+                            Xóa
+                         </button>
+                         <button 
+                            onClick={() => {
+                                const today = new Date();
+                                const todayStr = today.toISOString().split('T')[0];
+                                onChange(todayStr);
+                                setViewDate(today);
+                                setIsOpen(false);
+                            }}
+                            className="text-[12px] font-bold text-primary hover:text-primary-dark px-2 py-1"
+                         >
+                            Hôm nay
+                         </button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+
+// --- MAIN SCREEN ---
+
 const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onNavigate }) => {
   const [step, setStep] = useState(1);
   const [selectedService, setSelectedService] = useState<ServiceType>(null);
   const [selectedProduct, setSelectedProduct] = useState<number>(1);
   const [locationType, setLocationType] = useState<'STORE' | 'HOME'>('STORE');
+
+  // Form States
+  const [selectedStore, setSelectedStore] = useState('Gearvn Hoàng Hoa Thám (Q. Tân Bình)');
+  const [selectedTime, setSelectedTime] = useState('09:00');
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
 
   const handleNext = () => {
     if (step < 3) {
@@ -60,6 +272,17 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
       desc: 'Windows, Driver, Game...',
       color: 'bg-purple-50 text-purple-600'
     }
+  ];
+
+  const storeOptions = [
+    'Gearvn Hoàng Hoa Thám (Q. Tân Bình)',
+    'Gearvn Trần Hưng Đạo (Q.1)',
+    'Gearvn Kha Vạn Cân (TP. Thủ Đức)',
+    'Gearvn Thái Hà (Hà Nội)'
+  ];
+
+  const timeOptions = [
+    '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'
   ];
 
   return (
@@ -145,10 +368,10 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
           </div>
 
           <div className="relative group">
-            <i className="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+            <i className="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"></i>
             <input 
               type="text" 
-              className="w-full h-12 bg-white border-none rounded-[14px] pl-12 pr-4 text-[15px] shadow-sm focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-gray-400 font-medium" 
+              className="w-full h-12 bg-[#F2F2F7] border-none rounded-[12px] pl-12 pr-4 text-[15px] focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400 font-semibold text-gray-900" 
               placeholder="Tìm kiếm thiết bị..." 
             />
           </div>
@@ -201,10 +424,10 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
           </div>
           
           <div className="space-y-2 pt-2">
-             <label className="block text-[14px] font-semibold text-text-primary">Ghi chú (Tùy chọn)</label>
+             <label className="block text-[14px] font-bold text-text-primary ml-1">Ghi chú <span className="text-gray-400 font-normal">(Tùy chọn)</span></label>
              <textarea 
                 rows={3} 
-                className="w-full bg-white border border-gray-200 text-text-primary text-[15px] rounded-[14px] focus:ring-primary focus:border-primary block p-4 font-medium placeholder:text-gray-400"
+                className="w-full bg-[#F2F2F7] border-none text-text-primary text-[15px] rounded-[12px] focus:ring-2 focus:ring-primary/20 block p-4 font-semibold placeholder:text-gray-400 resize-none"
                 placeholder="Mô tả sơ qua tình trạng máy..."
              ></textarea>
           </div>
@@ -242,41 +465,36 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
           </div>
 
           {locationType === 'STORE' && (
-             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+             <div className="space-y-5 animate-in fade-in slide-in-from-bottom-2 duration-300">
                 <div className="space-y-2">
-                   <label className="block text-[14px] font-semibold text-text-primary">Chọn cửa hàng</label>
-                   <div className="relative">
-                        <select className="w-full h-12 appearance-none bg-white border border-gray-200 text-text-primary text-[15px] rounded-[14px] px-4 font-medium focus:ring-primary focus:border-primary">
-                                <option>Gearvn Hoàng Hoa Thám (Q. Tân Bình)</option>
-                                <option>Gearvn Trần Hưng Đạo (Q.1)</option>
-                                <option>Gearvn Kha Vạn Cân (TP. Thủ Đức)</option>
-                                <option>Gearvn Thái Hà (Hà Nội)</option>
-                        </select>
-                        <i className="ph-bold ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
-                   </div>
+                   <label className="block text-[14px] font-bold text-text-primary ml-1">Cửa hàng</label>
+                   {/* Custom Select for Store */}
+                   <CustomSelect 
+                      options={storeOptions}
+                      value={selectedStore}
+                      onChange={setSelectedStore}
+                      placeholder="Chọn cửa hàng"
+                   />
                 </div>
                 
                 <div className="space-y-2">
-                    <label className="block text-[14px] font-semibold text-text-primary">Chọn thời gian</label>
+                    <label className="block text-[14px] font-bold text-text-primary ml-1">Thời gian hẹn</label>
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="relative">
-                             <input 
-                                type="date" 
-                                className="w-full h-12 bg-white border border-gray-200 text-text-primary text-[15px] rounded-[14px] px-3 focus:ring-primary focus:border-primary block font-medium"
-                                defaultValue={new Date().toISOString().split('T')[0]} 
+                        <div className="relative z-20">
+                             {/* Replaced native input with Custom Rounded DatePicker */}
+                             <CustomDatePicker 
+                                value={selectedDate}
+                                onChange={setSelectedDate}
                              />
                         </div>
                         <div className="relative">
-                            <select className="w-full h-12 appearance-none bg-white border border-gray-200 text-text-primary text-[15px] rounded-[14px] px-3 focus:ring-primary focus:border-primary block font-medium">
-                                <option>09:00</option>
-                                <option>10:00</option>
-                                <option>11:00</option>
-                                <option>14:00</option>
-                                <option>15:00</option>
-                                <option>16:00</option>
-                                <option>17:00</option>
-                            </select>
-                            <i className="ph-bold ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+                            {/* Custom Select for Time */}
+                            <CustomSelect 
+                              options={timeOptions}
+                              value={selectedTime}
+                              onChange={setSelectedTime}
+                              placeholder="09:00"
+                           />
                         </div>
                     </div>
                 </div>
@@ -308,9 +526,8 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
         </div>
       )}
 
-      {/* Footer Actions - Updated Position (Bottom 0) */}
-      {/* Moved to bottom-0 because App.tsx now hides BottomNav for this screen */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 pb-[calc(env(safe-area-inset-bottom)+16px)] z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+      {/* Footer Actions - Subtle Glassmorphism */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white/90 backdrop-blur-xl border-t border-gray-200/50 p-4 pb-[calc(env(safe-area-inset-bottom)+16px)] z-40 flex gap-3 shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.05)]">
          {step > 1 && (
              <button 
                 onClick={handleBack}
