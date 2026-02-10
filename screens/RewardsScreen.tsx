@@ -11,15 +11,15 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => 
     <div className="min-h-screen bg-background-light pb-24">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100 px-4 h-14 flex items-center justify-between">
-          <button onClick={onBack} className="size-10 flex items-center justify-center -ml-2 text-text-primary hover:bg-gray-50 rounded-full transition-colors active:scale-90">
-             <i className="ph-bold ph-caret-left text-2xl"></i>
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+             <i className="ph-bold ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[16px] font-bold text-text-primary">Ưu đãi Gearvn</h1>
           <button 
             onClick={() => onNavigate(ScreenName.MY_REWARDS)}
-            className="size-10 flex items-center justify-center -mr-2 text-text-primary hover:bg-gray-50 rounded-full transition-colors active:scale-90"
+            className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900"
           >
-            <i className="ph-bold ph-clock-counter-clockwise text-2xl"></i>
+            <i className="ph-bold ph-clock-counter-clockwise text-xl"></i>
           </button>
       </header>
 

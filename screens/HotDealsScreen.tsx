@@ -62,12 +62,12 @@ const HotDealsScreen: React.FC<HotDealsScreenProps> = ({ onBack }) => {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
         <div className="flex items-center p-4 justify-between h-14">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
-             <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+             <i className="ph-bold ph-caret-left text-xl"></i>
           </button>
-          <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center pr-8 text-text-primary">Hot Deals</h1>
-          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2 active:scale-90">
-             <i className="ph-bold ph-magnifying-glass text-text-primary text-xl"></i>
+          <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center text-text-primary">Hot Deals</h1>
+          <button className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+             <i className="ph-bold ph-magnifying-glass text-xl"></i>
           </button>
         </div>
       </header>

@@ -14,10 +14,11 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-200">
         <div className="flex items-center p-4 justify-between h-14">
-          <button onClick={onBack} className="size-10 flex items-center justify-center -ml-2 rounded-full hover:bg-gray-100 transition-colors active:scale-90">
-            <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+            <i className="ph-bold ph-caret-left text-xl"></i>
           </button>
-          <h1 className="text-text-primary text-[17px] font-bold leading-tight tracking-tight text-center flex-1 pr-8">Quản lý Bảo hành</h1>
+          <h1 className="text-text-primary text-[17px] font-bold leading-tight tracking-tight text-center flex-1">Quản lý Bảo hành</h1>
+          <div className="size-10"></div>
         </div>
         {/* Tabs - Height 48px for touch */}
         <div className="flex px-4 gap-8">

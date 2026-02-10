@@ -33,10 +33,11 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
     <div className="min-h-screen bg-background-light pb-48">
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 ios-blur p-4 border-b border-gray-100 justify-between h-14">
-        <button onClick={handleBack} className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
-            <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
+        <button onClick={handleBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+            <i className="ph-bold ph-caret-left text-xl"></i>
         </button>
-        <h2 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center pr-8">Tạo yêu cầu bảo hành</h2>
+        <h2 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center">Tạo yêu cầu bảo hành</h2>
+        <div className="size-10"></div>
       </div>
 
       {/* Stepper */}

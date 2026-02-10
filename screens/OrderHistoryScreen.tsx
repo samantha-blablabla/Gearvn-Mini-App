@@ -78,13 +78,14 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack, onNavig
   return (
     <div className="min-h-screen bg-background-light pb-24">
        {/* Combined Sticky Header */}
-       <div className="sticky top-0 z-40 bg-white/95 ios-blur shadow-sm border-b border-gray-100">
+       <div className="sticky top-0 z-50 bg-white/95 ios-blur shadow-sm border-b border-gray-100">
            {/* Top Nav */}
            <div className="flex items-center px-4 h-14 justify-between">
-              <button onClick={onBack} className="text-text-primary flex size-10 items-center justify-center hover:bg-gray-100 rounded-full transition-colors -ml-2 active:scale-90">
-                 <i className="ph-bold ph-caret-left text-2xl"></i>
+              <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
+                 <i className="ph-bold ph-caret-left text-xl"></i>
               </button>
-              <h1 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center pr-8">Lịch sử mua hàng</h1>
+              <h1 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center">Lịch sử mua hàng</h1>
+              <div className="size-10"></div>
            </div>
 
            {/* Search & Filter */}
