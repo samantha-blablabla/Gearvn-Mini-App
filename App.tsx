@@ -24,6 +24,8 @@ import { ScreenName } from './types';
 
 const App: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<ScreenName>(ScreenName.HOME);
+  // State to track where the user came from (Origin Tracking)
+  const [previousScreen, setPreviousScreen] = useState<ScreenName>(ScreenName.HOME);
 
   // Scroll to top on navigation change
   useEffect(() => {
@@ -31,6 +33,13 @@ const App: React.FC = () => {
   }, [currentScreen]);
 
   const navigateTo = (screen: ScreenName) => {
+    // Smart Navigation Logic:
+    // When going to Warranty Detail, remember where we came from.
+    if (screen === ScreenName.WARRANTY_DETAIL) {
+      if (currentScreen === ScreenName.HOME || currentScreen === ScreenName.WARRANTY) {
+        setPreviousScreen(currentScreen);
+      }
+    }
     setCurrentScreen(screen);
   };
 
@@ -73,7 +82,8 @@ const App: React.FC = () => {
         navigateTo(ScreenName.HOME);
         break;
       case ScreenName.WARRANTY_DETAIL:
-        navigateTo(ScreenName.HOME);
+        // Use the tracked previous screen
+        navigateTo(previousScreen);
         break;
       case ScreenName.HOT_DEALS:
         navigateTo(ScreenName.HOME);
@@ -124,7 +134,10 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.PRIVACY_POLICY && <PrivacyPolicyScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={() => navigateTo(ScreenName.HOME)} />}
-      {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={() => navigateTo(ScreenName.HOME)} />}
+      
+      {/* Updated to use goBack for smart navigation */}
+      {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={goBack} />}
+      
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
       
       {currentScreen === ScreenName.POINTS_POLICY && <PointsPolicyScreen onBack={goBack} />}

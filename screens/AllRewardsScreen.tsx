@@ -18,40 +18,40 @@ const AllRewardsScreen: React.FC<AllRewardsScreenProps> = ({ onBack, onNavigate 
 
   return (
     <div className="min-h-screen bg-background-light pb-24">
-       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-        <div className="flex items-center p-4 justify-between">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
+       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
+        <div className="flex items-center p-4 justify-between h-14">
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
+             <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
           </button>
-          <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Tất cả phần thưởng</h1>
-          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2">
-             <i className="ph-bold ph-magnifying-glass text-gray-900 text-xl"></i>
+          <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center pr-8 text-text-primary">Tất cả phần thưởng</h1>
+          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2 active:scale-90">
+             <i className="ph-bold ph-magnifying-glass text-text-primary text-xl"></i>
           </button>
         </div>
       </header>
       
-      <main className="p-4 grid grid-cols-2 gap-4">
+      <main className="p-5 grid grid-cols-2 gap-4">
          {rewards.map((item) => (
              <div 
              key={item.id}
              onClick={() => onNavigate(ScreenName.REWARD_DETAIL)}
-             className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group cursor-pointer hover:shadow-md transition-shadow h-full"
+             className="bg-white rounded-[20px] overflow-hidden border border-transparent hover:border-gray-100 shadow-soft flex flex-col group cursor-pointer active:scale-[0.98] transition-transform h-full"
           >
             <div className="relative">
               <div 
-                className="aspect-video bg-center bg-cover bg-gray-100" 
-                style={{backgroundImage: `url("${item.image}")`}}
+                className="aspect-square bg-center bg-cover bg-[#F9FAFB] p-4 m-2 rounded-[14px]" 
+                style={{backgroundImage: `url("${item.image}")`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}
               ></div>
             </div>
-            <div className="p-3 flex flex-col flex-1">
-              <h3 className="text-gray-900 text-sm font-bold leading-snug line-clamp-2 h-[40px] mb-1">{item.title}</h3>
+            <div className="p-4 pt-0 flex flex-col flex-1">
+              <h3 className="text-text-primary text-[14px] font-bold leading-snug line-clamp-2 h-[40px] mb-2">{item.title}</h3>
               <div className="mt-auto">
-                 <div className="flex items-center gap-1 mb-3">
+                 <div className="flex items-center gap-1.5 mb-3">
                    <i className="ph-fill ph-star text-primary text-[16px]"></i>
-                   <p className="text-primary text-sm font-bold">{item.points} pts</p>
+                   <p className="text-primary text-[14px] font-bold">{item.points} pts</p>
                  </div>
-                 <button className="w-full py-2 bg-white border border-primary text-primary rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-colors">
-                     Redeem
+                 <button className="w-full h-10 bg-white border border-primary text-primary rounded-[10px] text-[12px] font-bold hover:bg-primary hover:text-white transition-colors active:scale-95">
+                     Đổi quà
                  </button>
               </div>
             </div>

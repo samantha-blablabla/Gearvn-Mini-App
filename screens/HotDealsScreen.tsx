@@ -49,7 +49,7 @@ const HotDealsScreen: React.FC<HotDealsScreenProps> = ({ onBack }) => {
     },
     {
         id: 6,
-        name: "Tay cầm Sony DualSense Wireless - Midnight Black",
+        name: "Tay cầm Sony DualSense Wireless",
         price: "1.490.000đ",
         oldPrice: "1.890.000đ",
         discount: "-21%",
@@ -60,33 +60,33 @@ const HotDealsScreen: React.FC<HotDealsScreenProps> = ({ onBack }) => {
   return (
     <div className="min-h-screen bg-background-light pb-24">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-        <div className="flex items-center p-4 justify-between">
-          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2">
-             <i className="ph-bold ph-caret-left text-gray-900 text-xl"></i>
+      <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
+        <div className="flex items-center p-4 justify-between h-14">
+          <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -ml-2 active:scale-90">
+             <i className="ph-bold ph-caret-left text-text-primary text-2xl"></i>
           </button>
-          <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-8">Hot Deals</h1>
-          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2">
-             <i className="ph-bold ph-magnifying-glass text-gray-900 text-xl"></i>
+          <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center pr-8 text-text-primary">Hot Deals</h1>
+          <button className="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 transition-colors -mr-2 active:scale-90">
+             <i className="ph-bold ph-magnifying-glass text-text-primary text-xl"></i>
           </button>
         </div>
       </header>
 
-      <main className="p-4">
+      <main className="p-5">
         <div className="grid grid-cols-2 gap-4">
             {allDeals.map((deal) => (
-              <div key={deal.id} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col h-full">
-                <div className="relative h-40 w-full bg-[#F3F4F6] flex items-center justify-center p-4">
+              <div key={deal.id} className="bg-white rounded-[20px] overflow-hidden shadow-soft flex flex-col h-full active:scale-[0.98] transition-transform cursor-pointer border border-transparent hover:border-gray-100">
+                <div className="relative h-44 w-full bg-[#F9FAFB] flex items-center justify-center p-5">
                   <img src={deal.image} alt={deal.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
-                  <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm">{deal.discount}</div>
+                  <div className="absolute top-2.5 left-2.5 bg-primary text-white text-[11px] font-black px-2 py-0.5 rounded-[6px] shadow-sm">{deal.discount}</div>
                 </div>
-                <div className="p-3 flex-1 flex flex-col">
+                <div className="p-4 flex-1 flex flex-col">
                   {/* Fixed height for title to align rows */}
-                  <h4 className="text-xs font-bold line-clamp-2 text-gray-800 leading-snug h-[32px] mb-2">{deal.name}</h4>
+                  <h4 className="text-[14px] font-bold line-clamp-2 text-text-primary leading-snug h-[40px] mb-2">{deal.name}</h4>
                   <div className="mt-auto">
-                    <p className="text-primary font-bold text-sm">{deal.price}</p>
-                    <p className="text-[10px] text-gray-400 line-through font-medium">{deal.oldPrice}</p>
-                    <button className="w-full mt-2 bg-primary/10 text-primary text-xs font-bold py-1.5 rounded hover:bg-primary hover:text-white transition-colors">
+                    <p className="text-primary font-bold text-[16px]">{deal.price}</p>
+                    <p className="text-[11px] text-gray-400 line-through font-medium">{deal.oldPrice}</p>
+                    <button className="w-full mt-3 bg-primary/10 text-primary text-[12px] font-bold py-2 rounded-[10px] hover:bg-primary hover:text-white transition-colors">
                         Mua ngay
                     </button>
                   </div>
