@@ -180,21 +180,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
               <i className="ph-bold ph-arrows-left-right"></i>
               {isFlipped ? 'Xem mặt trước' : 'Quyền lợi của tôi'}
           </button>
-
-           {/* Floating Action Pill */}
-          <div className="absolute -bottom-6 z-30 animate-float">
-             <button 
-                onClick={() => onNavigate(ScreenName.CREATE_WARRANTY)}
-                className="bg-white/90 backdrop-blur-xl text-primary font-bold text-[14px] px-8 py-3.5 rounded-full shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5)] border border-white hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
-             >
-                 <i className="ph-bold ph-wrench text-lg"></i>
-                 GỬI BẢO HÀNH
-             </button>
-          </div>
       </div>
 
-      {/* 4. Sliding Bottom Sheet (The Content Layer) - HIG Update: Increased pb to 40 for bottom nav space */}
-      <div className="relative z-20 mt-12 bg-background-light min-h-screen rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-40">
+      {/* 4. Sliding Bottom Sheet (The Content Layer) - HIG Update: Reduced mt to 5 to push content up */}
+      <div className="relative z-20 mt-5 bg-background-light min-h-screen rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-40">
           {/* Sheet Handle */}
           <div className="w-full flex justify-center pt-3 pb-1">
               <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
