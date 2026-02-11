@@ -52,7 +52,7 @@ const App: React.FC = () => {
         setPreviousScreen(currentScreen);
       }
     }
-    
+
     // Smart Tracking for Support Screen (Requested Update)
     // Captures the current screen before navigating to Support, ensuring the Back button works intuitively.
     if (screen === ScreenName.SUPPORT) {
@@ -61,7 +61,7 @@ const App: React.FC = () => {
 
     // Save origin for Minigame too, so we can go back to where we were
     if (screen === ScreenName.MINIGAME) {
-        setPreviousScreen(currentScreen);
+      setPreviousScreen(currentScreen);
     }
 
     setCurrentScreen(screen);
@@ -111,9 +111,9 @@ const App: React.FC = () => {
       case ScreenName.SUPPORT:
         // Use the tracked previous screen if it exists and makes sense, otherwise default to Home
         if (previousScreen && previousScreen !== ScreenName.SUPPORT) {
-            navigateTo(previousScreen);
+          navigateTo(previousScreen);
         } else {
-            navigateTo(ScreenName.HOME);
+          navigateTo(ScreenName.HOME);
         }
         break;
       case ScreenName.WARRANTY_DETAIL:
@@ -141,9 +141,9 @@ const App: React.FC = () => {
       case ScreenName.MINIGAME:
         // Return to where we opened the game from
         if (previousScreen && previousScreen !== ScreenName.MINIGAME) {
-            navigateTo(previousScreen);
+          navigateTo(previousScreen);
         } else {
-            navigateTo(ScreenName.HOME);
+          navigateTo(ScreenName.HOME);
         }
         break;
       default:
@@ -153,16 +153,16 @@ const App: React.FC = () => {
 
   return (
     // Mobile Container Strategy:
-    <div className="w-full max-w-[430px] min-h-screen bg-background-light relative shadow-2xl overflow-x-hidden">
+    <div className="w-full max-w-[430px] min-h-screen mx-auto bg-background-light relative shadow-2xl overflow-x-hidden">
       {currentScreen === ScreenName.HOME && <HomeScreen onNavigate={navigateTo} />}
       {currentScreen === ScreenName.WARRANTY && <WarrantyScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.REWARDS && <RewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.HOME)} />}
       {currentScreen === ScreenName.PROFILE && <ProfileScreen onNavigate={navigateTo} />}
-      
+
       {currentScreen === ScreenName.CREATE_WARRANTY && <CreateWarrantyScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SERVICE_BOOKING && <ServiceBookingScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SERVICE_BOOKING_SUCCESS && <ServiceBookingSuccessScreen onNavigate={navigateTo} />}
-      
+
       {currentScreen === ScreenName.HISTORY && <OrderHistoryScreen onBack={() => navigateTo(ScreenName.PROFILE)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.ORDER_SEARCH && <OrderLookupScreen onBack={() => navigateTo(ScreenName.HOME)} onNavigate={navigateTo} />}
       {currentScreen === ScreenName.SHIPPING_ADDRESS && <ShippingAddressScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
@@ -171,14 +171,14 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.SERVICE_APPOINTMENTS && <ServiceAppointmentsScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.PRIVACY_POLICY && <PrivacyPolicyScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
-      
+
       {/* Support Screen now uses onBack for navigation */}
       {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={goBack} />}
-      
+
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={goBack} />}
-      
+
       {currentScreen === ScreenName.HOT_DEALS && <HotDealsScreen onBack={() => navigateTo(ScreenName.HOME)} />}
-      
+
       {currentScreen === ScreenName.POINTS_POLICY && <PointsPolicyScreen onBack={goBack} />}
       {currentScreen === ScreenName.MY_REWARDS && <MyRewardsScreen onNavigate={navigateTo} onBack={() => navigateTo(ScreenName.REWARDS)} />}
       {currentScreen === ScreenName.REWARD_DETAIL && <RewardDetailScreen onBack={() => navigateTo(ScreenName.REWARDS)} />}
@@ -187,29 +187,30 @@ const App: React.FC = () => {
 
       {currentScreen === ScreenName.MINIGAME && <MinigameScreen onBack={goBack} />}
 
-      {/* Floating Game Button - Global Position */}
-      {/* Only show when NOT in the minigame or other full-screen flows (optional) */}
+      {/* Floating Game Button - Constrained to mobile container */}
       {currentScreen !== ScreenName.MINIGAME && currentScreen !== ScreenName.SERVICE_BOOKING && currentScreen !== ScreenName.CREATE_WARRANTY && (
-         <button
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-[60] pointer-events-none">
+          <button
             onClick={() => navigateTo(ScreenName.MINIGAME)}
-            className="fixed bottom-24 right-4 z-[60] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 group shadow-[0_0_20px_rgba(227,0,25,0.4)]"
-         >
+            className="pointer-events-auto absolute bottom-0 right-4 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 group shadow-[0_0_20px_rgba(227,0,25,0.4)]"
+          >
             {/* Pulsing rings */}
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-20 animate-ping"></span>
             <span className="absolute inline-flex h-12 w-12 rounded-full bg-primary/40 opacity-75 blur-sm"></span>
-            
+
             {/* Main Button Body - Gradient */}
             <div className="relative w-full h-full rounded-full bg-gradient-to-tr from-primary to-[#ff4d4d] flex items-center justify-center border-2 border-white/20 overflow-hidden">
-                {/* Shimmer Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 animate-[shimmer_2s_infinite]"></div>
-                <i className="ph-fill ph-gift text-2xl text-white drop-shadow-md group-hover:rotate-12 transition-transform"></i>
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 animate-[shimmer_2s_infinite]"></div>
+              <i className="ph-fill ph-gift text-2xl text-white drop-shadow-md group-hover:rotate-12 transition-transform"></i>
             </div>
-            
+
             {/* Notification Badge */}
             <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 border-2 border-white text-[10px] font-bold text-yellow-900 shadow-sm animate-bounce">
               3
             </span>
-         </button>
+          </button>
+        </div>
       )}
 
       {/* Conditionally Render BottomNav */}

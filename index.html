@@ -1,133 +1,163 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>Gearvn Sync</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#E30019", // GearVN Red (Deeper)
-              "primary-dark": "#C40016",
-              "background-light": "#F2F4F6", // iOS Light Gray
-              "background-dark": "#1C1C1E",
-              "card-white": "#FFFFFF",
-              "text-primary": "#111827",
-              "text-secondary": "#6B7280",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            boxShadow: {
-              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-              'glow': '0 4px 15px -3px rgba(227, 0, 25, 0.2)',
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
-            }
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Gearvn Sync</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E30019", // GearVN Red (Deeper)
+            "primary-dark": "#C40016",
+            "background-light": "#F2F4F6", // iOS Light Gray
+            "background-dark": "#1C1C1E",
+            "card-white": "#FFFFFF",
+            "text-primary": "#111827",
+            "text-secondary": "#6B7280",
           },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+            'glow': '0 4px 15px -3px rgba(227, 0, 25, 0.2)',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
         },
-      }
-    </script>
-    <style>
-      :root {
-        --app-max-width: 430px;
-      }
-      
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #111; /* Dark background for desktop */
-        margin: 0;
-        padding: 0;
-        /* Mobile App Feel optimizations */
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        user-select: none;
-        -webkit-user-select: none;
-        overscroll-behavior-y: none; /* Prevent browser bounce */
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-      }
+      },
+    }
+  </script>
+  <style>
+    :root {
+      --app-max-width: 430px;
+    }
 
-      /* Allow text selection only in inputs */
-      input, textarea {
-        user-select: text;
-        -webkit-user-select: text;
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+      overscroll-behavior-y: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
 
-      /* Prevent dragging images (app feel) */
-      img {
-        -webkit-user-drag: none;
-        user-drag: none;
-        pointer-events: none; /* Let clicks pass through if needed, or just stop drag */
-      }
+    /* Allow text selection only in inputs */
+    input,
+    textarea {
+      user-select: text;
+      -webkit-user-select: text;
+    }
 
-      /* Hide Scrollbar Global */
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      * {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+    /* Prevent dragging images (app feel) */
+    img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: none;
+      /* Let clicks pass through if needed, or just stop drag */
+    }
 
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+    /* Hide Scrollbar Global */
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
-      .ios-blur {
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.85);
-      }
-      
-      /* Icon adjustments */
-      i[class^="ph"] {
-        font-size: 1.5rem;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      
-      /* App Container Alignment */
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .ios-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Icon adjustments */
+    i[class^="ph"] {
+      font-size: 1.5rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* App Container Alignment */
+    #root {
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    /* Desktop: Phone frame effect */
+    @media (min-width: 431px) {
       #root {
-        display: flex;
-        justify-content: center;
-        min-height: 100vh;
+        padding: 16px 0;
+        align-items: flex-start;
       }
 
-      /* 3D Flip Card Utilities */
-      .perspective-1000 {
-        perspective: 1000px;
+      #root>div {
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.08),
+          0 25px 80px -12px rgba(0, 0, 0, 0.8),
+          0 0 40px rgba(227, 0, 25, 0.05);
+        max-height: calc(100dvh - 32px);
+        overflow-y: auto;
       }
-      .transform-style-3d {
-        transform-style: preserve-3d;
-      }
-      .backface-hidden {
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-      }
-      .rotate-y-180 {
-        transform: rotateY(180deg);
-      }
-    </style>
+    }
+
+    /* 3D Flip Card Utilities */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -138,7 +168,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
