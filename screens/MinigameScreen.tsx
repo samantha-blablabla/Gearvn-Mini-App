@@ -8,15 +8,17 @@ interface MinigameScreenProps {
 // --- GAME CONSTANTS ---
 const GRAVITY = 0.45;
 const JUMP_FORCE = -8.5;
-const BASE_SPEED = 3; // Scrolling speed
+const BASE_SPEED = 5; // Faster speed from Preview
 const SPAWN_RATE = 180;
 const COIN_SPAWN_RATE = 120;
 const PIXEL_FONT = "'Press Start 2P', monospace";
 
 const ASSETS = {
   BG_SKY: '/game-assets/oga-swm-bg-gradient-sky.png',
+  BG_MOUNTAINS: '/game-assets/desertbg-pal00.png', // New Mountain Layer
   BG_MID: '/game-assets/oga-swm-bg-blobby.png',
   TILES: '/game-assets/oga-swm-tiles-alpha.png',
+  TILES_EARTH: '/game-assets/oga-swm-earth-tile-variations-alpha.png', // New Earth Variations
   BRAINGUY: '/game-assets/oga-swm-brainguy-alpha.png',
 };
 
@@ -190,6 +192,7 @@ const MinigameScreen: React.FC<MinigameScreenProps> = ({ onBack }) => {
     coins: [] as { x: number; y: number; size: number; }[],
     backgroundOffset: 0,
     midgroundOffset: 0,
+    mtnOffset: 0,
   });
 
   useEffect(() => {
@@ -222,6 +225,7 @@ const MinigameScreen: React.FC<MinigameScreenProps> = ({ onBack }) => {
     gameRef.current.spriteManager = spriteManager;
     spriteManager.loadImages({
       BG_SKY: ASSETS.BG_SKY,
+      BG_MOUNTAINS: ASSETS.BG_MOUNTAINS,
       BG_MID: ASSETS.BG_MID,
       TILES: ASSETS.TILES,
     });
@@ -244,8 +248,9 @@ const MinigameScreen: React.FC<MinigameScreenProps> = ({ onBack }) => {
       const groundY = height - 60;
 
       state.frames++;
-      state.backgroundOffset += 0.3;
-      state.midgroundOffset += 1;
+      state.mtnOffset += BASE_SPEED * 0.3;
+      state.midgroundOffset += BASE_SPEED * 0.5; // Blobby moves slower than ground
+      // state.frames handled below
 
       const p = state.player;
       p.dy += GRAVITY;
@@ -364,15 +369,29 @@ const MinigameScreen: React.FC<MinigameScreenProps> = ({ onBack }) => {
       const groundY = height - 60;
 
       // PARALLAX BG (Static Theme)
+      // 1. SKY (Fixed)
       sm.drawSprite(ctx, 'BG_SKY', 0, 0, 320, 240, 0, 0, width, height);
-      const bgW = height * 2;
-      const bgH = height;
-      const offset = state.midgroundOffset % bgW;
 
-      // Midground transparent logic
+      // 2. MOUNTAINS (Parallax 0.3)
+      const mtnW = 320;
+      const mtnH = 320;
+      const mtnDrawH = height * 0.7;
+      const mtnDrawW = mtnDrawH; // Square asset aspect ratio
+      const mtnCount = Math.ceil(width / mtnDrawW) + 2;
+
+      for (let i = -1; i < mtnCount; i++) {
+        const destX = (i * mtnDrawW) - (state.mtnOffset % mtnDrawW);
+        sm.drawSprite(ctx, 'BG_MOUNTAINS', 0, 0, mtnW, mtnH, destX, height - mtnDrawH, mtnDrawW, mtnDrawH);
+      }
+
+      // 3. MIDGROUND BLOBBY (Parallax 0.5, Transparent)
+      const blobW = height * 2; // Stretch standard
+      const blobH = height;
+      const blobOffset = state.midgroundOffset % blobW;
+
       ctx.globalAlpha = 0.6;
-      sm.drawSprite(ctx, 'BG_MID', 0, 0, 240, 160, -offset, 0, bgW, bgH);
-      sm.drawSprite(ctx, 'BG_MID', 0, 0, 240, 160, -offset + bgW, 0, bgW, bgH);
+      sm.drawSprite(ctx, 'BG_MID', 0, 0, 320, 256, -blobOffset, 0, blobW, blobH);
+      sm.drawSprite(ctx, 'BG_MID', 0, 0, 320, 256, -blobOffset + blobW, 0, blobW, blobH);
       ctx.globalAlpha = 1.0;
 
       // GROUND
