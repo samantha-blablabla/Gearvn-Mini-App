@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ScreenName } from '../types';
 
 interface RewardsScreenProps {
@@ -13,14 +13,14 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => 
       {/* Header - HIG Update: Increased height via py-3 and min-h */}
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100 px-4 py-3 min-h-[60px] flex items-center justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-bold ph-caret-left text-xl"></i>
+             <i className="ph-regular ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[17px] font-bold text-text-primary">Ưu đãi Gearvn</h1>
           <button 
             onClick={() => onNavigate(ScreenName.MY_REWARDS)}
             className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900"
           >
-            <i className="ph-bold ph-clock-counter-clockwise text-xl"></i>
+            <i className="ph-regular ph-clock-counter-clockwise text-xl"></i>
           </button>
       </header>
 
@@ -53,7 +53,7 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => 
                    onClick={() => onNavigate(ScreenName.POINTS_POLICY)}
                    className="text-primary text-[12px] font-bold flex items-center gap-1 hover:underline"
                  >
-                     Chính sách <i className="ph-bold ph-caret-right"></i>
+                     Chính sách <i className="ph-regular ph-caret-right"></i>
                  </button>
              </div>
           </div>
@@ -62,17 +62,17 @@ const RewardsScreen: React.FC<RewardsScreenProps> = ({ onBack, onNavigate }) => 
         {/* Filters */}
         <div className="flex gap-3 px-5 overflow-x-auto hide-scrollbar">
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-[12px] bg-primary text-white px-5 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
-            <i className="ph-bold ph-squares-four text-lg"></i>
+            <i className="ph-regular ph-squares-four text-lg"></i>
             <p className="text-[13px] font-bold">Tất cả</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-[12px] bg-white border border-gray-200 px-5 text-gray-600 hover:bg-gray-50 transition-colors active:scale-95">
             <div className="size-4 bg-gray-600 rounded flex items-center justify-center text-white">
-                <i className="ph-bold ph-tag text-[10px]"></i>
+                <i className="ph-regular ph-tag text-[10px]"></i>
             </div>
             <p className="text-[13px] font-bold">Voucher</p>
           </button>
           <button className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-[12px] bg-white border border-gray-200 px-5 text-gray-600 hover:bg-gray-50 transition-colors active:scale-95">
-             <i className="ph-bold ph-game-controller text-lg"></i>
+             <i className="ph-regular ph-game-controller text-lg"></i>
             <p className="text-[13px] font-bold">Gaming Gear</p>
           </button>
         </div>

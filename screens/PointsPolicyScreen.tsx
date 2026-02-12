@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ScreenName } from '../types';
 
 interface PointsPolicyScreenProps {
@@ -18,7 +18,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
       <div className="relative z-10 pt-[calc(env(safe-area-inset-top)+16px)] px-5 mb-6">
          <div className="flex items-center justify-between text-white mb-6">
             <button onClick={onBack} className="bg-white/10 backdrop-blur-md size-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-colors active:scale-90">
-              <i className="ph-bold ph-caret-left text-2xl"></i>
+              <i className="ph-regular ph-caret-left text-2xl"></i>
             </button>
             <h1 className="font-bold text-[17px] tracking-wide">Member Pass</h1>
             <div className="size-10"></div> {/* Spacer */}
@@ -67,13 +67,13 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
              onClick={() => setActiveTab('QR')}
              className={`flex-1 h-12 text-[14px] font-bold rounded-[14px] flex items-center justify-center gap-2 transition-all duration-300 relative z-10 ${activeTab === 'QR' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'}`}
            >
-             <i className="ph-bold ph-qr-code text-lg"></i> Tích điểm
+             <i className="ph-regular ph-qr-code text-lg"></i> Tích điểm
            </button>
            <button 
              onClick={() => setActiveTab('BENEFITS')}
              className={`flex-1 h-12 text-[14px] font-bold rounded-[14px] flex items-center justify-center gap-2 transition-all duration-300 relative z-10 ${activeTab === 'BENEFITS' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'}`}
            >
-             <i className="ph-bold ph-crown text-lg"></i> Quyền lợi
+             <i className="ph-regular ph-crown text-lg"></i> Quyền lợi
            </button>
            
            {/* Animated Background Pill */}
@@ -138,7 +138,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                   <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
                            <div className="size-10 bg-white/10 rounded-[12px] flex items-center justify-center backdrop-blur-sm border border-white/10 shadow-inner">
-                               <i className="ph-bold ph-lock-key text-xl text-primary"></i>
+                               <i className="ph-regular ph-lock-key text-xl text-primary"></i>
                            </div>
                            <div>
                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Mục tiêu tiếp theo</p>
@@ -151,7 +151,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                                <span className="text-gray-300 font-medium text-[13px]">Tích điểm</span>
                                <div className="flex items-center gap-2">
                                    <span className="text-gray-500 line-through text-[12px] font-medium">1.2%</span>
-                                   <i className="ph-bold ph-arrow-right text-xs text-gray-500"></i>
+                                   <i className="ph-regular ph-arrow-right text-xs text-gray-500"></i>
                                    <span className="text-green-400 font-bold text-[13px]">1.5%</span>
                                </div>
                           </div>
@@ -162,7 +162,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                       </div>
 
                       <div className="flex items-center gap-2 text-[11px] text-gray-400 bg-white/5 p-2.5 rounded-[10px]">
-                           <i className="ph-bold ph-info"></i>
+                           <i className="ph-regular ph-info"></i>
                            <p>Cần thêm <span className="text-white font-bold">14,674</span> điểm để mở khóa quyền lợi này</p>
                       </div>
                   </div>
@@ -172,7 +172,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
               <div className="bg-white rounded-[24px] p-6 shadow-soft animate-in fade-in zoom-in-95 duration-300 space-y-6">
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-[14px] bg-yellow-100 flex items-center justify-center text-yellow-600 shrink-0">
-                            <i className="ph-bold ph-percent text-2xl"></i>
+                            <i className="ph-regular ph-percent text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-[16px]">Giảm giá đặc quyền</h3>
@@ -182,7 +182,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
 
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-[14px] bg-blue-100 flex items-center justify-center text-blue-600 shrink-0">
-                            <i className="ph-bold ph-cake text-2xl"></i>
+                            <i className="ph-regular ph-cake text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-[16px]">Quà sinh nhật</h3>
@@ -192,7 +192,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
 
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-[14px] bg-green-100 flex items-center justify-center text-green-600 shrink-0">
-                            <i className="ph-bold ph-truck text-2xl"></i>
+                            <i className="ph-regular ph-truck text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-[16px]">Miễn phí vận chuyển</h3>
@@ -202,7 +202,7 @@ const PointsPolicyScreen: React.FC<PointsPolicyScreenProps> = ({ onBack }) => {
                     
                     <div className="flex items-start gap-4">
                         <div className="size-12 rounded-[14px] bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
-                            <i className="ph-bold ph-wrench text-2xl"></i>
+                            <i className="ph-regular ph-wrench text-2xl"></i>
                         </div>
                         <div>
                             <h3 className="font-bold text-gray-900 text-[16px]">Ưu tiên bảo hành</h3>

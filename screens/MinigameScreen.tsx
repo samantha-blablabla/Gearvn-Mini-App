@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+﻿import React, { useRef, useEffect, useState } from 'react';
 import { SpriteManager } from '../utils/SpriteManager';
 
 interface MinigameScreenProps {
@@ -572,7 +572,7 @@ const MinigameScreen: React.FC<MinigameScreenProps> = ({ onBack }) => {
               onClick={(e) => { e.stopPropagation(); onBack(); }}
               className="pointer-events-auto size-10 bg-black/50 rounded-lg flex items-center justify-center border-2 border-white/20 text-white active:scale-95"
             >
-              <i className="ph-bold ph-caret-left text-lg"></i>
+              <i className="ph-regular ph-caret-left text-lg"></i>
             </button>
           </div>
         )}

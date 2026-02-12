@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ScreenName } from '../types';
 
 interface OrderLookupScreenProps {
@@ -35,7 +35,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
         <div className="flex items-center p-4 justify-between h-14">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-bold ph-caret-left text-xl"></i>
+             <i className="ph-regular ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center text-text-primary">Tra cứu vận đơn</h1>
           <div className="size-10"></div>
@@ -48,7 +48,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
         <div className="bg-white p-6 rounded-[24px] shadow-soft border border-transparent">
            <div className="flex justify-center mb-6">
               <div className="size-24 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 ring-8 ring-blue-50/50">
-                 <i className="ph-bold ph-magnifying-glass text-4xl"></i>
+                 <i className="ph-regular ph-magnifying-glass text-4xl"></i>
               </div>
            </div>
            
@@ -75,7 +75,7 @@ const OrderLookupScreen: React.FC<OrderLookupScreenProps> = ({ onBack, onNavigat
                 className="w-full h-12 bg-primary text-white font-bold rounded-[14px] hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95"
               >
                   Tra cứu ngay
-                  <i className="ph-bold ph-arrow-right"></i>
+                  <i className="ph-regular ph-arrow-right"></i>
               </button>
            </div>
         </div>

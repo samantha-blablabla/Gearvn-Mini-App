@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ScreenName } from '../types';
 
 interface CreateWarrantyScreenProps {
@@ -34,7 +34,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
       {/* Header */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 ios-blur p-4 border-b border-gray-100 justify-between h-14">
         <button onClick={handleBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-            <i className="ph-bold ph-caret-left text-xl"></i>
+            <i className="ph-regular ph-caret-left text-xl"></i>
         </button>
         <h2 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center">Tạo yêu cầu bảo hành</h2>
         <div className="size-10"></div>
@@ -73,7 +73,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
           </div>
 
           <div className="relative group">
-            <i className="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+            <i className="ph-regular ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
             <input 
               type="text" 
               className="w-full h-12 bg-white border-none rounded-[14px] pl-12 pr-4 text-[15px] shadow-sm focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-gray-400 font-medium" 
@@ -98,7 +98,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
               </div>
               <div className="shrink-0 flex items-center justify-center">
                   <div className={`w-6 h-6 rounded-full border-[2px] flex items-center justify-center transition-colors ${selectedProduct === 1 ? 'border-primary bg-primary' : 'border-gray-300'}`}>
-                      {selectedProduct === 1 && <i className="ph-bold ph-check text-white text-sm"></i>}
+                      {selectedProduct === 1 && <i className="ph-regular ph-check text-white text-sm"></i>}
                   </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
               </div>
               <div className="shrink-0 flex items-center justify-center">
                   <div className={`w-6 h-6 rounded-full border-[2px] flex items-center justify-center transition-colors ${selectedProduct === 2 ? 'border-primary bg-primary' : 'border-gray-300'}`}>
-                      {selectedProduct === 2 && <i className="ph-bold ph-check text-white text-sm"></i>}
+                      {selectedProduct === 2 && <i className="ph-regular ph-check text-white text-sm"></i>}
                   </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
               </div>
               <div className="shrink-0 flex items-center justify-center">
                  <div className={`w-6 h-6 rounded-full border-[2px] flex items-center justify-center transition-colors ${selectedProduct === 3 ? 'border-primary bg-primary' : 'border-gray-300'}`}>
-                      {selectedProduct === 3 && <i className="ph-bold ph-check text-white text-sm"></i>}
+                      {selectedProduct === 3 && <i className="ph-regular ph-check text-white text-sm"></i>}
                   </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                     <option>Pin / Sạc</option>
                     <option>Khác</option>
                   </select>
-                  <i className="ph-bold ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+                  <i className="ph-regular ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
                </div>
             </div>
 
@@ -201,13 +201,13 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                <label className="block text-[14px] font-bold text-text-primary">Hình ảnh / Video minh họa</label>
                <div className="grid grid-cols-4 gap-3">
                   <button className="aspect-square rounded-[14px] border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors active:scale-95">
-                     <i className="ph-bold ph-image text-2xl"></i>
+                     <i className="ph-regular ph-image text-2xl"></i>
                      <span className="text-[10px] font-bold mt-1">Thêm</span>
                   </button>
                   <div className="aspect-square rounded-[14px] bg-gray-100 relative group overflow-hidden border border-gray-200">
                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZgCdVBaSGN69UV7RN1d8GXknQ0AYGBAtzPHox2F94LrT4a8JG7rXwQt07NWP1RIWgDsaai6gS5XhjkTN68eOGkgKUj8wGqmWX33czp4g8mr3Pn50btwpVH05OBJVC_qp88DWfxWE60OEC1PQURWnr9GDWAq1pvwUUSCDTLl-5X6qvu4atZTyts5FAuT0uok7oAKhO5ekt2KJd6j3kaUQEhCqrGGvWM8GiA5Byq9lcvCWeipBxz1cPOibPOPA47L1PRYA9n_Wi8U" className="w-full h-full object-cover opacity-80" />
                      <button className="absolute top-1 right-1 bg-black/50 text-white rounded-full p-0.5 backdrop-blur-sm">
-                        <i className="ph-bold ph-x text-sm"></i>
+                        <i className="ph-regular ph-x text-sm"></i>
                      </button>
                   </div>
                </div>
@@ -231,7 +231,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                className={`p-4 rounded-[16px] border-[2px] cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${shippingMethod === 'store' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2.5 rounded-full ${shippingMethod === 'store' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-                   <i className="ph-bold ph-storefront text-xl"></i>
+                   <i className="ph-regular ph-storefront text-xl"></i>
                 </div>
                 <span className={`text-[14px] font-bold ${shippingMethod === 'store' ? 'text-primary' : 'text-gray-600'}`}>Gửi tại cửa hàng</span>
              </div>
@@ -241,7 +241,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                className={`p-4 rounded-[16px] border-[2px] cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${shippingMethod === 'pickup' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2.5 rounded-full ${shippingMethod === 'pickup' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-                   <i className="ph-bold ph-truck text-xl"></i>
+                   <i className="ph-regular ph-truck text-xl"></i>
                 </div>
                 <span className={`text-[14px] font-bold ${shippingMethod === 'pickup' ? 'text-primary' : 'text-gray-600'}`}>Lấy hàng tại nhà</span>
              </div>
@@ -258,7 +258,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                         <option>Gearvn Kha Vạn Cân (TP. Thủ Đức)</option>
                         <option>Gearvn Thái Hà (Hà Nội)</option>
                       </select>
-                      <i className="ph-bold ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+                      <i className="ph-regular ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
                    </div>
                 </div>
 
@@ -312,7 +312,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
                            <option>13:00 - 17:00</option>
                            <option>17:00 - 20:00</option>
                          </select>
-                         <i className="ph-bold ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
+                         <i className="ph-regular ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
                       </div>
                    </div>
                 </div>
@@ -344,7 +344,7 @@ const CreateWarrantyScreen: React.FC<CreateWarrantyScreenProps> = ({ onBack, onN
             className={`bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-[14px] transition-all active:scale-95 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 ${step > 1 ? 'w-2/3' : 'w-full'}`}
          >
             {step === 3 ? 'Hoàn tất yêu cầu' : 'Tiếp tục'}
-            <i className={`text-xl ${step === 3 ? 'ph-bold ph-check' : 'ph-bold ph-caret-right'}`}></i>
+            <i className={`text-xl ${step === 3 ? 'ph-regular ph-check' : 'ph-regular ph-caret-right'}`}></i>
          </button>
       </div>
     </div>
