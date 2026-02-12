@@ -84,7 +84,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
             <button
               key={item.id}
               onClick={() => onNavigate(item.id as ScreenName)}
-              className={`flex flex-col items-center gap-1 justify-center group w-1/5 active:scale-95 transition-transform`}
+              className={`flex flex-col items-center gap-0.5 justify-center group w-1/5 active:scale-95 transition-transform`}
             >
               <div className="relative p-1">
                 {/* Use ph-fill for active state, ph-regular for inactive */}
