@@ -39,12 +39,12 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ options, value, onChange, p
         className={`w-full h-[50px] bg-[#F2F2F7] rounded-[12px] px-4 flex items-center justify-between transition-all duration-200 outline-none active:scale-[0.99] ${isOpen ? 'bg-white ring-2 ring-primary/20' : 'hover:bg-[#E5E5EA]'}`}
       >
         <div className="flex items-center gap-2 truncate pr-2">
-           {icon && <i className={`ph-regular ${icon} text-gray-500`}></i>}
+           {icon && <i className={`ph ${icon} text-gray-500`}></i>}
            <span className={`text-[15px] font-semibold truncate ${value ? 'text-text-primary' : 'text-gray-400'}`}>
              {value || placeholder}
            </span>
         </div>
-        <i className={`ph-regular ph-caret-down text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`}></i>
+        <i className={`ph ph-caret-down text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`}></i>
       </button>
 
       {isOpen && (
@@ -64,7 +64,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ options, value, onChange, p
                 }`}
               >
                 <span className="truncate">{option}</span>
-                {value === option && <i className="ph-regular ph-check text-primary"></i>}
+                {value === option && <i className="ph ph-check text-primary"></i>}
               </div>
             ))}
           </div>
@@ -128,7 +128,7 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({ value, onChange }) 
                 className={`w-full h-[50px] bg-[#F2F2F7] rounded-[12px] px-4 flex items-center justify-between transition-all duration-200 outline-none active:scale-[0.99] ${isOpen ? 'bg-white ring-2 ring-primary/20' : 'hover:bg-[#E5E5EA]'}`}
             >
                 <div className="flex items-center gap-2 truncate pr-2">
-                    <i className="ph-regular ph-calendar-blank text-gray-500"></i>
+                    <i className="ph ph-calendar-blank text-gray-500"></i>
                     <span className="text-[15px] font-semibold text-text-primary">
                         {formatDateDisplay(value)}
                     </span>
@@ -140,13 +140,13 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({ value, onChange }) 
                     {/* Header */}
                     <div className="flex items-center justify-between mb-4">
                         <button onClick={() => changeMonth(-1)} className="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors active:scale-90">
-                            <i className="ph-regular ph-caret-left"></i>
+                            <i className="ph ph-caret-left"></i>
                         </button>
                         <span className="text-[15px] font-bold text-gray-900 capitalize">
                             Tháng {viewDate.getMonth() + 1}, {viewDate.getFullYear()}
                         </span>
                         <button onClick={() => changeMonth(1)} className="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors active:scale-90">
-                            <i className="ph-regular ph-caret-right"></i>
+                            <i className="ph ph-caret-right"></i>
                         </button>
                     </div>
 
@@ -291,7 +291,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
       {/* HIG Update: Header with min-height 60px and py-3 */}
       <div className="sticky top-0 z-50 flex items-center bg-white/90 ios-blur px-4 py-3 border-b border-gray-100 justify-between min-h-[60px]">
         <button onClick={handleBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-            <i className="ph-regular ph-caret-left text-xl"></i>
+            <i className="ph ph-caret-left text-xl"></i>
         </button>
         <h2 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center">Đặt lịch dịch vụ</h2>
         <div className="size-10"></div>
@@ -344,7 +344,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
                      <p className="text-[13px] text-text-secondary mt-0.5 font-medium">{item.desc}</p>
                   </div>
                   <div className={`size-6 rounded-full border-[2px] flex items-center justify-center ${selectedService === item.id ? 'border-primary bg-primary' : 'border-gray-200'}`}>
-                     {selectedService === item.id && <i className="ph-regular ph-check text-white text-xs"></i>}
+                     {selectedService === item.id && <i className="ph ph-check text-white text-xs"></i>}
                   </div>
                </div>
              ))}
@@ -368,7 +368,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
           </div>
 
           <div className="relative group">
-            <i className="ph-regular ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"></i>
+            <i className="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"></i>
             <input 
               type="text" 
               className="w-full h-12 bg-[#F2F2F7] border-none rounded-[12px] pl-12 pr-4 text-[15px] focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-gray-400 font-semibold text-gray-900" 
@@ -392,7 +392,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
               </div>
               <div className="shrink-0 flex items-center justify-center">
                   <div className={`w-6 h-6 rounded-full border-[2px] flex items-center justify-center transition-colors ${selectedProduct === 1 ? 'border-primary bg-primary' : 'border-gray-300'}`}>
-                      {selectedProduct === 1 && <i className="ph-regular ph-check text-white text-sm"></i>}
+                      {selectedProduct === 1 && <i className="ph ph-check text-white text-sm"></i>}
                   </div>
               </div>
             </div>
@@ -411,14 +411,14 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
               </div>
               <div className="shrink-0 flex items-center justify-center">
                  <div className={`w-6 h-6 rounded-full border-[2px] flex items-center justify-center transition-colors ${selectedProduct === 2 ? 'border-primary bg-primary' : 'border-gray-300'}`}>
-                      {selectedProduct === 2 && <i className="ph-regular ph-check text-white text-sm"></i>}
+                      {selectedProduct === 2 && <i className="ph ph-check text-white text-sm"></i>}
                   </div>
               </div>
             </div>
             
             <div className="flex items-center justify-center py-2">
                <button className="text-primary text-[13px] font-bold flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-[10px] hover:bg-primary/10">
-                  <i className="ph-regular ph-plus"></i> Thêm thiết bị khác
+                  <i className="ph ph-plus"></i> Thêm thiết bị khác
                </button>
             </div>
           </div>
@@ -448,7 +448,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
                className={`p-4 rounded-[16px] border-[2px] cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${locationType === 'STORE' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2.5 rounded-full ${locationType === 'STORE' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-                   <i className="ph-regular ph-storefront text-xl"></i>
+                   <i className="ph ph-storefront text-xl"></i>
                 </div>
                 <span className={`text-[14px] font-bold ${locationType === 'STORE' ? 'text-primary' : 'text-gray-600'}`}>Tại cửa hàng</span>
              </div>
@@ -458,7 +458,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
                className={`p-4 rounded-[16px] border-[2px] cursor-pointer transition-all flex flex-col items-center text-center gap-2 active:scale-[0.98] ${locationType === 'HOME' ? 'border-primary bg-primary/5' : 'border-gray-200 bg-white hover:border-primary/50'}`}
              >
                 <div className={`p-2.5 rounded-full ${locationType === 'HOME' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}>
-                   <i className="ph-regular ph-house-line text-xl"></i>
+                   <i className="ph ph-house-line text-xl"></i>
                 </div>
                 <span className={`text-[14px] font-bold ${locationType === 'HOME' ? 'text-primary' : 'text-gray-600'}`}>Tại nhà</span>
              </div>
@@ -542,7 +542,7 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
             className={`bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-[14px] transition-all active:scale-95 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 ${step > 1 ? 'w-2/3' : 'w-full'} ${(step === 1 && !selectedService) ? 'opacity-50 cursor-not-allowed' : ''}`}
          >
             {step === 3 ? 'Xác nhận đặt lịch' : 'Tiếp tục'}
-            <i className={`text-xl ${step === 3 ? 'ph-regular ph-check' : 'ph-regular ph-caret-right'}`}></i>
+            <i className={`text-xl ${step === 3 ? 'ph ph-check' : 'ph ph-caret-right'}`}></i>
          </button>
       </div>
     </div>
@@ -550,3 +550,4 @@ const ServiceBookingScreen: React.FC<ServiceBookingScreenProps> = ({ onBack, onN
 };
 
 export default ServiceBookingScreen;
+

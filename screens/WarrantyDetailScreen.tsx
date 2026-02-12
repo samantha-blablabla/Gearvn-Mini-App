@@ -13,7 +13,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Chi tiết bảo hành</h1>
           <div className="size-10"></div>
@@ -37,7 +37,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
         {/* Timeline */}
         <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
             <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <i className="ph-regular ph-clock text-primary text-xl"></i>
+                <i className="ph ph-clock text-primary text-xl"></i>
                 Tiến độ xử lý
             </h3>
             
@@ -46,7 +46,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <i className="ph-regular ph-arrows-clockwise text-base animate-spin"></i>
+                             <i className="ph ph-arrows-clockwise text-base animate-spin"></i>
                         </div>
                     </div>
                     <div>
@@ -60,7 +60,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <i className="ph-regular ph-check text-base"></i>
+                             <i className="ph ph-check text-base"></i>
                         </div>
                     </div>
                     <div>
@@ -74,7 +74,7 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 <div className="relative flex gap-4">
                     <div className="z-10 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center border-4 border-white shadow-sm">
-                             <i className="ph-regular ph-check text-base"></i>
+                             <i className="ph ph-check text-base"></i>
                         </div>
                     </div>
                     <div>
@@ -144,3 +144,4 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
 };
 
 export default WarrantyDetailScreen;
+

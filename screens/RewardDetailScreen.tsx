@@ -13,7 +13,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       <header className="sticky top-0 z-50 bg-white/0">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white/80 backdrop-blur shadow-sm hover:bg-white transition-colors active:scale-90">
-             <i className="ph-regular ph-caret-left text-gray-900 text-xl"></i>
+             <i className="ph ph-caret-left text-gray-900 text-xl"></i>
           </button>
         </div>
       </header>
@@ -61,7 +61,7 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
       {/* Floating Action Button - Stacked above BottomNav */}
       <div className="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
           <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
-              <i className="ph-regular ph-gift text-lg"></i>
+              <i className="ph ph-gift text-lg"></i>
               Đổi quà ngay
           </button>
       </div>
@@ -70,3 +70,4 @@ const RewardDetailScreen: React.FC<RewardDetailScreenProps> = ({ onBack }) => {
 };
 
 export default RewardDetailScreen;
+

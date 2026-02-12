@@ -13,11 +13,11 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Địa chỉ giao hàng</h1>
           <button className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-            <i className="ph-regular ph-plus text-xl"></i>
+            <i className="ph ph-plus text-xl"></i>
           </button>
         </div>
       </header>
@@ -42,11 +42,11 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
-                 <i className="ph-regular ph-pencil-simple text-sm"></i> Sửa
+                 <i className="ph ph-pencil-simple text-sm"></i> Sửa
               </button>
               {/* Delete is disabled for default */}
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-300 bg-gray-50 rounded-lg cursor-not-allowed flex items-center justify-center gap-2">
-                 <i className="ph-regular ph-trash text-sm"></i> Xóa
+                 <i className="ph ph-trash text-sm"></i> Xóa
               </button>
            </div>
         </div>
@@ -66,10 +66,10 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
 
            <div className="flex gap-3 pt-3 border-t border-gray-50">
               <button className="flex-1 py-1.5 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
-                 <i className="ph-regular ph-pencil-simple text-sm"></i> Sửa
+                 <i className="ph ph-pencil-simple text-sm"></i> Sửa
               </button>
               <button className="flex-1 py-1.5 text-xs font-bold text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors flex items-center justify-center gap-2 active:scale-95">
-                 <i className="ph-regular ph-trash text-sm"></i> Xóa
+                 <i className="ph ph-trash text-sm"></i> Xóa
               </button>
            </div>
            
@@ -82,7 +82,7 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
       {/* Footer Action - Stacked above BottomNav */}
       <div className="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-100 p-4 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
           <button className="w-full bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95">
-              <i className="ph-regular ph-plus text-lg"></i>
+              <i className="ph ph-plus text-lg"></i>
               Thêm địa chỉ mới
           </button>
       </div>
@@ -91,3 +91,4 @@ const ShippingAddressScreen: React.FC<ShippingAddressScreenProps> = ({ onBack })
 };
 
 export default ShippingAddressScreen;
+

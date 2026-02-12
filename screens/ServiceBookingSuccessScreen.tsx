@@ -21,7 +21,7 @@ const ServiceBookingSuccessScreen: React.FC<ServiceBookingSuccessScreenProps> = 
       {/* Success Animation Icon */}
       <div className="relative z-10 mb-8 animate-in zoom-in duration-500">
         <div className="size-24 bg-green-500 rounded-full flex items-center justify-center shadow-xl shadow-green-500/30">
-           <i className="ph-regular ph-check text-5xl text-white"></i>
+           <i className="ph ph-check text-5xl text-white"></i>
         </div>
         <div className="absolute inset-0 border-4 border-green-200 rounded-full animate-ping opacity-20"></div>
       </div>
@@ -87,7 +87,7 @@ const ServiceBookingSuccessScreen: React.FC<ServiceBookingSuccessScreenProps> = 
            className="w-full h-14 bg-primary text-white font-bold rounded-[16px] shadow-lg shadow-primary/30 flex items-center justify-center gap-2 active:scale-95 transition-transform"
          >
             Xem lịch hẹn
-            <i className="ph-regular ph-arrow-right"></i>
+            <i className="ph ph-arrow-right"></i>
          </button>
          
          <button 
@@ -103,3 +103,4 @@ const ServiceBookingSuccessScreen: React.FC<ServiceBookingSuccessScreenProps> = 
 };
 
 export default ServiceBookingSuccessScreen;
+

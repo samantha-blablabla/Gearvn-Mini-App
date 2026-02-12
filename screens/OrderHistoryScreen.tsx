@@ -82,7 +82,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack, onNavig
            {/* Top Nav - Increased height for Airy feel */}
            <div className="flex items-center px-4 py-2 min-h-[60px] justify-between">
               <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-                 <i className="ph-regular ph-caret-left text-xl"></i>
+                 <i className="ph ph-caret-left text-xl"></i>
               </button>
               <h1 className="text-text-primary text-[17px] font-bold leading-tight flex-1 text-center">Lịch sử mua hàng</h1>
               <div className="size-10"></div>
@@ -94,7 +94,7 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack, onNavig
                   <label className="flex flex-col w-full relative">
                      <div className="flex w-full items-stretch rounded-[14px] h-12 bg-gray-100 border border-transparent focus-within:border-primary/30 focus-within:bg-white transition-all">
                         <div className="text-gray-400 flex items-center justify-center pl-4">
-                           <i className="ph-regular ph-magnifying-glass text-xl"></i>
+                           <i className="ph ph-magnifying-glass text-xl"></i>
                         </div>
                         <input type="text" className="flex w-full border-none bg-transparent focus:ring-0 placeholder:text-gray-400 px-3 text-[15px] font-medium" placeholder="Tìm theo mã đơn hàng..." />
                      </div>
@@ -178,3 +178,4 @@ const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ onBack, onNavig
 };
 
 export default OrderHistoryScreen;
+

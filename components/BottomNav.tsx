@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ScreenName } from '../types';
 
 interface BottomNavProps {
@@ -87,9 +87,9 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
               className={`flex flex-col items-center gap-0.5 justify-center group w-1/5 active:scale-95 transition-transform`}
             >
               <div className="relative p-1">
-                {/* Use ph-fill for active state, ph-regular for inactive */}
+                {/* Use ph-fill for active state, ph for inactive */}
                 <i
-                  className={`ph ${highlight ? 'ph-fill' : 'ph-regular'} ${item.icon} transition-colors duration-200 text-[24px] ${highlight ? 'text-primary' : 'text-gray-400 group-hover:text-primary/70'
+                  className={`ph ${highlight ? 'ph-fill' : 'ph'} ${item.icon} transition-colors duration-200 text-[24px] ${highlight ? 'text-primary' : 'text-gray-400 group-hover:text-primary/70'
                     }`}
                 ></i>
                 {item.id === ScreenName.REWARDS && !highlight && (

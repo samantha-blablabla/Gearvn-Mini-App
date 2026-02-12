@@ -21,11 +21,11 @@ const AllRewardsScreen: React.FC<AllRewardsScreenProps> = ({ onBack, onNavigate 
        <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
         <div className="flex items-center p-4 justify-between h-14">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center text-text-primary">Tất cả phần thưởng</h1>
           <button className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-magnifying-glass text-xl"></i>
+             <i className="ph ph-magnifying-glass text-xl"></i>
           </button>
         </div>
       </header>
@@ -63,3 +63,4 @@ const AllRewardsScreen: React.FC<AllRewardsScreenProps> = ({ onBack, onNavigate 
 };
 
 export default AllRewardsScreen;
+

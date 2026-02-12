@@ -14,7 +14,7 @@ const OrderDetailScreen: React.FC<OrderDetailScreenProps> = ({ onBack, onNavigat
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="flex items-center p-4 justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Thông tin đơn hàng</h1>
           <div className="size-10"></div>
@@ -42,28 +42,28 @@ const OrderDetailScreen: React.FC<OrderDetailScreenProps> = ({ onBack, onNavigat
                     {/* Step 1 */}
                     <div className="flex flex-col items-center gap-2">
                         <div className="size-6 rounded-full bg-green-500 border-2 border-white shadow-sm flex items-center justify-center">
-                            <i className="ph-regular ph-check text-white text-xs"></i>
+                            <i className="ph ph-check text-white text-xs"></i>
                         </div>
                         <span className="text-[10px] font-bold text-gray-800">Đặt hàng</span>
                     </div>
                     {/* Step 2 */}
                     <div className="flex flex-col items-center gap-2">
                         <div className="size-6 rounded-full bg-green-500 border-2 border-white shadow-sm flex items-center justify-center">
-                            <i className="ph-regular ph-check text-white text-xs"></i>
+                            <i className="ph ph-check text-white text-xs"></i>
                         </div>
                         <span className="text-[10px] font-bold text-gray-800">Xác nhận</span>
                     </div>
                     {/* Step 3 */}
                     <div className="flex flex-col items-center gap-2">
                         <div className="size-6 rounded-full bg-green-500 border-2 border-white shadow-sm flex items-center justify-center">
-                            <i className="ph-regular ph-check text-white text-xs"></i>
+                            <i className="ph ph-check text-white text-xs"></i>
                         </div>
                          <span className="text-[10px] font-bold text-gray-800">Đang giao</span>
                     </div>
                     {/* Step 4 */}
                     <div className="flex flex-col items-center gap-2">
                         <div className="size-6 rounded-full bg-green-500 border-2 border-white shadow-sm flex items-center justify-center">
-                            <i className="ph-regular ph-check text-white text-xs"></i>
+                            <i className="ph ph-check text-white text-xs"></i>
                         </div>
                          <span className="text-[10px] font-bold text-gray-800">Hoàn tất</span>
                     </div>
@@ -179,11 +179,11 @@ const OrderDetailScreen: React.FC<OrderDetailScreenProps> = ({ onBack, onNavigat
                 onClick={() => onNavigate(ScreenName.SUPPORT)}
                 className="flex-1 bg-gray-100 text-gray-800 font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors active:scale-95"
             >
-                <i className="ph-regular ph-chat-circle-text text-xl text-gray-600"></i>
+                <i className="ph ph-chat-circle-text text-xl text-gray-600"></i>
                 Hỗ trợ
             </button>
             <button className="flex-1 bg-primary text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 active:scale-95">
-                <i className="ph-regular ph-arrows-clockwise text-xl"></i>
+                <i className="ph ph-arrows-clockwise text-xl"></i>
                 Mua lại
             </button>
           </div>
@@ -193,3 +193,4 @@ const OrderDetailScreen: React.FC<OrderDetailScreenProps> = ({ onBack, onNavigat
 };
 
 export default OrderDetailScreen;
+

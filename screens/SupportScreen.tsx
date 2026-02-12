@@ -12,7 +12,7 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
        <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
         <div className="flex items-center justify-between px-4 py-3 min-h-[60px]">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[17px] font-bold tracking-tight text-text-primary flex-1 text-center">Liên hệ hỗ trợ</h1>
           <div className="size-10"></div>
@@ -67,7 +67,7 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
           </div>
           
           <div className="relative mb-5">
-            <i className="ph-regular ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+            <i className="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
             <input type="text" className="w-full h-12 bg-white border border-gray-200 rounded-[14px] pl-11 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent text-[15px] placeholder:text-gray-400" placeholder="Tìm theo quận, huyện hoặc thành phố" />
           </div>
 
@@ -75,7 +75,7 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
             <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJLc5LGeTunaZ-MmOtloph1t_jj2O4wA7BD7LS2Tg-ec7XsIB0ToDxvTS8WvyQ2Bxgg7rqGxPUF3TVkT0Gjwu_etT2gpDfzcvnS7wShUsckptlDe0fcgiWRvRIqGV_N0wyNu2zqn9Es-oyUBxB3zXMDRH1R-bQ-9fy_81WYSDLg-CudVmZcsdUQ3hkUG5V2-YK49FurMiGEecstVqtWcQ8jeGPUgk_8kSMvFvg9F_zP38CBbfiPY-DorkGR7mJXZXi-95oSoodb6A")'}}></div>
             <div className="absolute top-4 right-4 flex flex-col gap-2">
               <button className="size-11 bg-white rounded-[12px] shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors active:scale-95">
-                <i className="ph-regular ph-crosshair text-gray-700 text-xl"></i>
+                <i className="ph ph-crosshair text-gray-700 text-xl"></i>
               </button>
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -101,10 +101,10 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
             </div>
             <div className="grid grid-cols-2 gap-3 mt-5">
               <button className="flex items-center justify-center gap-2 h-11 border border-primary text-primary font-bold rounded-[12px] text-[14px] hover:bg-primary/5 transition-colors active:scale-95">
-                <i className="ph-regular ph-phone text-lg"></i> Gọi Cửa Hàng
+                <i className="ph ph-phone text-lg"></i> Gọi Cửa Hàng
               </button>
               <button className="flex items-center justify-center gap-2 h-11 bg-primary text-white font-bold rounded-[12px] text-[14px] hover:bg-primary/90 shadow-lg shadow-primary/20 transition-colors active:scale-95">
-                <i className="ph-regular ph-map-pin text-lg"></i> Chỉ Đường
+                <i className="ph ph-map-pin text-lg"></i> Chỉ Đường
               </button>
             </div>
           </div>
@@ -115,24 +115,24 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
            <div className="space-y-3">
              <div className="flex items-center justify-between p-4 bg-white rounded-[16px] border border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors active:scale-[0.98]">
                <div className="flex items-center gap-3">
-                 <i className="ph-regular ph-question text-gray-400 text-xl"></i>
+                 <i className="ph ph-question text-gray-400 text-xl"></i>
                  <span className="text-[14px] font-semibold text-text-primary">Chính Sách Đổi Trả</span>
                </div>
-               <i className="ph-regular ph-caret-right text-gray-300"></i>
+               <i className="ph ph-caret-right text-gray-300"></i>
              </div>
              <div className="flex items-center justify-between p-4 bg-white rounded-[16px] border border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors active:scale-[0.98]">
                <div className="flex items-center gap-3">
-                 <i className="ph-regular ph-truck text-gray-400 text-xl"></i>
+                 <i className="ph ph-truck text-gray-400 text-xl"></i>
                  <span className="text-[14px] font-semibold text-text-primary">Theo Dõi Giao Hàng</span>
                </div>
-               <i className="ph-regular ph-caret-right text-gray-300"></i>
+               <i className="ph ph-caret-right text-gray-300"></i>
              </div>
              <div className="flex items-center justify-between p-4 bg-white rounded-[16px] border border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors active:scale-[0.98]">
                <div className="flex items-center gap-3">
-                 <i className="ph-regular ph-wallet text-gray-400 text-xl"></i>
+                 <i className="ph ph-wallet text-gray-400 text-xl"></i>
                  <span className="text-[14px] font-semibold text-text-primary">Trả Góp & Thanh Toán</span>
                </div>
-               <i className="ph-regular ph-caret-right text-gray-300"></i>
+               <i className="ph ph-caret-right text-gray-300"></i>
              </div>
            </div>
         </div>
@@ -142,3 +142,4 @@ const SupportScreen: React.FC<SupportScreenProps> = ({ onBack }) => {
 };
 
 export default SupportScreen;
+

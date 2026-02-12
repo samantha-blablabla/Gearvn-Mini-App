@@ -18,7 +18,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              </div>
              <div className="flex gap-2">
                 <button className="bg-white/10 backdrop-blur-md size-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                   <i className="ph-regular ph-dots-three text-xl"></i>
+                   <i className="ph ph-dots-three text-xl"></i>
                 </button>
              </div>
           </div>
@@ -72,21 +72,21 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
              <div className="grid grid-cols-3 gap-2">
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2.5 group">
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="ph-regular ph-clock text-2xl"></i>
+                      <i className="ph ph-clock text-2xl"></i>
                    </div>
                    <span className="text-[12px] font-medium text-text-secondary">Đang xử lý</span>
                 </button>
                 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2.5 group">
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="ph-regular ph-truck text-2xl"></i>
+                      <i className="ph ph-truck text-2xl"></i>
                    </div>
                    <span className="text-[12px] font-medium text-text-secondary">Đang giao</span>
                 </button>
 
                 <button onClick={() => onNavigate(ScreenName.HISTORY)} className="flex flex-col items-center gap-2.5 group relative">
                    <div className="size-14 bg-red-50 rounded-[18px] flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-                      <i className="ph-regular ph-check-circle text-2xl"></i>
+                      <i className="ph ph-check-circle text-2xl"></i>
                    </div>
                    <span className="text-[12px] font-medium text-text-secondary">Hoàn thành</span>
                    <div className="absolute -top-1 right-3 bg-primary text-white text-[10px] font-bold size-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">3</div>
@@ -105,13 +105,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-calendar-blank text-xl"></i>
+                   <i className="ph ph-calendar-blank text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Lịch hẹn dịch vụ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Xem các lịch hẹn đã đặt</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -119,13 +119,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-shopping-bag text-xl"></i>
+                   <i className="ph ph-shopping-bag text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Lịch sử mua hàng</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Xem các đơn hàng đã hoàn thành</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
           </div>
 
@@ -140,13 +140,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-chat-circle text-xl"></i>
+                   <i className="ph ph-chat-circle text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Liên hệ hỗ trợ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Chat với GearVN</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -154,13 +154,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-users text-xl"></i>
+                   <i className="ph ph-users text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Theo dõi GearVN</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Nhận thông báo ưu đãi</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
              
              <button 
@@ -168,13 +168,13 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-50"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-shield-check text-xl"></i>
+                   <i className="ph ph-shield-check text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Chính sách bảo mật</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Quyền riêng tư & bảo mật</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
 
              <button 
@@ -182,19 +182,19 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
                 className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 active:bg-gray-100 transition-colors"
              >
                 <div className="size-10 bg-red-50 rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                   <i className="ph-regular ph-file-text text-xl"></i>
+                   <i className="ph ph-file-text text-xl"></i>
                 </div>
                 <div className="flex-1 text-left">
                    <p className="font-semibold text-text-primary text-[15px]">Điều khoản dịch vụ</p>
                    <p className="text-[12px] text-text-secondary mt-0.5">Điều khoản sử dụng</p>
                 </div>
-                <i className="ph-regular ph-caret-right text-gray-300"></i>
+                <i className="ph ph-caret-right text-gray-300"></i>
              </button>
           </div>
           
           <div className="flex flex-col items-center gap-2 py-6">
               <div className="flex items-center gap-2 text-primary font-bold text-xl">
-                 <i className="ph-regular ph-lightning"></i> GEARVN
+                 <i className="ph ph-lightning"></i> GEARVN
               </div>
               <p className="text-[12px] text-gray-400 font-medium">GearVN Member • Version 1.1.3</p>
               
@@ -208,3 +208,4 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onNavigate }) => {
 };
 
 export default ProfileScreen;
+

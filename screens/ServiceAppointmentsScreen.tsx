@@ -11,7 +11,7 @@ const ServiceAppointmentsScreen: React.FC<ServiceAppointmentsScreenProps> = ({ o
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-100">
         <div className="flex items-center p-4 justify-between h-14">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-             <i className="ph-regular ph-caret-left text-xl"></i>
+             <i className="ph ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-[17px] font-bold leading-tight tracking-tight flex-1 text-center text-text-primary">Lịch hẹn dịch vụ</h1>
           <div className="size-10"></div>
@@ -27,7 +27,7 @@ const ServiceAppointmentsScreen: React.FC<ServiceAppointmentsScreenProps> = ({ o
            <h3 className="text-text-primary font-bold text-[18px]">Chưa có lịch hẹn nào</h3>
            <p className="text-text-secondary text-[14px] mt-2 max-w-[240px] leading-relaxed">Bạn có thể đặt lịch vệ sinh PC, bảo dưỡng thiết bị tại cửa hàng Gearvn gần nhất.</p>
            <button className="mt-8 px-8 h-12 bg-primary text-white rounded-[14px] font-bold text-[15px] shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-2">
-              <i className="ph-regular ph-plus"></i>
+              <i className="ph ph-plus"></i>
               Đặt lịch ngay
            </button>
         </div>
@@ -54,3 +54,4 @@ const ServiceAppointmentsScreen: React.FC<ServiceAppointmentsScreenProps> = ({ o
 };
 
 export default ServiceAppointmentsScreen;
+
