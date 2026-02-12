@@ -16,7 +16,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
       <header className="sticky top-0 z-50 bg-white/90 ios-blur border-b border-gray-200">
         <div className="flex items-center px-4 py-3 min-h-[60px] justify-between">
           <button onClick={onBack} className="flex items-center justify-center size-10 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-gray-50 transition-all active:scale-90 text-gray-900">
-            <i className="ph-bold ph-caret-left text-xl"></i>
+            <i className="ph-regular ph-caret-left text-xl"></i>
           </button>
           <h1 className="text-text-primary text-[17px] font-bold leading-tight tracking-tight text-center flex-1">Quản lý Bảo hành</h1>
           <div className="size-10"></div>
@@ -70,7 +70,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     {/* Step 1 */}
                     <div className="flex flex-col items-center">
                       <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph-bold ph-arrows-clockwise text-[14px] animate-spin"></i>
+                        <i className="ph-regular ph-arrows-clockwise text-[14px] animate-spin"></i>
                       </div>
                       <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                     </div>
@@ -82,7 +82,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     {/* Step 2 */}
                     <div className="flex flex-col items-center">
                       <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph-bold ph-check text-[14px]"></i>
+                        <i className="ph-regular ph-check text-[14px]"></i>
                       </div>
                       <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                     </div>
@@ -94,7 +94,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     {/* Step 3 */}
                     <div className="flex flex-col items-center">
                       <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph-bold ph-check text-[14px]"></i>
+                        <i className="ph-regular ph-check text-[14px]"></i>
                       </div>
                     </div>
                     <div className="pt-0.5">

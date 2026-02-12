@@ -73,10 +73,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 </div>
                 <div className="flex gap-3">
                     <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform">
-                        <i className="ph-bold ph-scan text-xl"></i>
+                        <i className="ph-regular ph-scan text-xl"></i>
                     </button>
                     <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform relative">
-                        <i className="ph-bold ph-bell text-xl"></i>
+                        <i className="ph-regular ph-bell text-xl"></i>
                         <span className="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border border-black/50"></span>
                     </button>
                 </div>
@@ -100,7 +100,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                             <div className="flex justify-between items-start">
                                 <img src="https://gearvn.com/wp-content/uploads/2019/06/Logo-Gearvn-White.png" className="h-6 object-contain" alt="Gearvn" /> {/* Text Logo simulation */}
                                 <div className="bg-white/20 backdrop-blur-md px-2 py-1 rounded-[6px] border border-white/10">
-                                    <i className="ph-bold ph-qr-code text-lg"></i>
+                                    <i className="ph-regular ph-qr-code text-lg"></i>
                                 </div>
                             </div>
 
@@ -134,7 +134,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
 
                             <div className="relative z-10 flex justify-between items-center mb-3">
                                 <h3 className="font-bold text-gray-800 text-[14px] uppercase tracking-wider flex items-center gap-1">
-                                    <i className="ph-bold ph-cpu text-primary"></i> CORE BENEFITS
+                                    <i className="ph-regular ph-cpu text-primary"></i> CORE BENEFITS
                                 </h3>
                                 <span className="text-[9px] font-mono text-gray-500">v1.1.3 // ONLINE</span>
                             </div>
@@ -177,7 +177,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                     onClick={() => setIsFlipped(!isFlipped)}
                     className="mt-6 flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/80 text-[12px] font-semibold hover:bg-white/10 transition-colors active:scale-95"
                 >
-                    <i className="ph-bold ph-arrows-left-right"></i>
+                    <i className="ph-regular ph-arrows-left-right"></i>
                     {isFlipped ? 'Xem mặt trước' : 'Quyền lợi của tôi'}
                 </button>
             </div>
@@ -228,14 +228,14 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                         <div onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)} className="mb-8 bg-white p-4 rounded-[20px] shadow-soft border border-orange-100/50 flex items-center gap-4 active:scale-[0.98] transition-transform">
                             <div className="size-12 rounded-[12px] bg-orange-50 flex items-center justify-center text-orange-500 relative shrink-0">
                                 <div className="absolute top-0 right-0 size-2.5 bg-red-500 rounded-full border-2 border-white animate-pulse"></div>
-                                <i className="ph-bold ph-wrench text-xl"></i>
+                                <i className="ph-regular ph-wrench text-xl"></i>
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="text-[11px] font-bold text-orange-600 uppercase tracking-wide mb-0.5">Đang xử lý</p>
                                 <p className="text-[14px] font-semibold text-text-primary line-clamp-1">{activeWarranty.productName}</p>
                                 <p className="text-[12px] text-text-secondary mt-0.5">Cập nhật: {activeWarranty.lastUpdate}</p>
                             </div>
-                            <i className="ph-bold ph-caret-right text-gray-300"></i>
+                            <i className="ph-regular ph-caret-right text-gray-300"></i>
                         </div>
                     )}
 
