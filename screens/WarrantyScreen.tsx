@@ -66,38 +66,38 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                 {/* Stepper */}
                 <div className="px-5 pb-6 pt-3 border-t border-gray-50">
-                  <div className="grid grid-cols-[28px_1fr] gap-x-4 gap-y-0">
+                  <div className="grid grid-cols-[40px_1fr] gap-x-3 gap-y-0">
                     {/* Step 1 */}
-                    <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
-                        <i className="ph ph-arrows-clockwise text-xs animate-spin"></i>
+                    <div className="flex flex-col items-center h-full">
+                      <div className="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-md shrink-0">
+                        <i className="ph ph-arrows-clockwise text-sm animate-spin"></i>
                       </div>
-                      <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
+                      <div className="w-[2px] bg-primary h-full -mt-2 opacity-20 grow"></div>
                     </div>
-                    <div className="pb-7 pt-0.5">
+                    <div className="pb-8 pt-1">
                       <p className="text-[14px] font-bold text-primary leading-none">Đang kiểm tra</p>
                       <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">Hôm nay, 10:30 • Đang xác định lỗi phần cứng</p>
                     </div>
 
                     {/* Step 2 */}
-                    <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
-                        <i className="ph ph-check text-xs"></i>
+                    <div className="flex flex-col items-center h-full">
+                      <div className="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-md shrink-0">
+                        <i className="ph ph-check text-sm"></i>
                       </div>
-                      <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
+                      <div className="w-[2px] bg-primary h-full -mt-2 opacity-20 grow"></div>
                     </div>
-                    <div className="pb-7 pt-0.5">
+                    <div className="pb-8 pt-1">
                       <p className="text-[14px] font-semibold text-text-primary leading-none">Đã tiếp nhận</p>
                       <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">24/10/2023 • Tại Gearvn CMT8, Q.3</p>
                     </div>
 
                     {/* Step 3 */}
                     <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
-                        <i className="ph ph-check text-xs"></i>
+                      <div className="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-md shrink-0">
+                        <i className="ph ph-check text-sm"></i>
                       </div>
                     </div>
-                    <div className="pt-0.5">
+                    <div className="pt-1">
                       <p className="text-[14px] font-semibold text-text-primary leading-none">Tạo yêu cầu</p>
                       <p className="text-[12px] text-text-secondary mt-1.5 leading-snug">23/10/2023 • Qua ứng dụng Gearvn Sync</p>
                     </div>
