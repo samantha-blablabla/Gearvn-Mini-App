@@ -54,7 +54,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
                   onClick={() => onNavigate(ScreenName.SERVICE_BOOKING)}
                   className="size-11 bg-primary text-white rounded-[16px] shadow-lg shadow-primary/30 flex items-center justify-center hover:bg-primary/90 transition-all active:scale-95"
                 >
-                  <i className="ph-regular ph-plus text-xl"></i>
+                  <i className="ph-bold ph-plus text-xl"></i>
                 </button>
               </div>
             );
@@ -97,7 +97,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentScreen, onNavigate }) => {
                 )}
               </div>
               <span
-                className={`text-[10px] font-medium transition-colors duration-200 ${highlight ? 'text-primary' : 'text-gray-400 group-hover:text-primary/70'
+                className={`text-[11px] font-medium transition-colors duration-200 ${highlight ? 'text-primary' : 'text-gray-400 group-hover:text-primary/70'
                   }`}
               >
                 {item.label}
