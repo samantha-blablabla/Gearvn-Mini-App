@@ -46,12 +46,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
             {/* Claim Card 1 */}
             <div className="px-5">
               <div className="bg-white rounded-[20px] shadow-soft overflow-hidden border border-transparent">
-                <div className="p-5 flex gap-4">
-                  <div
-                    className="size-24 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100"
-                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8cMOAdL1G8lSJI51mJK5TwV9J0bXw-hga_moNy168ChyCKOKHwlRWGamHvWckLQR9jnoK2v6PeSzR7y7e5tSFJ5QK7tPZidZfZ7My854mjchgY1D-7HIpiDfa7nyEvUQ_QVVHliJ6ZwUY1FhB3cZ4T1EY8y_sdtZbewWVxmLQnD2HCk__6FExw2XBRZXTZeUPsgV5jPHLH0Q-F1ViLxUW0jZDoxlhUd073Rp_80jV7avMXWgEfm6tvrB8Qy8HV0nYfpYy0qw5ft8")' }}
-                  ></div>
-                  <div className="flex flex-col justify-between flex-1 py-1">
+                <div className="p-5">
+                  <div className="flex flex-col">
                     <div>
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="font-bold text-[15px] leading-tight text-text-primary line-clamp-2">Laptop ASUS ROG Strix G15</h3>
@@ -113,12 +109,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
             {/* Claim Card 2 */}
             <div className="px-5">
               <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden">
-                <div className="p-5 flex gap-4">
-                  <div
-                    className="size-24 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100"
-                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTA8EaIQxO_inNoACJm21LcUNbcyYAvpxsNttev9j449z4qqO211FcMOWg93kehMjlbAUywiXKQdJ8Wc7Qkcyn6d_81ae_cCHsFWRWdS8FXEMASBLOmesxuRNR4CtXhzk3sBTvjhInJBgq1j5FCOIcZGzE8Ey_i18ZEan1DZxYQBWcttzLiCUM8CGKrMWOt00Bgumc0azj6xD1oMb5BlQYDC7OmO49jWask7sdZFX7VeXnC3iWsxu5qeCqbM1_Lt1a1XYxbs-oi4c")' }}
-                  ></div>
-                  <div className="flex flex-col justify-between flex-1 py-1">
+                <div className="p-5">
+                  <div className="flex flex-col">
                     <div>
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="font-bold text-[15px] leading-tight text-text-primary line-clamp-2">Bàn phím Akko 3098B Multi-mode</h3>
@@ -152,12 +144,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
             {/* History Item 1 */}
             <div className="px-5">
               <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                <div className="p-5 flex gap-4">
-                  <div
-                    className="size-20 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100 grayscale"
-                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhbqn8oEvmnOKeK03rnvsGiy5zDNuKeH7h8xdx21TDPRCcNogKnMH91l1i1V9Fwamut-yi8lxShUUHpzAw5PX3YqaxVPljgnknmrpxFpuaK8s20JBNd4tFLVcB5vP_NXZBG9mtTUee_jHJPFh6RdobW2cjAYF2sFBFoBexOK6HDyti3VrqWuRUHxqcltLLNspakmvS4ykRfE1QlMrN-X9gyb5G3017ppzFHSl3w_0w1X9jSBjamgxel-6e-1aoRvaMQ1tSMWxiK5E")' }}
-                  ></div>
-                  <div className="flex flex-col justify-between flex-1">
+                <div className="p-5">
+                  <div className="flex flex-col">
                     <div>
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Chuột Logitech G502 HERO</h3>
@@ -179,12 +167,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
             {/* History Item 2 */}
             <div className="px-5">
               <div className="bg-white rounded-[20px] shadow-soft border border-transparent overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                <div className="p-5 flex gap-4">
-                  <div
-                    className="size-20 bg-center bg-no-repeat bg-contain bg-[#F9FAFB] rounded-[16px] flex-shrink-0 border border-gray-100 grayscale"
-                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo-C2djq42-Z6x61oTMA9jF8wCtl0fUxI1il_o3yjxE24lFoAvdBIHLkvSrfxagrt_oqXEo-q4G3NM8RAmwHWvvodhtVqp-bqLwex9p42Oyis2Jkfd4oBkOdiQj1uM_5zS58jMgGgK6oxyR1Ay1kp070sFlPSTvWZKr3aD7Mh2gIha2tcUM9cDWuf56PxVbSt_7vTj8DEO3oGApZYrPf57ve3yNGUwmDZdceJhI0Vj25mm5SPem41E6_JEZbBhN21F2pMrbm08HvY")' }}
-                  ></div>
-                  <div className="flex flex-col justify-between flex-1">
+                <div className="p-5">
+                  <div className="flex flex-col">
                     <div>
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="font-bold text-[14px] leading-tight text-text-primary line-clamp-2">Tai nghe Kingston HyperX Cloud III</h3>
