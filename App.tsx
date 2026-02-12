@@ -187,31 +187,28 @@ const App: React.FC = () => {
 
       {currentScreen === ScreenName.MINIGAME && <MinigameScreen onBack={goBack} />}
 
-      {/* Floating Game Button - Constrained to mobile container */}
+      {/* Floating Game Button - Halted
       {currentScreen !== ScreenName.MINIGAME && currentScreen !== ScreenName.SERVICE_BOOKING && currentScreen !== ScreenName.CREATE_WARRANTY && (
         <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-[60] pointer-events-none">
           <button
             onClick={() => navigateTo(ScreenName.MINIGAME)}
             className="pointer-events-auto absolute bottom-0 right-4 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 group shadow-[0_0_20px_rgba(227,0,25,0.4)]"
           >
-            {/* Pulsing rings */}
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-20 animate-ping"></span>
             <span className="absolute inline-flex h-12 w-12 rounded-full bg-primary/40 opacity-75 blur-sm"></span>
 
-            {/* Main Button Body - Gradient */}
             <div className="relative w-full h-full rounded-full bg-gradient-to-tr from-primary to-[#ff4d4d] flex items-center justify-center border-2 border-white/20 overflow-hidden">
-              {/* Shimmer Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 animate-[shimmer_2s_infinite]"></div>
               <i className="ph-fill ph-gift text-2xl text-white drop-shadow-md group-hover:rotate-12 transition-transform"></i>
             </div>
 
-            {/* Notification Badge */}
             <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 border-2 border-white text-[10px] font-bold text-yellow-900 shadow-sm animate-bounce">
               3
             </span>
           </button>
         </div>
       )}
+      */}
 
       {/* Conditionally Render BottomNav */}
       {!screensWithoutNav.includes(currentScreen) && (
