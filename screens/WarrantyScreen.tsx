@@ -61,7 +61,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     </div>
                     <button
                       onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-                      className="self-end bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
+                      className="self-start mt-3 bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
                     >
                       Xem chi tiết
                     </button>
@@ -129,7 +129,7 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
                     </div>
                     <button
                       onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)}
-                      className="self-end mt-2 bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
+                      className="self-start mt-3 bg-primary text-white text-[13px] font-bold px-4 h-9 rounded-[10px] hover:bg-primary/90 transition-colors active:scale-95 shadow-lg shadow-primary/20"
                     >
                       Xem chi tiết
                     </button>
