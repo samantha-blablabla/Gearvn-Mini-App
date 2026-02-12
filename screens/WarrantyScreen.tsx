@@ -66,11 +66,11 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                 {/* Stepper */}
                 <div className="px-5 pb-6 pt-3 border-t border-gray-50">
-                  <div className="grid grid-cols-[24px_1fr] gap-x-4 gap-y-0">
+                  <div className="grid grid-cols-[28px_1fr] gap-x-4 gap-y-0">
                     {/* Step 1 */}
                     <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph ph-arrows-clockwise text-[14px] animate-spin"></i>
+                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
+                        <i className="ph ph-arrows-clockwise text-xs animate-spin"></i>
                       </div>
                       <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                     </div>
@@ -81,8 +81,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                     {/* Step 2 */}
                     <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph ph-check text-[14px]"></i>
+                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
+                        <i className="ph ph-check text-xs"></i>
                       </div>
                       <div className="w-[2px] bg-primary h-full -mt-2 -mb-2 opacity-30"></div>
                     </div>
@@ -93,8 +93,8 @@ const WarrantyScreen: React.FC<WarrantyScreenProps> = ({ onNavigate, onBack }) =
 
                     {/* Step 3 */}
                     <div className="flex flex-col items-center">
-                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-4 ring-white z-10 shadow-sm">
-                        <i className="ph ph-check text-[14px]"></i>
+                      <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center ring-2 ring-white z-10 shadow-sm">
+                        <i className="ph ph-check text-xs"></i>
                       </div>
                     </div>
                     <div className="pt-0.5">
