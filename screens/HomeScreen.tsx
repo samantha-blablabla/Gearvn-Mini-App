@@ -66,8 +66,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
             </div>
 
             {/* 2. Transparent Header - HIG Update: Increased top padding */}
-            <div className="absolute top-0 left-0 right-0 z-20 pt-[calc(env(safe-area-inset-top)+48px)] px-5 flex justify-between items-center text-white">
-                <div className="flex flex-col">
+            <div
+                className="absolute top-0 left-0 right-0 z-20 px-5 flex justify-between items-center text-white"
+                style={{ paddingTop: 'calc(env(safe-area-inset-top) + 4px)' }}
+            >
+                <div className="flex flex-col mt-2"> {/* Reduced margin-top */}
                     <span className="text-[13px] font-medium opacity-80 tracking-wide">Good Afternoon,</span>
                     <span className="text-[20px] font-bold tracking-tight leading-none">Minh Hoàng</span>
                 </div>

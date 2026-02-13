@@ -42,6 +42,29 @@ const App: React.FC = () => {
   // Scroll to top on navigation change
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Dynamic Theme Color & Status Bar Style
+    const darkerScreens = [ScreenName.HOME, ScreenName.MINIGAME];
+    const isDark = darkerScreens.includes(currentScreen);
+
+    // 1. Update theme-color (Android/Chrome/Safari Browser)
+    let themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (!themeMeta) {
+      themeMeta = document.createElement('meta');
+      themeMeta.setAttribute('name', 'theme-color');
+      document.head.appendChild(themeMeta);
+    }
+    themeMeta.setAttribute('content', isDark ? '#000000' : '#F2F4F6');
+
+    // 2. Update iOS Status Bar Style (Try to switch between light/dark text)
+    // Note: iOS PWA often locks this at startup, but some versions allow update.
+    let statusMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+    if (statusMeta) {
+      // black-translucent = White Text (for Dark BG)
+      // default = Black Text (for Light BG)
+      statusMeta.setAttribute('content', isDark ? 'black-translucent' : 'default');
+    }
+
   }, [currentScreen]);
 
   const navigateTo = (screen: ScreenName) => {
