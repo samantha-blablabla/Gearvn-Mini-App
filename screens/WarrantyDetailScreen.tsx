@@ -26,13 +26,13 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                     <div className="w-full">
                         <h2 className="font-bold text-gray-900 text-sm line-clamp-2">Laptop ASUS ROG Strix G15 G513IH-HN015W</h2>
                         <p className="text-gray-500 text-xs mt-1 font-mono">S/N: G513-2023-001</p>
-                        <div className="flex items-center justify-between mt-2">
-                            <span className="inline-block bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-[6px] uppercase border border-primary/10">
+                        <div className="mt-3">
+                            <span className="inline-block bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-[6px] uppercase border border-primary/10 mb-3">
                                 Đang xử lý
                             </span>
-                            <button className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white rounded-[8px] text-[11px] font-bold active:scale-95 transition-transform shadow-md shadow-primary/30">
-                                <i className="ph-fill ph-chat-circle-text text-base"></i>
-                                Chat ngay
+                            <button className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-white rounded-[12px] text-[13px] font-bold active:scale-[0.98] transition-all shadow-sm shadow-primary/20 hover:bg-primary/90">
+                                <i className="ph-fill ph-chat-circle-text text-lg"></i>
+                                Chat hỗ trợ kỹ thuật
                             </button>
                         </div>
                     </div>
