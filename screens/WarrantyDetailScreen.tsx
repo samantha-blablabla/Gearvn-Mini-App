@@ -124,14 +124,10 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                     <p className="text-[12px] font-medium text-gray-500">Kỹ thuật viên đang trực tuyến</p>
                 </div>
 
-                <div className="flex gap-3">
-                    <button className="flex-1 bg-gray-100 text-gray-800 font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors active:scale-95">
-                        <i className="ph-fill ph-chat-circle-text text-xl text-gray-600"></i>
+                <div className="w-full">
+                    <button className="w-full bg-primary text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 active:scale-95">
+                        <i className="ph-fill ph-chat-circle-text text-xl"></i>
                         Chat hỗ trợ
-                    </button>
-                    <button className="flex-1 bg-primary text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 active:scale-95">
-                        <i className="ph-fill ph-phone-call text-xl"></i>
-                        Gọi hotline
                     </button>
                 </div>
             </div>
@@ -140,4 +136,3 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
 };
 
 export default WarrantyDetailScreen;
-
