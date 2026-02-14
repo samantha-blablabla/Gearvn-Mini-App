@@ -27,10 +27,10 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                         className="w-20 h-20 bg-center bg-no-repeat bg-contain bg-gray-50 rounded-lg flex-shrink-0 border border-gray-100"
                         style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8cMOAdL1G8lSJI51mJK5TwV9J0bXw-hga_moNy168ChyCKOKHwlRWGamHvWckLQR9jnoK2v6PeSzR7y7e5tSFJ5QK7tPZidZfZ7My854mjchgY1D-7HIpiDfa7nyEvUQ_QVVHliJ6ZwUY1FhB3cZ4T1EY8y_sdtZbewWVxmLQnD2HCk__6FExw2XBRZXTZeUPsgV5jPHLH0Q-F1ViLxUW0jZDoxlhUd073Rp_80jV7avMXWgEfm6tvrB8Qy8HV0nYfpYy0qw5ft8")' }}
                     ></div>
-                    <div>
+                    <div className="flex-1">
                         <h2 className="font-bold text-gray-900 text-sm line-clamp-2">Laptop ASUS ROG Strix G15 G513IH-HN015W</h2>
                         <p className="text-gray-500 text-xs mt-1 font-mono">S/N: G513-2023-001</p>
-                        <div className="flex items-center gap-3 mt-2">
+                        <div className="flex items-center justify-between mt-2">
                             <span className="inline-block bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-[6px] uppercase border border-primary/10">
                                 Đang xử lý
                             </span>
