@@ -251,9 +251,9 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                             </h2>
                             <button
                                 onClick={() => onNavigate(ScreenName.HOT_DEALS)}
-                                className="text-[13px] font-medium text-primary flex items-center gap-1 active:opacity-70 hover:underline"
+                                className="text-[13px] font-medium text-primary flex items-center gap-1 active:opacity-70 group"
                             >
-                                Xem thêm
+                                <span className="group-hover:underline">Xem thêm</span>
                                 <i className="ph ph-caret-right text-xs"></i>
                             </button>
                         </div>
