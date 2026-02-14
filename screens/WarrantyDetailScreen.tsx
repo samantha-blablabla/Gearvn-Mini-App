@@ -104,33 +104,6 @@ const WarrantyDetailScreen: React.FC<WarrantyDetailScreenProps> = ({ onBack }) =
                 </div>
             </main>
 
-            {/* Floating Action Buttons - Solid Drawer Implementation */}
-            {/* z-30 to sit BEHIND BottomNav (z-40) but capture clicks in padded area */}
-            {/* pb-[calc(88px+env...)] accounts for BottomNav height (64px) + padding (24px) */}
-            <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-gray-50 p-4 pb-[calc(88px+env(safe-area-inset-bottom))] z-30 shadow-[0_-4px_20px_-2px_rgba(0,0,0,0.05)] rounded-t-[24px]">
-                {/* Human Touch / Status Indicator */}
-                <div className="flex items-center justify-center gap-2 mb-3.5">
-                    <div className="flex -space-x-2">
-                        <div className="size-6 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                            <img src="https://i.pravatar.cc/100?img=33" alt="Support" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="size-6 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                            <img src="https://i.pravatar.cc/100?img=47" alt="Support" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="size-6 rounded-full border-2 border-white bg-green-100 flex items-center justify-center">
-                            <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>
-                        </div>
-                    </div>
-                    <p className="text-[12px] font-medium text-gray-500">Kỹ thuật viên đang trực tuyến</p>
-                </div>
-
-                <div className="w-full">
-                    <button className="w-full bg-primary text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 active:scale-95">
-                        <i className="ph-fill ph-chat-circle-text text-xl"></i>
-                        Chat hỗ trợ
-                    </button>
-                </div>
-            </div>
         </div>
     );
 };
