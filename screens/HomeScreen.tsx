@@ -244,10 +244,19 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
 
                     {/* Trending Section */}
                     <div className="mb-4">
-                        <h2 className="text-[18px] font-semibold text-text-primary mb-4 flex items-center gap-2">
-                            Xu hướng
-                            <span className="bg-red-100 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-[4px]">HOT</span>
-                        </h2>
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-[18px] font-semibold text-text-primary flex items-center gap-2">
+                                Xu hướng
+                                <span className="bg-red-100 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-[4px]">HOT</span>
+                            </h2>
+                            <button
+                                onClick={() => onNavigate(ScreenName.HOT_DEALS)}
+                                className="text-[13px] font-medium text-primary flex items-center gap-1 active:opacity-70 hover:underline"
+                            >
+                                Xem thêm
+                                <i className="ph ph-caret-right text-xs"></i>
+                            </button>
+                        </div>
                         <div className="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x snap-mandatory">
                             {hotDeals.map((deal) => (
                                 <div key={deal.id} className="min-w-[160px] bg-white rounded-[18px] p-3 shadow-soft snap-start border border-gray-100">
