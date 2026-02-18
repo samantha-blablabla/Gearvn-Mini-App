@@ -23,6 +23,7 @@ import AllRewardsScreen from './screens/AllRewardsScreen';
 import OrderLookupScreen from './screens/OrderLookupScreen';
 import OrderDetailScreen from './screens/OrderDetailScreen';
 import MinigameScreen from './screens/MinigameScreen'; // Import Minigame
+import ChatScreen from './screens/ChatScreen'; // Import Chatbot
 import BottomNav from './components/BottomNav';
 import { ScreenName } from './types';
 
@@ -37,6 +38,7 @@ const App: React.FC = () => {
     ScreenName.SERVICE_BOOKING_SUCCESS,
     ScreenName.CREATE_WARRANTY,
     ScreenName.MINIGAME, // Hide nav on game screen
+    ScreenName.CHAT, // Hide nav on chat screen
   ];
 
   // Scroll to top on navigation change
@@ -84,6 +86,11 @@ const App: React.FC = () => {
 
     // Save origin for Minigame too, so we can go back to where we were
     if (screen === ScreenName.MINIGAME) {
+      setPreviousScreen(currentScreen);
+    }
+
+    // Save origin for Chat too
+    if (screen === ScreenName.CHAT) {
       setPreviousScreen(currentScreen);
     }
 
@@ -169,6 +176,14 @@ const App: React.FC = () => {
           navigateTo(ScreenName.HOME);
         }
         break;
+      case ScreenName.CHAT:
+        // Return to where we opened the chat from
+        if (previousScreen && previousScreen !== ScreenName.CHAT) {
+          navigateTo(previousScreen);
+        } else {
+          navigateTo(ScreenName.HOME);
+        }
+        break;
       default:
         navigateTo(ScreenName.HOME);
     }
@@ -196,7 +211,7 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.TERMS_OF_SERVICE && <TermsOfServiceScreen onBack={() => navigateTo(ScreenName.PROFILE)} />}
 
       {/* Support Screen now uses onBack for navigation */}
-      {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={goBack} />}
+      {currentScreen === ScreenName.SUPPORT && <SupportScreen onBack={goBack} onNavigate={navigateTo} />}
 
       {currentScreen === ScreenName.WARRANTY_DETAIL && <WarrantyDetailScreen onBack={goBack} />}
 
@@ -209,6 +224,8 @@ const App: React.FC = () => {
       {currentScreen === ScreenName.ORDER_DETAIL && <OrderDetailScreen onNavigate={navigateTo} onBack={goBack} />}
 
       {currentScreen === ScreenName.MINIGAME && <MinigameScreen onBack={goBack} />}
+
+      {currentScreen === ScreenName.CHAT && <ChatScreen onBack={goBack} onNavigate={navigateTo} />}
 
       {/* Floating Game Button - Halted
       {currentScreen !== ScreenName.MINIGAME && currentScreen !== ScreenName.SERVICE_BOOKING && currentScreen !== ScreenName.CREATE_WARRANTY && (

@@ -280,6 +280,19 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 </div>
 
             </div>
+
+            {/* Floating Chat FAB */}
+            <div className="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-[60] pointer-events-none">
+                <button
+                    onClick={() => onNavigate(ScreenName.CHAT)}
+                    className="pointer-events-auto absolute bottom-0 right-4 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 group shadow-[0_4px_20px_rgba(227,0,25,0.3)]"
+                >
+                    <div className="relative w-full h-full rounded-full bg-gradient-to-tr from-primary to-[#ff4d4d] flex items-center justify-center border-2 border-white/20 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-[shimmer_3s_infinite]"></div>
+                        <i className="ph-fill ph-chat-circle-dots text-2xl text-white drop-shadow-md"></i>
+                    </div>
+                </button>
+            </div>
         </div>
     );
 };

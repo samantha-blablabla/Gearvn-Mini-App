@@ -25,6 +25,7 @@ export enum ScreenName {
   SERVICE_BOOKING = 'SERVICE_BOOKING',
   SERVICE_BOOKING_SUCCESS = 'SERVICE_BOOKING_SUCCESS',
   MINIGAME = 'MINIGAME', // New Gacha Game
+  CHAT = 'CHAT', // GearBot Chatbot
 }
 
 export interface Product {
