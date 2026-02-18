@@ -75,7 +75,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
 
             {/* 2. Large Membership Card (Highlands Style - Portrait Ratio) */}
             <div className="px-5 pt-5 pb-4">
-                <div className="w-full rounded-[28px] bg-gradient-to-br from-[#E30019] to-[#8a000f] p-6 text-white overflow-hidden relative aspect-[3/4] flex flex-col justify-between shadow-xl shadow-red-500/20">
+                <div className="w-full rounded-[28px] bg-gradient-to-br from-[#E30019] to-[#8a000f] p-6 text-white overflow-hidden relative aspect-[4/5] flex flex-col justify-between shadow-xl shadow-red-500/20">
                     {/* Texture Overlays */}
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15 mix-blend-overlay"></div>
                     <div className="absolute -right-8 top-1/2 -translate-y-1/2 text-[180px] font-black opacity-[0.07] leading-none tracking-tighter select-none rotate-[-8deg]">GEAR<br />VN</div>
