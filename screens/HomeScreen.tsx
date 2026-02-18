@@ -74,136 +74,121 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 </div>
             </header>
 
-            {/* 2. Flip Membership Card (Compact - 240px) */}
-            <div className="px-5 pt-5 pb-3">
-                <div className="w-full h-[240px] perspective-1000">
-                    <div
-                        className={`relative w-full h-full transform-style-3d transition-transform duration-700 ease-in-out ${isFlipped ? 'rotate-y-180' : ''}`}
-                    >
-                        {/* FRONT FACE */}
-                        <div className="absolute inset-0 w-full h-full backface-hidden rounded-[24px] bg-gradient-to-br from-[#E30019] to-[#8a000f] p-5 text-white overflow-hidden border border-white/10 shadow-xl shadow-red-500/20">
-                            {/* Texture */}
-                            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15 mix-blend-overlay"></div>
-                            <div className="absolute -right-6 -bottom-8 text-[120px] font-black opacity-[0.06] leading-none tracking-tighter select-none">GEAR<br />VN</div>
-
-                            <div className="relative z-10 h-full flex flex-col justify-between">
-                                {/* Top: Logo + QR */}
-                                <div className="flex justify-between items-start">
-                                    <img src="https://gearvn.com/wp-content/uploads/2019/06/Logo-Gearvn-White.png" className="h-6 object-contain" alt="Gearvn" />
-                                    <button className="bg-white/15 backdrop-blur-md p-2 rounded-[10px] border border-white/10 active:scale-95 transition-transform">
-                                        <i className="ph ph-qr-code text-xl"></i>
-                                    </button>
-                                </div>
-
-                                {/* Bottom: Member Info + Flip Trigger */}
-                                <div>
-                                    <div className="flex justify-between items-end">
-                                        <div>
-                                            <h2 className="text-[28px] font-extrabold leading-none tracking-tight">Gold</h2>
-                                            <p className="text-[13px] font-bold opacity-80 mt-0.5">Member</p>
-                                            <div className="flex items-center gap-2 text-yellow-300 mt-1.5">
-                                                <i className="ph-fill ph-lightning text-lg"></i>
-                                                <span className="text-[16px] font-bold font-mono">1,250 <span className="text-[10px] opacity-70">PTS</span></span>
-                                            </div>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="text-[11px] font-medium opacity-60 mb-1">Your Stamps</p>
-                                            <button
-                                                onClick={() => setIsFlipped(true)}
-                                                className="bg-white/15 backdrop-blur-md p-2 rounded-[10px] border border-white/10 active:scale-95 transition-transform"
-                                            >
-                                                <i className="ph ph-arrows-clockwise text-xl"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    {/* Progress Bar */}
-                                    <div className="mt-3 h-1 w-full bg-black/20 rounded-full overflow-hidden">
-                                        <div className="h-full w-[62%] bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.6)]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* BACK FACE */}
-                        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-[24px] bg-gradient-to-br from-gray-200 to-gray-300 p-1 overflow-hidden shadow-xl">
-                            <div className="w-full h-full bg-[#f0f1f3] rounded-[20px] relative overflow-hidden p-5 flex flex-col">
-                                {/* Dot Pattern */}
-                                <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
-                                    backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-                                    backgroundSize: '12px 12px'
-                                }}></div>
-
-                                <div className="relative z-10 flex justify-between items-center mb-4">
-                                    <h3 className="font-bold text-gray-800 text-[14px] uppercase tracking-wider flex items-center gap-1.5">
-                                        <i className="ph ph-cpu text-primary"></i> Quyền lợi
-                                    </h3>
-                                    <button
-                                        onClick={() => setIsFlipped(false)}
-                                        className="bg-gray-200 p-1.5 rounded-[8px] active:scale-95 transition-transform"
-                                    >
-                                        <i className="ph ph-arrows-clockwise text-lg text-gray-600"></i>
-                                    </button>
-                                </div>
-
-                                {/* Benefits Grid */}
-                                <div className="grid grid-cols-4 gap-2 flex-1">
-                                    <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
-                                        <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                        <i className="ph-fill ph-truck text-xl text-gray-800 mb-1"></i>
-                                        <span className="text-[9px] font-bold text-gray-600">FreeShip</span>
-                                    </div>
-                                    <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
-                                        <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                        <i className="ph-fill ph-percent text-xl text-gray-800 mb-1"></i>
-                                        <span className="text-[9px] font-bold text-gray-600">-5% Gear</span>
-                                    </div>
-                                    <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
-                                        <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                        <i className="ph-fill ph-wrench text-xl text-gray-800 mb-1"></i>
-                                        <span className="text-[9px] font-bold text-gray-600">Vệ sinh</span>
-                                    </div>
-                                    <div className="bg-gray-100 rounded-[14px] p-2 flex flex-col items-center justify-center opacity-50 grayscale">
-                                        <i className="ph-fill ph-cake text-xl text-gray-500 mb-1"></i>
-                                        <span className="text-[9px] font-bold text-gray-500">Sinh nhật</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3. Video Player Section */}
-            <div className="px-5 mb-5">
-                <div className="w-full h-[200px] rounded-[20px] overflow-hidden bg-gray-900 relative shadow-lg">
-                    {/* Video element - replace src with actual promo video */}
+            {/* 2. Video Background + Floating Card */}
+            <div className="relative overflow-hidden">
+                {/* Video Background Layer */}
+                <div className="absolute inset-0 z-0">
                     <video
                         className="w-full h-full object-cover"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        poster="https://lh3.googleusercontent.com/aida-public/AB6AXuDCiUj36XN7t7Hn76W0s55_yF0l7q7dC7z7wWw7pL9q8yD4v0x1jG4h3nF7kQ9w8e5rT6yU2iO4pL1aS3dF8gH5jK0lZ2xX4cV9bN7mQ1wE6rT5yU8iO3pL0aS2dF7gH5jK0lZ2xX4cV9bN7mQ1wE6rT5yU8iO3pL0aS2dF7gH4jK9lZ1xX3cV8bN6mQ0wE5r"
                     >
                         {/* <source src="/asset/promo.mp4" type="video/mp4" /> */}
                     </video>
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                    {/* Animated equalizer + label */}
-                    <div className="absolute bottom-3 left-4 flex items-center gap-2 text-white/80">
-                        <div className="flex gap-0.5 items-end h-3">
-                            <div className="w-[3px] h-2 bg-primary rounded-full animate-pulse"></div>
-                            <div className="w-[3px] h-3 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.15s' }}></div>
-                            <div className="w-[3px] h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                    {/* Fallback gradient bg when no video source */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+                    {/* Dark overlay for card readability */}
+                    <div className="absolute inset-0 bg-black/20"></div>
+                </div>
+
+                {/* Floating Flip Card */}
+                <div className="relative z-10 px-5 pt-5 pb-6">
+                    <div className="w-full h-[240px] perspective-1000">
+                        <div
+                            className={`relative w-full h-full transform-style-3d transition-transform duration-700 ease-in-out ${isFlipped ? 'rotate-y-180' : ''}`}
+                        >
+                            {/* FRONT FACE */}
+                            <div className="absolute inset-0 w-full h-full backface-hidden rounded-[24px] bg-gradient-to-br from-[#E30019] to-[#8a000f] p-5 text-white overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+                                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15 mix-blend-overlay"></div>
+                                <div className="absolute -right-6 -bottom-8 text-[120px] font-black opacity-[0.06] leading-none tracking-tighter select-none">GEAR<br />VN</div>
+
+                                <div className="relative z-10 h-full flex flex-col justify-between">
+                                    <div className="flex justify-between items-start">
+                                        <img src="https://gearvn.com/wp-content/uploads/2019/06/Logo-Gearvn-White.png" className="h-6 object-contain" alt="Gearvn" />
+                                        <button className="bg-white/15 backdrop-blur-md p-2 rounded-[10px] border border-white/10 active:scale-95 transition-transform">
+                                            <i className="ph ph-qr-code text-xl"></i>
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex justify-between items-end">
+                                            <div>
+                                                <h2 className="text-[28px] font-extrabold leading-none tracking-tight">Gold</h2>
+                                                <p className="text-[13px] font-bold opacity-80 mt-0.5">Member</p>
+                                                <div className="flex items-center gap-2 text-yellow-300 mt-1.5">
+                                                    <i className="ph-fill ph-lightning text-lg"></i>
+                                                    <span className="text-[16px] font-bold font-mono">1,250 <span className="text-[10px] opacity-70">PTS</span></span>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="text-[11px] font-medium opacity-60 mb-1">Your Stamps</p>
+                                                <button
+                                                    onClick={() => setIsFlipped(true)}
+                                                    className="bg-white/15 backdrop-blur-md p-2 rounded-[10px] border border-white/10 active:scale-95 transition-transform"
+                                                >
+                                                    <i className="ph ph-arrows-clockwise text-xl"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="mt-3 h-1 w-full bg-black/20 rounded-full overflow-hidden">
+                                            <div className="h-full w-[62%] bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.6)]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* BACK FACE */}
+                            <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-[24px] bg-gradient-to-br from-gray-200 to-gray-300 p-1 overflow-hidden shadow-2xl shadow-black/40">
+                                <div className="w-full h-full bg-[#f0f1f3] rounded-[20px] relative overflow-hidden p-5 flex flex-col">
+                                    <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
+                                        backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
+                                        backgroundSize: '12px 12px'
+                                    }}></div>
+
+                                    <div className="relative z-10 flex justify-between items-center mb-4">
+                                        <h3 className="font-bold text-gray-800 text-[14px] uppercase tracking-wider flex items-center gap-1.5">
+                                            <i className="ph ph-cpu text-primary"></i> Quyền lợi
+                                        </h3>
+                                        <button
+                                            onClick={() => setIsFlipped(false)}
+                                            className="bg-gray-200 p-1.5 rounded-[8px] active:scale-95 transition-transform"
+                                        >
+                                            <i className="ph ph-arrows-clockwise text-lg text-gray-600"></i>
+                                        </button>
+                                    </div>
+
+                                    <div className="grid grid-cols-4 gap-2 flex-1">
+                                        <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
+                                            <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                            <i className="ph-fill ph-truck text-xl text-gray-800 mb-1"></i>
+                                            <span className="text-[9px] font-bold text-gray-600">FreeShip</span>
+                                        </div>
+                                        <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
+                                            <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                            <i className="ph-fill ph-percent text-xl text-gray-800 mb-1"></i>
+                                            <span className="text-[9px] font-bold text-gray-600">-5% Gear</span>
+                                        </div>
+                                        <div className="bg-white rounded-[14px] p-2 flex flex-col items-center justify-center shadow-sm relative">
+                                            <div className="absolute top-1.5 right-1.5 size-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                            <i className="ph-fill ph-wrench text-xl text-gray-800 mb-1"></i>
+                                            <span className="text-[9px] font-bold text-gray-600">Vệ sinh</span>
+                                        </div>
+                                        <div className="bg-gray-100 rounded-[14px] p-2 flex flex-col items-center justify-center opacity-50 grayscale">
+                                            <i className="ph-fill ph-cake text-xl text-gray-500 mb-1"></i>
+                                            <span className="text-[9px] font-bold text-gray-500">Sinh nhật</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <span className="text-[11px] font-semibold">GearVN Spotlight</span>
                     </div>
                 </div>
             </div>
 
-            {/* 4. Content Sections */}
-            <div className="px-5">
+            {/* 3. Content Sections */}
+            <div className="px-5 pt-5">
                 <div className="mb-5">
                     <h2 className="text-[18px] font-semibold text-text-primary">Dịch vụ nổi bật</h2>
                 </div>
@@ -236,7 +221,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                     </button>
                 </div>
 
-                {/* Warranty Status Widget (Mini) */}
+                {/* Warranty Status Widget */}
                 {activeWarranty.hasActive && (
                     <div onClick={() => onNavigate(ScreenName.WARRANTY_DETAIL)} className="mb-8 bg-white p-4 rounded-[20px] shadow-soft border border-orange-100/50 flex items-center gap-4 active:scale-[0.98] transition-transform">
                         <div className="size-12 rounded-[12px] bg-orange-50 flex items-center justify-center text-orange-500 relative shrink-0">
