@@ -48,33 +48,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
     return (
         <div className="relative min-h-screen bg-background-light overflow-hidden pb-40">
 
-            {/* 1. Header */}
-            <header
-                className="sticky top-0 z-50 px-5 flex justify-between items-center bg-background-light/80 backdrop-blur-xl border-b border-gray-100/50"
-                style={{ paddingTop: 'calc(env(safe-area-inset-top) + 8px)', paddingBottom: '10px' }}
-            >
-                <div className="flex flex-col">
-                    <span className="text-[13px] font-medium text-text-secondary tracking-wide">Good Afternoon,</span>
-                    <span className="text-[20px] font-bold tracking-tight leading-tight text-text-primary">Minh Hoàng</span>
-                </div>
-                <div className="flex gap-2.5">
-                    <button
-                        onClick={() => onNavigate(ScreenName.ORDER_SEARCH)}
-                        className="size-10 rounded-full bg-gray-100 flex items-center justify-center active:scale-95 transition-transform text-gray-600"
-                    >
-                        <i className="ph ph-magnifying-glass text-xl"></i>
-                    </button>
-                    <button className="size-10 rounded-full bg-gray-100 flex items-center justify-center active:scale-95 transition-transform text-gray-600">
-                        <i className="ph ph-scan text-xl"></i>
-                    </button>
-                    <button className="size-10 rounded-full bg-gray-100 flex items-center justify-center active:scale-95 transition-transform text-gray-600 relative">
-                        <i className="ph ph-bell text-xl"></i>
-                        <span className="absolute top-2 right-2 size-2.5 bg-red-500 rounded-full border-2 border-background-light"></span>
-                    </button>
-                </div>
-            </header>
-
-            {/* 2. Video Background + Floating Card */}
+            {/* 1. Video Background + Header + Card (all in one container) */}
             <div className="relative overflow-hidden">
                 {/* Video Background Layer */}
                 <div className="absolute inset-0 z-0">
@@ -89,12 +63,38 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                     </video>
                     {/* Fallback gradient bg when no video source */}
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
-                    {/* Dark overlay for card readability */}
+                    {/* Dark overlay for readability */}
                     <div className="absolute inset-0 bg-black/20"></div>
                 </div>
 
+                {/* Header - Floating on video */}
+                <header
+                    className="relative z-20 px-5 flex justify-between items-center text-white"
+                    style={{ paddingTop: 'calc(env(safe-area-inset-top) + 12px)', paddingBottom: '8px' }}
+                >
+                    <div className="flex flex-col">
+                        <span className="text-[13px] font-medium opacity-80 tracking-wide">Good Afternoon,</span>
+                        <span className="text-[20px] font-bold tracking-tight leading-tight">Minh Hoàng</span>
+                    </div>
+                    <div className="flex gap-2.5">
+                        <button
+                            onClick={() => onNavigate(ScreenName.ORDER_SEARCH)}
+                            className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform"
+                        >
+                            <i className="ph ph-magnifying-glass text-xl"></i>
+                        </button>
+                        <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform">
+                            <i className="ph ph-scan text-xl"></i>
+                        </button>
+                        <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform relative">
+                            <i className="ph ph-bell text-xl"></i>
+                            <span className="absolute top-2 right-2 size-2.5 bg-red-500 rounded-full border-2 border-black/30"></span>
+                        </button>
+                    </div>
+                </header>
+
                 {/* Floating Flip Card */}
-                <div className="relative z-10 px-5 pt-5 pb-6">
+                <div className="relative z-10 px-5 pt-3 pb-6">
                     <div className="w-full h-[240px] perspective-1000">
                         <div
                             className={`relative w-full h-full transform-style-3d transition-transform duration-700 ease-in-out ${isFlipped ? 'rotate-y-180' : ''}`}
