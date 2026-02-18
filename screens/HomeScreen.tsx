@@ -74,7 +74,13 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                     <span className="text-[13px] font-medium opacity-80 tracking-wide">Good Afternoon,</span>
                     <span className="text-[20px] font-bold tracking-tight leading-none">Minh Hoàng</span>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-2.5">
+                    <button
+                        onClick={() => onNavigate(ScreenName.ORDER_SEARCH)}
+                        className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform"
+                    >
+                        <i className="ph ph-magnifying-glass text-xl"></i>
+                    </button>
                     <button className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 active:scale-95 transition-transform">
                         <i className="ph ph-scan text-xl"></i>
                     </button>
@@ -193,9 +199,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate }) => {
                 </div>
 
                 <div className="px-5 pt-4">
-                    <div className="flex justify-between items-center mb-5">
+                    <div className="mb-5">
                         <h2 className="text-[18px] font-semibold text-text-primary">Dịch vụ nổi bật</h2>
-                        <button onClick={() => onNavigate(ScreenName.ORDER_SEARCH)} className="text-primary text-[13px] font-bold">Tra cứu đơn</button>
                     </div>
 
                     {/* Quick Services Grid */}
